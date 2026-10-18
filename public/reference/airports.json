@@ -1,0 +1,1638 @@
+{
+  "version": 2,
+  "reviewedAt": "2026-10-16",
+  "records": [
+    {
+      "id": "I140",
+      "canonicalName": "AGARTALA LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "AGARTALA LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I270",
+      "canonicalName": "AGATTI SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "AGATTI SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I022",
+      "canonicalName": "AHMEDABAD AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "AHMEDABAD AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I298",
+      "canonicalName": "ALANG SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "ALANG SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I032",
+      "canonicalName": "AMRITSAR AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "AMRITSAR AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I096",
+      "canonicalName": "BAGDOGRA AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "BAGDOGRA AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I221",
+      "canonicalName": "BEDI BANDAR SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "BEDI BANDAR SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I085",
+      "canonicalName": "Bengaluru",
+      "aliases": [
+        "Bangalore",
+        "Kempegowda",
+        "Kempegowda International Airport"
+      ],
+      "airportCode": "BLR",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://www.bengaluruairport.com/"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "BENGALURU AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I203",
+      "canonicalName": "BHAVNAGAR SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "BHAVNAGAR SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I056",
+      "canonicalName": "BHOGAPURAM AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "BHOGAPURAM AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I027",
+      "canonicalName": "BHOPAL AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "BHOPAL AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I084",
+      "canonicalName": "BHUBANESHWAR AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "BHUBANESHWAR AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I010",
+      "canonicalName": "Kozhikode",
+      "aliases": [
+        "Calicut",
+        "Calicut International Airport"
+      ],
+      "airportCode": "CCJ",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://www.aai.aero/sites/default/files/newspaper_articles_images/Airport_International_8.pdf"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "CALICUT AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I210",
+      "canonicalName": "CALICUT SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "CALICUT SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I005",
+      "canonicalName": "CHANDIGARH AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "CHANDIGARH AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I008",
+      "canonicalName": "Chennai",
+      "aliases": [
+        "Madras"
+      ],
+      "airportCode": "MAA",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://www.incredibleindia.gov.in/en/tamil-nadu/chennai",
+        "https://www.aai.aero/sites/default/files/flight_schedule/Arrival_FLIGHT%20SCHEDULE.pdf"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "CHENNAI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I208",
+      "canonicalName": "CHENNAI SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "CHENNAI SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I024",
+      "canonicalName": "Kochi",
+      "aliases": [
+        "Cochin",
+        "Cochin International Airport"
+      ],
+      "airportCode": "COK",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://www.cial.aero/About-Us"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "COCHIN AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I224",
+      "canonicalName": "COCHIN SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "COCHIN SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I094",
+      "canonicalName": "COIMBATORE AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "COIMBATORE AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I239",
+      "canonicalName": "CUDDALORE SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "CUDDALORE SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I217",
+      "canonicalName": "DAHEJ SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "DAHEJ SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I132",
+      "canonicalName": "DARRANGA LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "DARRANGA LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I130",
+      "canonicalName": "DAWKI LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "DAWKI LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I004",
+      "canonicalName": "DELHI AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "DELHI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I288",
+      "canonicalName": "DHAMRA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "DHAMRA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I012",
+      "canonicalName": "GAYA AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "GAYA AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I164",
+      "canonicalName": "GEDE LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "GEDE LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I163",
+      "canonicalName": "GHOJADANGA LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "GHOJADANGA LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I033",
+      "canonicalName": "Goa Dabolim",
+      "aliases": [
+        "Dabolim"
+      ],
+      "airportCode": "GOI",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://aim-india.aai.aero/eaip-v2-01-2025/pdf/Official%20AIC/AIC2023/AIC14_2023.pdf"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "GOA AIRPORT(DABOLIM)",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I034",
+      "canonicalName": "Goa Mopa",
+      "aliases": [
+        "Mopa",
+        "Manohar International Airport"
+      ],
+      "airportCode": "GOX",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://aim-india.aai.aero/eaip-v2-01-2025/pdf/Official%20AIC/AIC2023/AIC14_2023.pdf",
+        "https://www.miagoaairport.com/contact"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "GOA AIRPORT (MOPA)",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I283",
+      "canonicalName": "GOA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "GOA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I019",
+      "canonicalName": "GUWAHATI AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "GUWAHATI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I204",
+      "canonicalName": "HALDIA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "HALDIA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I162",
+      "canonicalName": "HARIDASPUR LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "HARIDASPUR LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I229",
+      "canonicalName": "HAZIRA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "HAZIRA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I041",
+      "canonicalName": "HYDERABAD AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "HYDERABAD AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I017",
+      "canonicalName": "INDORE AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "INDORE AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I199",
+      "canonicalName": "JAIGAON LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "JAIGAON LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I006",
+      "canonicalName": "JAIPUR AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "JAIPUR AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I119",
+      "canonicalName": "JOGBANI LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "JOGBANI LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I258",
+      "canonicalName": "KAKINADA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KAKINADA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I207",
+      "canonicalName": "KAMARAJAR SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KAMARAJAR SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I234",
+      "canonicalName": "KANDLA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KANDLA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I030",
+      "canonicalName": "KANNUR AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KANNUR AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I211",
+      "canonicalName": "KARAIKAL SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KARAIKAL SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I209",
+      "canonicalName": "KATTUPALI SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KATTUPALI SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I002",
+      "canonicalName": "Kolkata",
+      "aliases": [
+        "Calcutta"
+      ],
+      "airportCode": "CCU",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://industry.wb.gov.in/state_profile.html",
+        "https://www.aai.aero/sites/default/files/flight_schedule/Arrival_FLIGHT%20SCHEDULE.pdf"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "KOLKATA AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I202",
+      "canonicalName": "KOLKATA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KOLKATA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I212",
+      "canonicalName": "KOLLAM SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KOLLAM SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I227",
+      "canonicalName": "KRISHNAPATNAM SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "KRISHNAPATNAM SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I021",
+      "canonicalName": "LUCKNOW AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "LUCKNOW AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I015",
+      "canonicalName": "MADURAI AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "MADURAI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I272",
+      "canonicalName": "MANDVI SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "MANDVI SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I092",
+      "canonicalName": "Mangaluru",
+      "aliases": [
+        "Mangalore",
+        "Mangaluru International Airport"
+      ],
+      "airportCode": "IXE",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://mangaluru.adaniairports.com/en/",
+        "https://aim-india.aai.aero/eaip-v2-01-2023/pdf/SUPs/AIPS_2022_177.pdf"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "MANGALORE AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I293",
+      "canonicalName": "MANGALORE SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "MANGALORE SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I126",
+      "canonicalName": "MOREH LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "MOREH LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I001",
+      "canonicalName": "Mumbai",
+      "aliases": [
+        "Bombay",
+        "Chhatrapati Shivaji Maharaj International Airport"
+      ],
+      "airportCode": "BOM",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://mumbaicity.gov.in/en/about-district/",
+        "https://www.incredibleindia.gov.in/en/maharashtra/mumbai/chhatrapati-shivaji-maharaj-terminus"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "MUMBAI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I201",
+      "canonicalName": "MUMBAI SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "MUMBAI SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I222",
+      "canonicalName": "MUNDRA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "MUNDRA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I238",
+      "canonicalName": "NAGAPATTINAM SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "NAGAPATTINAM SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I016",
+      "canonicalName": "NAGPUR AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "NAGPUR AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I044",
+      "canonicalName": "NAVI MUMBAI AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "NAVI MUMBAI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I240",
+      "canonicalName": "NHAVA SHEVA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "NHAVA SHEVA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I291",
+      "canonicalName": "PARADEEP SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "PARADEEP SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I231",
+      "canonicalName": "PIPAVAV SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "PIPAVAV SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I220",
+      "canonicalName": "PORBANDAR SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "PORBANDAR SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I077",
+      "canonicalName": "PORTBLAIR AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "PORTBLAIR AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I277",
+      "canonicalName": "PORT BLAIR SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "PORT BLAIR SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I026",
+      "canonicalName": "PUNE AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "PUNE AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I112",
+      "canonicalName": "RAXAUL LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "RAXAUL LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I153",
+      "canonicalName": "RUPAIDIHA LANDPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "landport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "RUPAIDIHA LANDPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I218",
+      "canonicalName": "SIKKA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "SIKKA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I029",
+      "canonicalName": "SURAT AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "SURAT AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I003",
+      "canonicalName": "Tiruchirappalli",
+      "aliases": [
+        "Trichy",
+        "Tiruchirappalli International Airport"
+      ],
+      "airportCode": "TRZ",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://aim-india.aai.aero/eaip-v2-06-2024/pdf/Official%20AIC/AIC2021/AIC_2021_04.pdf"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "TIRUCHIRAPALLI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I042",
+      "canonicalName": "TIRUPATI AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "TIRUPATI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I023",
+      "canonicalName": "Thiruvananthapuram",
+      "aliases": [
+        "Trivandrum",
+        "Thiruvananthapuram International Airport"
+      ],
+      "airportCode": "TRV",
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [
+        "https://thiruvananthapuram.adaniairports.com/en/"
+      ],
+      "liveDropdownLabels": [
+        {
+          "label": "TRIVANDRUM AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I219",
+      "canonicalName": "TUNA TEKRA SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "TUNA TEKRA SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I237",
+      "canonicalName": "TUTICORIN SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "TUTICORIN SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I223",
+      "canonicalName": "VALLARPADAM SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "VALLARPADAM SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I007",
+      "canonicalName": "VARANASI AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "VARANASI AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I043",
+      "canonicalName": "VIJAYAWADA AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "VIJAYAWADA AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I025",
+      "canonicalName": "VISHAKHAPATNAM AIRPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "airport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "VISHAKHAPATNAM AIRPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I225",
+      "canonicalName": "VISHAKHAPATNAM SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "VISHAKHAPATNAM SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I228",
+      "canonicalName": "VIZHINJAM INTERNATIONAL SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "VIZHINJAM INTERNATIONAL SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "I226",
+      "canonicalName": "VIZHINJAM SEAPORT",
+      "aliases": [],
+      "region": "Registration arrival option",
+      "locationKind": "seaport",
+      "confidence": "LIVE_VERIFIED",
+      "aliasSources": [],
+      "liveDropdownLabels": [
+        {
+          "label": "VIZHINJAM SEAPORT",
+          "context": "Registration · Port Of Arrival · before applicant gate",
+          "observedAt": "2026-10-17",
+          "source": "https://indianvisaonline.gov.in/evisa/Registration"
+        }
+      ],
+      "caveat": "Dropdown presence does not establish entry eligibility. Confirm the choice and authorized entry on your current official form."
+    },
+    {
+      "id": "gurugram",
+      "canonicalName": "Gurugram",
+      "aliases": [
+        "Gurgaon"
+      ],
+      "region": "Haryana",
+      "locationKind": "district",
+      "confidence": "REPORTED",
+      "aliasSources": [
+        "https://gurugram.gov.in/history/"
+      ],
+      "liveDropdownLabels": [],
+      "caveat": "Gurgaon and Gurugram are alternate names. Match the city or district requested by the field and use the PIN from the full address."
+    }
+  ]
+}

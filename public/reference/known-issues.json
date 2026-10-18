@@ -1,0 +1,239 @@
+{
+  "version": 2,
+  "reviewedAt": "2026-10-16",
+  "records": [
+    {
+      "id": "employer-punctuation",
+      "title": "The form clears after an employer name",
+      "sectionIds": [
+        "employment"
+      ],
+      "fieldIds": [
+        "employer"
+      ],
+      "symptoms": "Save and Next clears fields after you enter a company name with periods or commas.",
+      "explanation": "A user confirmed firsthand that periods or commas in an employer name caused Save and Next to clear fields.",
+      "workaround": "Keep a record of your original answer. Check all entries before retrying. If you consider removing punctuation, first confirm that the resulting name remains accurate. Ask official support when a legal name cannot be entered correctly.",
+      "evidenceStatus": "REPORTED",
+      "officialUrls": [],
+      "caveats": "Not a universal punctuation restriction. No silent substitutions or automatic name rewriting.",
+      "lastReviewedAt": "2026-10-16",
+      "otherSources": [
+        "Project SPEC.md · initial user research"
+      ]
+    },
+    {
+      "id": "religion-other",
+      "title": "“Other” religion needs an explanation",
+      "sectionIds": [
+        "identity"
+      ],
+      "fieldIds": [
+        "religion",
+        "religionOther"
+      ],
+      "symptoms": "The form resets or refuses to continue after Other is selected.",
+      "explanation": "The official sample shows an “If Others, Please specify” prompt. A user confirmed firsthand that leaving the explanation empty caused the form to reset.",
+      "workaround": "Fill the explanation before continuing. Enter NA if not applicable. Recheck the selection and explanation after a page refresh.",
+      "evidenceStatus": "REPORTED",
+      "officialUrls": [
+        "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+      ],
+      "caveats": "The user confirmed the conditional explanation field and use of NA in their session. Use NA only when it accurately applies.",
+      "lastReviewedAt": "2026-10-16",
+      "otherSources": [
+        "Project SPEC.md · initial user research"
+      ]
+    },
+    {
+      "id": "selections-reset",
+      "title": "A selection disappears after editing another field",
+      "sectionIds": [
+        "identity",
+        "family",
+        "travel"
+      ],
+      "fieldIds": [],
+      "symptoms": "A radio button or dropdown returns to blank after the page changes.",
+      "explanation": "A user confirmed firsthand that selecting dependent controls before completing earlier fields could cause those selections to clear.",
+      "workaround": "Work from the top of the government page downward, then recheck every selection before saving.",
+      "evidenceStatus": "REPORTED",
+      "officialUrls": [],
+      "caveats": "This describes the user’s observed sequence; recheck selections after changing earlier fields.",
+      "lastReviewedAt": "2026-10-16",
+      "otherSources": [
+        "Project SPEC.md · initial user research"
+      ]
+    },
+    {
+      "id": "eta-or-application-id",
+      "title": "ETA number or Application ID?",
+      "sectionIds": [
+        "travel"
+      ],
+      "fieldIds": [
+        "previousVisaNumber"
+      ],
+      "symptoms": "You cannot tell which number belongs in the previous visa field.",
+      "explanation": "ETA means Electronic Travel Authorization. For a previous Indian e-Visa, the ETA number is the previous visa number. The Application ID tracks the application.",
+      "workaround": "Enter the ETA number from your previously issued e-Visa. For a regular visa, enter the visa number printed on the document.",
+      "evidenceStatus": "REPORTED",
+      "lastVerifiedAt": "2026-10-17",
+      "otherSources": [
+        "User-confirmed guidance · 17 October 2026"
+      ],
+      "officialUrls": [
+        "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf",
+        "https://indianvisaonline.gov.in/evisa/"
+      ],
+      "caveats": "Copy the number from the issued document, keeping its letters and digits intact.",
+      "lastReviewedAt": "2026-10-17"
+    },
+    {
+      "id": "visa-place-of-issue",
+      "title": "What was the previous visa’s place of issue?",
+      "sectionIds": [
+        "travel"
+      ],
+      "fieldIds": [
+        "previousVisaPlace"
+      ],
+      "symptoms": "You arrived through one airport but applied online.",
+      "explanation": "For a previous Indian e-Visa, you can enter New Delhi as the place of issue.",
+      "workaround": "Enter New Delhi for a previous e-Visa. For a regular visa, use the place of issue printed on the visa.",
+      "evidenceStatus": "REPORTED",
+      "lastVerifiedAt": "2026-10-17",
+      "otherSources": [
+        "User-confirmed guidance · 17 October 2026"
+      ],
+      "officialUrls": [
+        "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf",
+        "https://indianvisaonline.gov.in/evisa/"
+      ],
+      "caveats": "The place of issue is separate from your arrival airport.",
+      "lastReviewedAt": "2026-10-17"
+    },
+    {
+      "id": "airport-names",
+      "title": "Trivandrum, Thiruvananthapuram… which one?",
+      "sectionIds": [
+        "registration"
+      ],
+      "fieldIds": [
+        "arrivalPort"
+      ],
+      "symptoms": "Your ticket’s city name differs from the arrival dropdown.",
+      "explanation": "The live registration dropdown observed on 17 October 2026 contains 86 choices. Our arrival selector searches those exact labels plus separately sourced names and airport codes. Multiple names for one port share a result; different ports in one city remain separate.",
+      "workaround": "Use the airport finder to compare aliases and the observed dropdown label, then check the choice in your current form. Verify authorized entry separately on the official portal.",
+      "evidenceStatus": "LIVE_VERIFIED",
+      "officialUrls": [
+        "https://indianvisaonline.gov.in/evisa/Registration",
+        "https://indianvisaonline.gov.in/evisa/"
+      ],
+      "lastVerifiedAt": "2026-10-17",
+      "caveats": "Dropdown presence is not proof of authorized entry or eligibility. Choices may change with your session.",
+      "lastReviewedAt": "2026-10-16",
+      "otherSources": []
+    },
+    {
+      "id": "address-mapping",
+      "title": "City, district, state, or neighborhood?",
+      "sectionIds": [
+        "family"
+      ],
+      "fieldIds": [
+        "addressStreet",
+        "addressCity",
+        "addressRegion"
+      ],
+      "symptoms": "Your accommodation address has several place names.",
+      "explanation": "Some places have multiple names: Gurgaon and Gurugram refer to the same city in Haryana. Older and newer names can appear in addresses and dropdowns. City, district and state are separate parts of an address.",
+      "workaround": "Use the full address supplied by your accommodation. Put the street/locality in the address lines and the city, district, state and PIN in their corresponding fields. If a dropdown uses an alternate name, select the matching place.",
+      "evidenceStatus": "REPORTED",
+      "lastVerifiedAt": "2026-10-17",
+      "otherSources": [
+        "User-confirmed place-name alias · 17 October 2026"
+      ],
+      "officialUrls": [
+        "https://gurugram.gov.in/history/"
+      ],
+      "caveats": "A city name alone does not identify a street’s PIN code. Keep the PIN supplied with the full address.",
+      "lastReviewedAt": "2026-10-17"
+    },
+    {
+      "id": "national-id",
+      "title": "Citizenship / National ID is not your nationality",
+      "sectionIds": [
+        "identity"
+      ],
+      "fieldIds": [
+        "nationalId"
+      ],
+      "symptoms": "You are unsure what number to enter or whether you have one.",
+      "explanation": "This field asks for a national identity number. Enter NA when it does not apply; U.S. applicants without a national ID can use NA.",
+      "workaround": "Enter your applicable national identity number, or NA if you do not have one.",
+      "evidenceStatus": "OFFICIAL",
+      "officialUrls": [
+        "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+      ],
+      "lastVerifiedAt": "2026-10-16",
+      "otherSources": [
+        "U.S. applicant NA guidance confirmed by the user · 17 October 2026"
+      ],
+      "caveats": "Enter a number or NA here; your nationality belongs in the separate nationality field.",
+      "lastReviewedAt": "2026-10-17"
+    },
+    {
+      "id": "upload-action",
+      "title": "Choosing a file may not finish the upload",
+      "sectionIds": [],
+      "fieldIds": [],
+      "symptoms": "A selected filename appears but the official site still says Not Uploaded.",
+      "explanation": "Choosing a file and uploading it are separate steps. After selecting your file, use the displayed Upload Photo or Upload Document action.",
+      "workaround": "On the official site, select the prepared file, perform the displayed upload action, and inspect its status and preview before continuing.",
+      "evidenceStatus": "OFFICIAL",
+      "officialUrls": [
+        "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+      ],
+      "lastVerifiedAt": "2026-10-16",
+      "caveats": "Before continuing, make sure the file status shows it has uploaded and the preview displays the correct file. This companion never performs the upload.",
+      "lastReviewedAt": "2026-10-16",
+      "otherSources": []
+    },
+    {
+      "id": "document-requirements",
+      "title": "The right file type and size",
+      "sectionIds": [],
+      "fieldIds": [],
+      "symptoms": "A photo or passport scan is rejected for format or file size.",
+      "explanation": "Prepare a square JPEG photo of 10 KB–1 MB and at least 350 × 350 pixels. Prepare the passport biodata page as a PDF of 10–300 KB.",
+      "workaround": "Use the local file tools, inspect the full-size output, and check the current upload screen. Your face must be clear and the passport text and machine-readable lines legible.",
+      "evidenceStatus": "OFFICIAL",
+      "officialUrls": [
+        "https://indianvisaonline.gov.in/evisa/",
+        "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+      ],
+      "lastVerifiedAt": "2026-10-16",
+      "caveats": "Passing technical bounds cannot establish visual quality or official acceptance. HEIC/HEIF decoding runs locally; damaged or unsupported files need a fresh JPEG/PNG export.",
+      "lastReviewedAt": "2026-10-16",
+      "otherSources": []
+    },
+    {
+      "id": "payment-pending",
+      "title": "Payment was taken but the status has not changed",
+      "sectionIds": [],
+      "fieldIds": [],
+      "symptoms": "The bank shows a charge but the government status is pending.",
+      "explanation": "The official instructions say payment status updates can take up to two hours.",
+      "workaround": "Wait for the stated update period and use Verify Payment / Pay e-Visa Fee on the official portal before attempting another payment or application. Contact the official helpdesk if unresolved.",
+      "evidenceStatus": "OFFICIAL",
+      "officialUrls": [
+        "https://indianvisaonline.gov.in/evisa/"
+      ],
+      "lastVerifiedAt": "2026-10-16",
+      "caveats": "We do not process payments or collect payment details. Recheck current official instructions.",
+      "lastReviewedAt": "2026-10-16",
+      "otherSources": []
+    }
+  ]
+}

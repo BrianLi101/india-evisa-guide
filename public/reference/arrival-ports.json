@@ -1,0 +1,689 @@
+{
+  "observedAt": "2026-10-17",
+  "source": "https://indianvisaonline.gov.in/evisa/Registration",
+  "context": "Registration before applicant gate; not an eligibility list",
+  "records": [
+    {
+      "id": "I140",
+      "label": "AGARTALA LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I270",
+      "label": "AGATTI SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I022",
+      "label": "AHMEDABAD AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I298",
+      "label": "ALANG SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I032",
+      "label": "AMRITSAR AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I096",
+      "label": "BAGDOGRA AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I221",
+      "label": "BEDI BANDAR SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I085",
+      "label": "BENGALURU AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Bengaluru",
+        "Bangalore",
+        "Kempegowda",
+        "Kempegowda International Airport"
+      ],
+      "code": "BLR",
+      "aliasSources": [
+        "https://www.bengaluruairport.com/"
+      ]
+    },
+    {
+      "id": "I203",
+      "label": "BHAVNAGAR SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I056",
+      "label": "BHOGAPURAM AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I027",
+      "label": "BHOPAL AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I084",
+      "label": "BHUBANESHWAR AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I010",
+      "label": "CALICUT AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Kozhikode",
+        "Calicut",
+        "Calicut International Airport"
+      ],
+      "code": "CCJ",
+      "aliasSources": [
+        "https://www.aai.aero/sites/default/files/newspaper_articles_images/Airport_International_8.pdf"
+      ]
+    },
+    {
+      "id": "I210",
+      "label": "CALICUT SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I005",
+      "label": "CHANDIGARH AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I008",
+      "label": "CHENNAI AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Chennai",
+        "Madras"
+      ],
+      "code": "MAA",
+      "aliasSources": [
+        "https://www.incredibleindia.gov.in/en/tamil-nadu/chennai",
+        "https://www.aai.aero/sites/default/files/flight_schedule/Arrival_FLIGHT%20SCHEDULE.pdf"
+      ]
+    },
+    {
+      "id": "I208",
+      "label": "CHENNAI SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I024",
+      "label": "COCHIN AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Kochi",
+        "Cochin",
+        "Cochin International Airport"
+      ],
+      "code": "COK",
+      "aliasSources": [
+        "https://www.cial.aero/About-Us"
+      ]
+    },
+    {
+      "id": "I224",
+      "label": "COCHIN SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I094",
+      "label": "COIMBATORE AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I239",
+      "label": "CUDDALORE SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I217",
+      "label": "DAHEJ SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I132",
+      "label": "DARRANGA LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I130",
+      "label": "DAWKI LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I004",
+      "label": "DELHI AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I288",
+      "label": "DHAMRA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I012",
+      "label": "GAYA AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I164",
+      "label": "GEDE LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I163",
+      "label": "GHOJADANGA LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I033",
+      "label": "GOA AIRPORT(DABOLIM)",
+      "kind": "airport",
+      "names": [
+        "Goa Dabolim",
+        "Dabolim"
+      ],
+      "code": "GOI",
+      "aliasSources": [
+        "https://aim-india.aai.aero/eaip-v2-01-2025/pdf/Official%20AIC/AIC2023/AIC14_2023.pdf"
+      ]
+    },
+    {
+      "id": "I034",
+      "label": "GOA AIRPORT (MOPA)",
+      "kind": "airport",
+      "names": [
+        "Goa Mopa",
+        "Mopa",
+        "Manohar International Airport"
+      ],
+      "code": "GOX",
+      "aliasSources": [
+        "https://aim-india.aai.aero/eaip-v2-01-2025/pdf/Official%20AIC/AIC2023/AIC14_2023.pdf",
+        "https://www.miagoaairport.com/contact"
+      ]
+    },
+    {
+      "id": "I283",
+      "label": "GOA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I019",
+      "label": "GUWAHATI AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I204",
+      "label": "HALDIA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I162",
+      "label": "HARIDASPUR LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I229",
+      "label": "HAZIRA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I041",
+      "label": "HYDERABAD AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I017",
+      "label": "INDORE AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I199",
+      "label": "JAIGAON LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I006",
+      "label": "JAIPUR AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I119",
+      "label": "JOGBANI LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I258",
+      "label": "KAKINADA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I207",
+      "label": "KAMARAJAR SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I234",
+      "label": "KANDLA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I030",
+      "label": "KANNUR AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I211",
+      "label": "KARAIKAL SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I209",
+      "label": "KATTUPALI SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I002",
+      "label": "KOLKATA AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Kolkata",
+        "Calcutta"
+      ],
+      "code": "CCU",
+      "aliasSources": [
+        "https://industry.wb.gov.in/state_profile.html",
+        "https://www.aai.aero/sites/default/files/flight_schedule/Arrival_FLIGHT%20SCHEDULE.pdf"
+      ]
+    },
+    {
+      "id": "I202",
+      "label": "KOLKATA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I212",
+      "label": "KOLLAM SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I227",
+      "label": "KRISHNAPATNAM SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I021",
+      "label": "LUCKNOW AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I015",
+      "label": "MADURAI AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I272",
+      "label": "MANDVI SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I092",
+      "label": "MANGALORE AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Mangaluru",
+        "Mangalore",
+        "Mangaluru International Airport"
+      ],
+      "code": "IXE",
+      "aliasSources": [
+        "https://mangaluru.adaniairports.com/en/",
+        "https://aim-india.aai.aero/eaip-v2-01-2023/pdf/SUPs/AIPS_2022_177.pdf"
+      ]
+    },
+    {
+      "id": "I293",
+      "label": "MANGALORE SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I126",
+      "label": "MOREH LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I001",
+      "label": "MUMBAI AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Mumbai",
+        "Bombay",
+        "Chhatrapati Shivaji Maharaj International Airport"
+      ],
+      "code": "BOM",
+      "aliasSources": [
+        "https://mumbaicity.gov.in/en/about-district/",
+        "https://www.incredibleindia.gov.in/en/maharashtra/mumbai/chhatrapati-shivaji-maharaj-terminus"
+      ]
+    },
+    {
+      "id": "I201",
+      "label": "MUMBAI SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I222",
+      "label": "MUNDRA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I238",
+      "label": "NAGAPATTINAM SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I016",
+      "label": "NAGPUR AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I044",
+      "label": "NAVI MUMBAI AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I240",
+      "label": "NHAVA SHEVA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I291",
+      "label": "PARADEEP SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I231",
+      "label": "PIPAVAV SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I220",
+      "label": "PORBANDAR SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I077",
+      "label": "PORTBLAIR AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I277",
+      "label": "PORT BLAIR SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I026",
+      "label": "PUNE AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I112",
+      "label": "RAXAUL LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I153",
+      "label": "RUPAIDIHA LANDPORT",
+      "kind": "landport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I218",
+      "label": "SIKKA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I029",
+      "label": "SURAT AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I003",
+      "label": "TIRUCHIRAPALLI AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Tiruchirappalli",
+        "Trichy",
+        "Tiruchirappalli International Airport"
+      ],
+      "code": "TRZ",
+      "aliasSources": [
+        "https://aim-india.aai.aero/eaip-v2-06-2024/pdf/Official%20AIC/AIC2021/AIC_2021_04.pdf"
+      ]
+    },
+    {
+      "id": "I042",
+      "label": "TIRUPATI AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I023",
+      "label": "TRIVANDRUM AIRPORT",
+      "kind": "airport",
+      "names": [
+        "Thiruvananthapuram",
+        "Trivandrum",
+        "Thiruvananthapuram International Airport"
+      ],
+      "code": "TRV",
+      "aliasSources": [
+        "https://thiruvananthapuram.adaniairports.com/en/"
+      ]
+    },
+    {
+      "id": "I219",
+      "label": "TUNA TEKRA SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I237",
+      "label": "TUTICORIN SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I223",
+      "label": "VALLARPADAM SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I007",
+      "label": "VARANASI AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I043",
+      "label": "VIJAYAWADA AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I025",
+      "label": "VISHAKHAPATNAM AIRPORT",
+      "kind": "airport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I225",
+      "label": "VISHAKHAPATNAM SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I228",
+      "label": "VIZHINJAM INTERNATIONAL SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    },
+    {
+      "id": "I226",
+      "label": "VIZHINJAM SEAPORT",
+      "kind": "seaport",
+      "names": [],
+      "aliasSources": []
+    }
+  ]
+}

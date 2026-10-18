@@ -1,0 +1,2965 @@
+{
+  "version": 2,
+  "reviewedAt": "2026-10-16",
+  "records": {
+    "sections": [
+      {
+        "id": "registration",
+        "title": "Before you begin",
+        "order": 0,
+        "officialPageTitle": "e-Visa Application",
+        "description": "Your travel basics. Registration labels were observed on the live portal; choices can depend on nationality.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "sourceUrls": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "verifiedAt": "2026-10-16"
+      },
+      {
+        "id": "identity",
+        "title": "Personal & passport",
+        "order": 1,
+        "officialPageTitle": "Applicant Details Form · sample page 2",
+        "description": "Keep your passport beside you. Names and identity details should match it exactly.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "sourceUrls": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ]
+      },
+      {
+        "id": "family",
+        "title": "Address & family",
+        "order": 2,
+        "officialPageTitle": "Applicant Details Form · sample page 3",
+        "description": "Prepare your addresses and family details before opening the government form.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "sourceUrls": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ]
+      },
+      {
+        "id": "employment",
+        "title": "Occupation details",
+        "order": 3,
+        "officialPageTitle": "Provisional supplementary section",
+        "description": "Employment details are reported by applicants but absent from the reviewed sample. Confirm fields on your live form.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "sourceUrls": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ]
+      },
+      {
+        "id": "travel",
+        "title": "Visit & references",
+        "order": 4,
+        "officialPageTitle": "Visa Details Form · sample page 4",
+        "description": "Your plans, earlier visits and two reference contacts.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "sourceUrls": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ]
+      },
+      {
+        "id": "background",
+        "title": "Additional questions",
+        "order": 5,
+        "officialPageTitle": "Additional Question Details · sample page 5",
+        "description": "Answer carefully and truthfully. Read the full wording on the official portal before answering.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "sourceUrls": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "id": "gatePassport",
+        "sectionId": "registration",
+        "label": "Passport No",
+        "description": "Enter this only on the official portal. The opening gate asks for the passport you will travel on.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Passport No",
+          "control": "Text field",
+          "elementId": "gate_passport",
+          "maxLength": 14,
+          "context": "Initial passport/name gate, before Continue. This limit applies only to this gate field."
+        },
+        "hint": {
+          "hint": "Use the passport you’ll travel with.",
+          "prompt": "Passport number"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "gateNationality",
+        "sectionId": "registration",
+        "label": "Select Country/Region",
+        "description": "Select the country/region for your passport on the official portal.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Select Country/Region",
+          "control": "Dropdown",
+          "elementId": "gate_nationality",
+          "choices": [
+            "ALBANIA",
+            "ANDORRA",
+            "ANGOLA",
+            "ANGUILLA",
+            "ANTIGUA AND BARBUDA",
+            "ARGENTINA",
+            "ARMENIA",
+            "ARUBA",
+            "AUSTRALIA",
+            "AUSTRIA",
+            "AZERBAIJAN",
+            "BAHAMAS",
+            "BAHRAIN",
+            "BARBADOS",
+            "BELARUS",
+            "BELGIUM",
+            "BELIZE",
+            "BENIN",
+            "BOLIVIA",
+            "BOSNIA AND HERZEGOVINA",
+            "BOTSWANA",
+            "BRAZIL",
+            "BRUNEI",
+            "BULGARIA",
+            "BURUNDI",
+            "CAMBODIA",
+            "CAMEROON",
+            "CANADA",
+            "CAPE VERDE",
+            "CAYMAN ISLANDS",
+            "CHILE",
+            "CHINA-CHINA",
+            "CHINA- SAR HONGKONG",
+            "CHINA- SAR MACAU",
+            "COLOMBIA",
+            "COMOROS",
+            "COOK ISLANDS",
+            "COSTA RICA",
+            "COTE D\\'IVOIRE",
+            "CROATIA",
+            "CUBA",
+            "CYPRUS",
+            "CZECH REPUBLIC",
+            "DENMARK",
+            "DJIBOUTI",
+            "DOMINICA",
+            "DOMINICAN REPUBLIC",
+            "EAST TIMOR (DEMOCRATIC REPUBLIC OF)",
+            "ECUADOR",
+            "EL SALVADOR",
+            "EQUATORIAL GUINEA",
+            "ERITREA",
+            "ESTONIA",
+            "ESWATINI",
+            "FIJI",
+            "FINLAND",
+            "FRANCE",
+            "GABON",
+            "GAMBIA",
+            "GEORGIA",
+            "GERMANY",
+            "GHANA",
+            "GIBRALTAR",
+            "GREECE",
+            "GRENADA",
+            "GUATEMALA",
+            "GUERNSEY",
+            "GUINEA",
+            "GUYANA",
+            "HAITI",
+            "HONDURAS",
+            "HUNGARY",
+            "ICELAND",
+            "INDONESIA",
+            "IRELAND",
+            "ISLE OF MAN",
+            "ISRAEL",
+            "ITALY",
+            "JAMAICA",
+            "JAPAN",
+            "JERSEY",
+            "JORDAN",
+            "KAZAKHSTAN",
+            "KENYA",
+            "KIRIBATI",
+            "KUWAIT",
+            "KYRGYZSTAN",
+            "LAOS",
+            "LATVIA",
+            "LESOTHO",
+            "LIBERIA",
+            "LIECHTENSTEIN",
+            "LITHUANIA",
+            "LUXEMBOURG",
+            "MADAGASCAR",
+            "MALAWI",
+            "MALAYSIA",
+            "MALI",
+            "MALTA",
+            "MARSHALL ISLANDS",
+            "MAURITANIA",
+            "MAURITIUS",
+            "MEXICO",
+            "MICRONESIA (FEDERATED STATES OF)",
+            "MOLDOVA",
+            "MONACO",
+            "MONGOLIA",
+            "MONTENEGRO",
+            "MONTSERRAT",
+            "MOROCCO",
+            "MOZAMBIQUE",
+            "MYANMAR",
+            "NAMIBIA",
+            "NAURU",
+            "NETHERLANDS",
+            "NEW ZEALAND",
+            "NICARAGUA",
+            "NIGER",
+            "NIUE ISLAND",
+            "NORWAY",
+            "OMAN",
+            "PALAU",
+            "PALESTINE",
+            "PANAMA",
+            "PAPUA NEW GUINEA",
+            "PARAGUAY",
+            "PERU",
+            "PHILIPPINES",
+            "POLAND",
+            "PORTUGAL",
+            "QATAR",
+            "REPUBLIC OF KOREA",
+            "REPUBLIC OF NORTH MACEDONIA",
+            "ROMANIA",
+            "RUSSIAN FEDERATION",
+            "RWANDA",
+            "SAINT KITTS AND NEVIS",
+            "SAINT LUCIA",
+            "SAINT VINCENT AND THE GRENADINES",
+            "SAN MARINO",
+            "SAUDI ARABIA",
+            "SENEGAL",
+            "SERBIA",
+            "SEYCHELLES",
+            "SIERRA LEONE",
+            "SINGAPORE",
+            "SLOVAKIA",
+            "SLOVENIA",
+            "SOLOMON ISLANDS",
+            "SOUTH AFRICA",
+            "SPAIN",
+            "SRI LANKA",
+            "SURINAME",
+            "SWEDEN",
+            "SWITZERLAND",
+            "TAIWAN",
+            "TAJIKISTAN",
+            "TANZANIA",
+            "TEST",
+            "THAILAND",
+            "TOGO",
+            "TONGA",
+            "TRINIDAD AND TOBAGO",
+            "TURKS AND CAICOS ISL",
+            "TUVALU",
+            "UGANDA",
+            "UKRAINE",
+            "UNITED ARAB EMIRATES",
+            "UNITED KINGDOM",
+            "UNITED STATES OF AMERICA",
+            "URUGUAY",
+            "UZBEKISTAN",
+            "VANUATU",
+            "VATICAN CITY STATE ( HOLY SEE)",
+            "VENEZUELA",
+            "VIETNAM",
+            "WEST SAMOA",
+            "ZAMBIA",
+            "ZIMBABWE"
+          ],
+          "context": "Initial passport/name gate, before Continue. This limit applies only to this gate field."
+        },
+        "hint": {
+          "hint": "Choose the country/region of your passport."
+        },
+        "currentOptionsVerified": true,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "gateName",
+        "sectionId": "registration",
+        "label": "Name as in passport",
+        "description": "Use the name recorded in your passport on the official portal.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Name as in passport",
+          "control": "Text field",
+          "elementId": "gate_name",
+          "maxLength": 100,
+          "context": "Initial passport/name gate, before Continue. This limit applies only to this gate field."
+        },
+        "hint": {
+          "hint": "Match the full name in your passport.",
+          "prompt": "Full name as printed"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "nationality",
+        "sectionId": "registration",
+        "label": "Nationality/Region",
+        "description": "Use the nationality of the passport you will travel on. Check eligibility directly on the portal.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Nationality/Region",
+          "control": "Dropdown",
+          "elementId": "nationality_id",
+          "choices": [
+            "ALBANIA",
+            "ANDORRA",
+            "ANGOLA",
+            "ANGUILLA",
+            "ANTIGUA AND BARBUDA",
+            "ARGENTINA",
+            "ARMENIA",
+            "ARUBA",
+            "AUSTRALIA",
+            "AUSTRIA",
+            "AZERBAIJAN",
+            "BAHAMAS",
+            "BAHRAIN",
+            "BARBADOS",
+            "BELARUS",
+            "BELGIUM",
+            "BELIZE",
+            "BENIN",
+            "BOLIVIA",
+            "BOSNIA AND HERZEGOVINA",
+            "BOTSWANA",
+            "BRAZIL",
+            "BRUNEI",
+            "BULGARIA",
+            "BURUNDI",
+            "CAMBODIA",
+            "CAMEROON",
+            "CANADA",
+            "CAPE VERDE",
+            "CAYMAN ISLANDS",
+            "CHILE",
+            "CHINA-CHINA",
+            "CHINA- SAR HONGKONG",
+            "CHINA- SAR MACAU",
+            "COLOMBIA",
+            "COMOROS",
+            "COOK ISLANDS",
+            "COSTA RICA",
+            "COTE D\\'IVOIRE",
+            "CROATIA",
+            "CUBA",
+            "CYPRUS",
+            "CZECH REPUBLIC",
+            "DENMARK",
+            "DJIBOUTI",
+            "DOMINICA",
+            "DOMINICAN REPUBLIC",
+            "EAST TIMOR (DEMOCRATIC REPUBLIC OF)",
+            "ECUADOR",
+            "EL SALVADOR",
+            "EQUATORIAL GUINEA",
+            "ERITREA",
+            "ESTONIA",
+            "ESWATINI",
+            "FIJI",
+            "FINLAND",
+            "FRANCE",
+            "GABON",
+            "GAMBIA",
+            "GEORGIA",
+            "GERMANY",
+            "GHANA",
+            "GIBRALTAR",
+            "GREECE",
+            "GRENADA",
+            "GUATEMALA",
+            "GUERNSEY",
+            "GUINEA",
+            "GUYANA",
+            "HAITI",
+            "HONDURAS",
+            "HUNGARY",
+            "ICELAND",
+            "INDONESIA",
+            "IRELAND",
+            "ISLE OF MAN",
+            "ISRAEL",
+            "ITALY",
+            "JAMAICA",
+            "JAPAN",
+            "JERSEY",
+            "JORDAN",
+            "KAZAKHSTAN",
+            "KENYA",
+            "KIRIBATI",
+            "KUWAIT",
+            "KYRGYZSTAN",
+            "LAOS",
+            "LATVIA",
+            "LESOTHO",
+            "LIBERIA",
+            "LIECHTENSTEIN",
+            "LITHUANIA",
+            "LUXEMBOURG",
+            "MADAGASCAR",
+            "MALAWI",
+            "MALAYSIA",
+            "MALI",
+            "MALTA",
+            "MARSHALL ISLANDS",
+            "MAURITANIA",
+            "MAURITIUS",
+            "MEXICO",
+            "MICRONESIA (FEDERATED STATES OF)",
+            "MOLDOVA",
+            "MONACO",
+            "MONGOLIA",
+            "MONTENEGRO",
+            "MONTSERRAT",
+            "MOROCCO",
+            "MOZAMBIQUE",
+            "MYANMAR",
+            "NAMIBIA",
+            "NAURU",
+            "NETHERLANDS",
+            "NEW ZEALAND",
+            "NICARAGUA",
+            "NIGER",
+            "NIUE ISLAND",
+            "NORWAY",
+            "OMAN",
+            "PALAU",
+            "PALESTINE",
+            "PANAMA",
+            "PAPUA NEW GUINEA",
+            "PARAGUAY",
+            "PERU",
+            "PHILIPPINES",
+            "POLAND",
+            "PORTUGAL",
+            "QATAR",
+            "REPUBLIC OF KOREA",
+            "REPUBLIC OF NORTH MACEDONIA",
+            "ROMANIA",
+            "RUSSIAN FEDERATION",
+            "RWANDA",
+            "SAINT KITTS AND NEVIS",
+            "SAINT LUCIA",
+            "SAINT VINCENT AND THE GRENADINES",
+            "SAN MARINO",
+            "SAUDI ARABIA",
+            "SENEGAL",
+            "SERBIA",
+            "SEYCHELLES",
+            "SIERRA LEONE",
+            "SINGAPORE",
+            "SLOVAKIA",
+            "SLOVENIA",
+            "SOLOMON ISLANDS",
+            "SOUTH AFRICA",
+            "SPAIN",
+            "SRI LANKA",
+            "SURINAME",
+            "SWEDEN",
+            "SWITZERLAND",
+            "TAIWAN",
+            "TAJIKISTAN",
+            "TANZANIA",
+            "TEST",
+            "THAILAND",
+            "TOGO",
+            "TONGA",
+            "TRINIDAD AND TOBAGO",
+            "TURKS AND CAICOS ISL",
+            "TUVALU",
+            "UGANDA",
+            "UKRAINE",
+            "UNITED ARAB EMIRATES",
+            "UNITED KINGDOM",
+            "UNITED STATES OF AMERICA",
+            "URUGUAY",
+            "UZBEKISTAN",
+            "VANUATU",
+            "VATICAN CITY STATE ( HOLY SEE)",
+            "VENEZUELA",
+            "VIETNAM",
+            "WEST SAMOA",
+            "ZAMBIA",
+            "ZIMBABWE"
+          ],
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Use the nationality of the passport you’ll travel on."
+        },
+        "currentOptionsVerified": true,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "passportType",
+        "sectionId": "registration",
+        "label": "Passport Type",
+        "description": "These labels were observed in the registration dropdown. A listed option does not establish eligibility.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Passport Type",
+          "control": "Dropdown",
+          "elementId": "ppt_type_id",
+          "choices": [
+            "ORDINARY PASSPORT",
+            "OFFICIAL PASSPORT",
+            "DIPLOMATIC PASSPORT",
+            "SERVICE PASSPORT",
+            "SPECIAL PASSPORT"
+          ],
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Check the passport type printed in your travel document."
+        },
+        "currentOptionsVerified": true,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "arrivalPort",
+        "sectionId": "registration",
+        "label": "Port Of Arrival",
+        "description": "Indian cities can have multiple names: Thiruvananthapuram / Trivandrum, Bengaluru / Bangalore, and Kochi / Cochin. Search either name or the airport code to find the matching portal entry.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [
+          "airport-names"
+        ],
+        "observed": {
+          "label": "Port Of Arrival",
+          "control": "Dropdown",
+          "elementId": "missioncode_id",
+          "choices": [
+            "AGARTALA LANDPORT",
+            "AGATTI SEAPORT",
+            "AHMEDABAD AIRPORT",
+            "ALANG SEAPORT",
+            "AMRITSAR AIRPORT",
+            "BAGDOGRA AIRPORT",
+            "BEDI BANDAR SEAPORT",
+            "BENGALURU AIRPORT",
+            "BHAVNAGAR SEAPORT",
+            "BHOGAPURAM AIRPORT",
+            "BHOPAL AIRPORT",
+            "BHUBANESHWAR AIRPORT",
+            "CALICUT AIRPORT",
+            "CALICUT SEAPORT",
+            "CHANDIGARH AIRPORT",
+            "CHENNAI AIRPORT",
+            "CHENNAI SEAPORT",
+            "COCHIN AIRPORT",
+            "COCHIN SEAPORT",
+            "COIMBATORE AIRPORT",
+            "CUDDALORE SEAPORT",
+            "DAHEJ SEAPORT",
+            "DARRANGA LANDPORT",
+            "DAWKI LANDPORT",
+            "DELHI AIRPORT",
+            "DHAMRA SEAPORT",
+            "GAYA AIRPORT",
+            "GEDE LANDPORT",
+            "GHOJADANGA LANDPORT",
+            "GOA AIRPORT(DABOLIM)",
+            "GOA AIRPORT (MOPA)",
+            "GOA SEAPORT",
+            "GUWAHATI AIRPORT",
+            "HALDIA SEAPORT",
+            "HARIDASPUR LANDPORT",
+            "HAZIRA SEAPORT",
+            "HYDERABAD AIRPORT",
+            "INDORE AIRPORT",
+            "JAIGAON LANDPORT",
+            "JAIPUR AIRPORT",
+            "JOGBANI LANDPORT",
+            "KAKINADA SEAPORT",
+            "KAMARAJAR SEAPORT",
+            "KANDLA SEAPORT",
+            "KANNUR AIRPORT",
+            "KARAIKAL SEAPORT",
+            "KATTUPALI SEAPORT",
+            "KOLKATA AIRPORT",
+            "KOLKATA SEAPORT",
+            "KOLLAM SEAPORT",
+            "KRISHNAPATNAM SEAPORT",
+            "LUCKNOW AIRPORT",
+            "MADURAI AIRPORT",
+            "MANDVI SEAPORT",
+            "MANGALORE AIRPORT",
+            "MANGALORE SEAPORT",
+            "MOREH LANDPORT",
+            "MUMBAI AIRPORT",
+            "MUMBAI SEAPORT",
+            "MUNDRA SEAPORT",
+            "NAGAPATTINAM SEAPORT",
+            "NAGPUR AIRPORT",
+            "NAVI MUMBAI AIRPORT",
+            "NHAVA SHEVA SEAPORT",
+            "PARADEEP SEAPORT",
+            "PIPAVAV SEAPORT",
+            "PORBANDAR SEAPORT",
+            "PORTBLAIR AIRPORT",
+            "PORT BLAIR SEAPORT",
+            "PUNE AIRPORT",
+            "RAXAUL LANDPORT",
+            "RUPAIDIHA LANDPORT",
+            "SIKKA SEAPORT",
+            "SURAT AIRPORT",
+            "TIRUCHIRAPALLI AIRPORT",
+            "TIRUPATI AIRPORT",
+            "TRIVANDRUM AIRPORT",
+            "TUNA TEKRA SEAPORT",
+            "TUTICORIN SEAPORT",
+            "VALLARPADAM SEAPORT",
+            "VARANASI AIRPORT",
+            "VIJAYAWADA AIRPORT",
+            "VISHAKHAPATNAM AIRPORT",
+            "VISHAKHAPATNAM SEAPORT",
+            "VIZHINJAM INTERNATIONAL SEAPORT",
+            "VIZHINJAM SEAPORT"
+          ],
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Search by city, airport name or code. Choose the matching portal entry.",
+          "explanation": "Some Indian cities go by multiple names: Thiruvananthapuram is also Trivandrum, Bengaluru is Bangalore, and Kochi is Cochin. Search either name or the airport code to find the label used on the form."
+        },
+        "currentOptionsVerified": true,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "dob",
+        "sectionId": "registration",
+        "label": "Date of Birth",
+        "description": "Use the date recorded in your passport. The registration screen displays DD/MM/YYYY.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Date of Birth",
+          "control": "Date field",
+          "elementId": "dob_id",
+          "format": "DD/MM/YYYY",
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Day first, then month and year.",
+          "prompt": "DD/MM/YYYY"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "email",
+        "sectionId": "registration",
+        "label": "Email ID",
+        "description": "Use an address you can access for official messages.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Email ID",
+          "control": "Text field",
+          "elementId": "email_id",
+          "maxLength": 50,
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Use an inbox you can access for visa updates.",
+          "example": "traveler@example.test"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "emailConfirm",
+        "sectionId": "registration",
+        "label": "Re-enter Email ID",
+        "description": "Retype the same email address to catch mistakes.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Re-enter Email ID",
+          "control": "Text field",
+          "elementId": "email_re_id",
+          "maxLength": 50,
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Repeat your email address to catch typos before visa updates are sent.",
+          "example": "traveler@example.test"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "arrivalDate",
+        "sectionId": "registration",
+        "label": "Expected Date of Arrival",
+        "description": "Use your planned arrival date. Check the applicable application window on the official portal.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Expected Date of Arrival",
+          "control": "Date field",
+          "elementId": "jouryney_id",
+          "format": "DD/MM/YYYY",
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Use your planned arrival date.",
+          "prompt": "DD/MM/YYYY"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "purpose",
+        "sectionId": "registration",
+        "label": "Visiting India for",
+        "description": "Select the purpose shown on your official form after choosing your nationality.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Choose the purpose that matches your visit."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "captcha",
+        "sectionId": "registration",
+        "label": "Please enter above text",
+        "description": "Complete the displayed verification on the official website. The companion does not solve or submit it.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "Please enter above text",
+          "control": "Text field",
+          "elementId": "captcha",
+          "maxLength": 6,
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Type the code displayed on the official page.",
+          "prompt": "Code from the image"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "instructions",
+        "sectionId": "registration",
+        "label": "I have read the instructions ,I have all the required documents in scanned pdf format and photograph in jpg/jpeg format.",
+        "description": "Read the official instructions and confirm this statement on the official portal only when it is true.",
+        "evidenceStatus": "LIVE_VERIFIED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/Registration"
+        ],
+        "knownIssueIds": [],
+        "observed": {
+          "label": "I have read the instructions ,I have all the required documents in scanned pdf format and photograph in jpg/jpeg format.",
+          "control": "Checkbox",
+          "elementId": "read_instructions_check",
+          "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+        },
+        "hint": {
+          "hint": "Read the instructions and have your files ready before checking this box."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "surname",
+        "sectionId": "identity",
+        "label": "Surname (exactly as in your Passport)",
+        "description": "Use the surname field in your passport. If it is blank, consult official guidance; do not move names automatically.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Your family name, exactly as printed in your passport.",
+          "prompt": "Surname / family name"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "givenNames",
+        "sectionId": "identity",
+        "label": "Given Name/s (exactly as in your Passport)",
+        "description": "Include all given names as recorded. Keep the spelling, spacing and punctuation accurate.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Include all first and middle names in passport order.",
+          "prompt": "First and middle names"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "nameChanged",
+        "sectionId": "identity",
+        "label": "Have you ever changed your name?",
+        "description": "If applicable, prepare your previous names.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Include a legal name change, such as a surname changed after marriage."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "previousName",
+        "sectionId": "identity",
+        "label": "Previous name details",
+        "description": "Provisional combined note: the live form may split previous given names and surname.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use your former names if the form asks for them.",
+          "prompt": "Previous given names and surname"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "gender",
+        "sectionId": "identity",
+        "label": "Gender",
+        "description": "Choose the corresponding option on your live form. Current options have not been verified.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the applicable option on your official form."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "birthCity",
+        "sectionId": "identity",
+        "label": "Town/City of birth",
+        "description": "Use the place of birth recorded in your documents.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Match the place of birth recorded in your passport.",
+          "prompt": "Place of birth"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "birthCountry",
+        "sectionId": "identity",
+        "label": "Country of birth",
+        "description": "Use the country corresponding to your place of birth.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Choose your country of birth."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "nationalId",
+        "sectionId": "identity",
+        "label": "Citizenship/National Id No.",
+        "description": "Enter your national identity number if applicable. U.S. applicants without a national ID can enter NA.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [
+          "national-id"
+        ],
+        "hint": {
+          "example": "NA",
+          "hint": "U.S. applicant without a national ID? Enter NA.",
+          "explanation": "Enter your national identity number if you have one. If it does not apply, enter NA."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "religion",
+        "sectionId": "identity",
+        "label": "Religion",
+        "description": "Choose your religion. If you are not religious, select OTHERS and complete the explanation.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [
+          "religion-other"
+        ],
+        "hint": {
+          "hint": "Agnostic, atheist or non-religious? Choose OTHERS and fill in the explanation.",
+          "explanation": "OTHERS opens an explanation field. Leaving it blank can cause the form to reset; enter NA if not applicable."
+        },
+        "reportedChoices": {
+          "labels": [
+            "BAHAI",
+            "BUDDHISM",
+            "CHRISTIAN",
+            "HINDU",
+            "ISLAM",
+            "JAINISM",
+            "JUDAISM",
+            "OTHERS",
+            "PARSI",
+            "SIKH",
+            "ZOROASTRIAN"
+          ],
+          "source": "https://www.visatraveler.com/blog/india-e-visa-application/",
+          "checkedAt": "2026-10-17",
+          "evidenceStatus": "REPORTED"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "religionOther",
+        "sectionId": "identity",
+        "label": "If Others, Please specify",
+        "description": "Explain accurately in your own words. Do not use NA unless it is true and appropriate.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [
+          "religion-other"
+        ],
+        "hint": {
+          "hint": "Enter your explanation, or NA if not applicable.",
+          "prompt": "Your explanation"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "identificationMarks",
+        "sectionId": "identity",
+        "label": "Visible identification marks",
+        "description": "Describe visible marks accurately. Check official help if none apply.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Describe a visible identifying mark, such as a scar or mole.",
+          "prompt": "Visible scar or mole, if applicable"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "education",
+        "sectionId": "identity",
+        "label": "Educational Qualification",
+        "description": "Choose your highest qualification. These options are transcribed from a published walkthrough.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Choose the option that matches your highest qualification."
+        },
+        "reportedChoices": {
+          "labels": [
+            "BELOW MATRICULATION",
+            "GRADUATE",
+            "HIGHER SECONDARY",
+            "ILLITERATE",
+            "MATRICULATION",
+            "NA BEING MINOR",
+            "OTHERS",
+            "POSTGRADUATE",
+            "PROFESSIONAL"
+          ],
+          "source": "https://www.visatraveler.com/blog/india-e-visa-application/",
+          "checkedAt": "2026-10-17",
+          "evidenceStatus": "REPORTED"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "nationalityAcquired",
+        "sectionId": "identity",
+        "label": "Did you acquire Nationality by birth or by naturalization?",
+        "description": "Use the option that accurately describes how you acquired your nationality.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Choose how you acquired your current citizenship.",
+          "explanation": "By Birth means you held that citizenship from birth. Naturalization means you became a citizen later through an application process."
+        },
+        "reportedChoices": {
+          "labels": [
+            "By Birth",
+            "Naturalization"
+          ],
+          "source": "https://www.visatraveler.com/blog/india-e-visa-application/",
+          "checkedAt": "2026-10-17",
+          "evidenceStatus": "REPORTED"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "previousNationality",
+        "sectionId": "identity",
+        "label": "Previous nationality",
+        "description": "If requested after selecting naturalization, enter your previous nationality.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "If naturalized, give your previous nationality when requested."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "residentTwoYears",
+        "sectionId": "identity",
+        "label": "Have you lived for at least two years in the country where you are applying visa?",
+        "description": "Answer for your country of application.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer for your country of application."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "passportNumber",
+        "sectionId": "identity",
+        "label": "Passport Number",
+        "description": "Use the number on the passport you will carry.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the number on the passport you’ll travel with.",
+          "prompt": "Passport number"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "passportPlace",
+        "sectionId": "identity",
+        "label": "Place of Issue",
+        "description": "Use the issuing place shown in your passport, not your destination airport.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the issuing place in your passport, not your arrival airport.",
+          "prompt": "Place of issue"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "passportIssued",
+        "sectionId": "identity",
+        "label": "Date of Issue",
+        "description": "Use the passport issue date.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the passport issue date."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "passportExpiry",
+        "sectionId": "identity",
+        "label": "Date of Expiry",
+        "description": "Check passport validity requirements on the official portal for your trip.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the expiry date printed in your passport."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "otherPassport",
+        "sectionId": "identity",
+        "label": "Any other valid Passport/Identity Certificate (IC) held",
+        "description": "If yes, prepare details of the other valid document.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "If yes, prepare details of the other valid document."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "otherPassportCountry",
+        "sectionId": "identity",
+        "label": "Country of Issue (other passport)",
+        "description": "Use the details on the other valid document.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the details on the other valid document."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "otherPassportNumber",
+        "sectionId": "identity",
+        "label": "Passport/IC No.",
+        "description": "Use the details on the other valid document.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the details on the other valid document."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "otherPassportPlace",
+        "sectionId": "identity",
+        "label": "Place of Issue (other passport)",
+        "description": "Use the details on the other valid document.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the details on the other valid document."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "otherPassportNationality",
+        "sectionId": "identity",
+        "label": "Nationality mentioned therein",
+        "description": "Use the details on the other valid document.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the details on the other valid document."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "otherPassportIssued",
+        "sectionId": "identity",
+        "label": "Date of Issue (other passport)",
+        "description": "Use the issue date of the other document.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the issue date of the other document."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "addressStreet",
+        "sectionId": "family",
+        "label": "House No./Street (present address)",
+        "description": "Keep each address line within 35 characters without omitting details.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [
+          "address-mapping"
+        ],
+        "hint": {
+          "hint": "Keep each address line within 35 characters.",
+          "prompt": "House number and street"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "addressCity",
+        "sectionId": "family",
+        "label": "Village/Town/City (present address)",
+        "description": "Use your city or town; a neighborhood is not necessarily a city.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [
+          "address-mapping"
+        ],
+        "hint": {
+          "hint": "Use your city or town, not your neighborhood.",
+          "explanation": "Some cities have multiple names. Gurgaon and Gurugram refer to the same city in Haryana; either name may appear in an address or dropdown.",
+          "prompt": "City / town"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "addressCountry",
+        "sectionId": "family",
+        "label": "Country (present address)",
+        "description": "Country of your current residence.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Country of your current residence."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "addressRegion",
+        "sectionId": "family",
+        "label": "State/Province/District (present address)",
+        "description": "Use the administrative area appropriate to your address.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [
+          "address-mapping"
+        ],
+        "hint": {
+          "hint": "Use the state, province or district for your address.",
+          "explanation": "Places can appear under older or newer names, such as Gurgaon and Gurugram. Choose the matching place for the level requested: city, district or state.",
+          "prompt": "State / province / district"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "addressPostcode",
+        "sectionId": "family",
+        "label": "Postal/Zip Code",
+        "description": "Keep letters, spaces and leading zeros exactly as needed.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Keep leading zeros and any required letters or spaces.",
+          "explanation": "A postal code is an identifier, so a leading zero is part of the code.",
+          "prompt": "Postal / ZIP code"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "phone",
+        "sectionId": "family",
+        "label": "Phone No.",
+        "description": "Provide at least one contact number. Fill Phone No. or Mobile No.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Provide at least one contact number: phone or mobile.",
+          "prompt": "Contact number"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "mobile",
+        "sectionId": "family",
+        "label": "Mobile No.",
+        "description": "Provide either a phone number or mobile number.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Provide either a phone number or mobile number."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "sameAddress",
+        "sectionId": "family",
+        "label": "Is your permanent address the same?",
+        "description": "Guidance topic: check whether your official form offers a same-address control. Its current wording and behavior have not been verified.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the same-address option only if both addresses match."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "permanentStreet",
+        "sectionId": "family",
+        "label": "House No./Street (permanent address)",
+        "description": "Prepare your permanent address as requested on the live form.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Prepare your permanent address as requested on the live form."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "permanentCity",
+        "sectionId": "family",
+        "label": "Village/Town/City (permanent address)",
+        "description": "Prepare your permanent address as requested on the live form.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the city or town in your permanent address.",
+          "explanation": "Some places have multiple names, such as Gurgaon and Gurugram. Match the place in your address to the name shown on the form."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "permanentRegion",
+        "sectionId": "family",
+        "label": "State/Province/District (permanent address)",
+        "description": "Prepare your permanent address as requested on the live form.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the state, province or district for your permanent address.",
+          "explanation": "Older and newer place names can refer to the same area. Match both the place and the administrative level requested."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "fatherName",
+        "sectionId": "family",
+        "label": "Father’s Name",
+        "description": "Name as recorded in your family documents.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Name as recorded in your family documents."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "fatherNationality",
+        "sectionId": "family",
+        "label": "Father’s Nationality",
+        "description": "Current nationality.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Current nationality."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "fatherPreviousNationality",
+        "sectionId": "family",
+        "label": "Father’s Previous Nationality",
+        "description": "Previous nationality, if applicable.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Previous nationality, if applicable."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "fatherBirthplace",
+        "sectionId": "family",
+        "label": "Father’s Place of birth",
+        "description": "Town or city of birth.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Town or city of birth."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "fatherBirthCountry",
+        "sectionId": "family",
+        "label": "Father’s Country of birth",
+        "description": "Country of birth.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Country of birth."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "motherName",
+        "sectionId": "family",
+        "label": "Mother’s Name",
+        "description": "Name as recorded in your family documents.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Name as recorded in your family documents."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "motherNationality",
+        "sectionId": "family",
+        "label": "Mother’s Nationality",
+        "description": "Current nationality.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Current nationality."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "motherPreviousNationality",
+        "sectionId": "family",
+        "label": "Mother’s Previous Nationality",
+        "description": "Previous nationality, if applicable.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Previous nationality, if applicable."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "motherBirthplace",
+        "sectionId": "family",
+        "label": "Mother’s Place of birth",
+        "description": "Town or city of birth.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Town or city of birth."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "motherBirthCountry",
+        "sectionId": "family",
+        "label": "Mother’s Country of birth",
+        "description": "Country of birth.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Country of birth."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "maritalStatus",
+        "sectionId": "family",
+        "label": "Applicant's Marital Status",
+        "description": "Enter the current portal option. Married applicants may be asked for spouse details.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use your current status. Married applicants may need spouse details."
+        },
+        "reportedChoices": {
+          "labels": [
+            "DIVORCEE",
+            "MARRIED",
+            "SINGLE"
+          ],
+          "source": "https://www.visatraveler.com/blog/india-e-visa-application/",
+          "checkedAt": "2026-10-17",
+          "evidenceStatus": "REPORTED"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "spouseName",
+        "sectionId": "family",
+        "label": "Spouse name",
+        "description": "Provisional spouse field; confirm exact labels and requirements on the portal.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use your spouse’s full name.",
+          "prompt": "Spouse’s name"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "spouseNationality",
+        "sectionId": "family",
+        "label": "Spouse nationality",
+        "description": "Provisional spouse field; confirm exact labels and requirements on the portal.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use your spouse’s citizenship."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "spouseBirthplace",
+        "sectionId": "family",
+        "label": "Spouse place of birth",
+        "description": "Provisional spouse field; confirm exact labels and requirements on the portal.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use your spouse’s place of birth.",
+          "prompt": "Place of birth"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "spouseBirthCountry",
+        "sectionId": "family",
+        "label": "Spouse country of birth",
+        "description": "Provisional spouse field; confirm exact labels and requirements on the portal.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use your spouse’s country of birth."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "pakistanFamily",
+        "sectionId": "family",
+        "label": "Were your Parents/Grandparents Pakistan Nationals or belong to a Pakistan held area?",
+        "description": "Read the full live question and answer accurately.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Read the full live question and answer accurately."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "pakistanDetails",
+        "sectionId": "family",
+        "label": "If yes, give details",
+        "description": "Provide the details requested by the portal.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Provide the details requested by the portal."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "occupation",
+        "sectionId": "employment",
+        "label": "Present occupation",
+        "description": "Select your current occupation on the official form.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Choose your current occupation from the official form."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "employer",
+        "sectionId": "employment",
+        "label": "Employer name / business",
+        "description": "Preserve the legal name. Punctuation problems are reported, not established government rules.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [],
+        "knownIssueIds": [
+          "employer-punctuation"
+        ],
+        "hint": {
+          "hint": "Keep the employer or business name accurate.",
+          "explanation": "Periods and commas can cause Save and Next to clear the form. Format & copy removes punctuation and changes & to AND; check that the result still identifies your employer.",
+          "prompt": "Employer / business name"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "designation",
+        "sectionId": "employment",
+        "label": "Designation",
+        "description": "Your role or title, if requested.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Your role or title, if requested."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "employerAddress",
+        "sectionId": "employment",
+        "label": "Employer address",
+        "description": "Use the full accurate address before considering any explicit formatting change.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use your employer’s full address.",
+          "prompt": "Employer address"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "employerPhone",
+        "sectionId": "employment",
+        "label": "Employer phone",
+        "description": "Use the requested contact number if applicable.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the requested contact number if applicable."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "military",
+        "sectionId": "employment",
+        "label": "Military / police / security background",
+        "description": "Provisional preparation note. Check nationality-specific eligibility and the exact official question; no eligibility decision is made here.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Read the full question; include past service if asked."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "militaryDetails",
+        "sectionId": "employment",
+        "label": "Service details",
+        "description": "Prepare details if requested. Consult the portal if eligibility is unclear.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Give the service details requested on the official form."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "places",
+        "sectionId": "travel",
+        "label": "Places to be visited",
+        "description": "List your planned places. Check official guidance before visiting restricted areas.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "List your planned places. Check official guidance before visiting restricted areas."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "tourOperator",
+        "sectionId": "travel",
+        "label": "Have you booked any room in Hotel/Resort etc. through any Tour Operator?",
+        "description": "Answer based on your actual booking.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer based on your actual booking."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "operatorDetails",
+        "sectionId": "travel",
+        "label": "Tour operator / booking details",
+        "description": "Provisional note for follow-up questions shown by the live portal.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the tour operator details from your booking."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "exitPort",
+        "sectionId": "travel",
+        "label": "Expected Port of Exit from India",
+        "description": "Verify the live exit dropdown separately from arrival ports.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Enter the airport or port you plan to leave India from.",
+          "explanation": "Your departure port can differ from your arrival port. Use your return or onward itinerary."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "visitedIndia",
+        "sectionId": "travel",
+        "label": "Have you ever visited India before?",
+        "description": "If yes, gather earlier visa and visit records.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "If yes, gather earlier visa and visit records."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "previousAddress",
+        "sectionId": "travel",
+        "label": "Address during previous visit",
+        "description": "Use your previous accommodation address.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use your previous accommodation address."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "previousCities",
+        "sectionId": "travel",
+        "label": "Cities previously visited in India",
+        "description": "Separate the cities you previously visited with commas.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Separate the cities you previously visited with commas.",
+          "example": "New Delhi, Jaipur, Agra"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "previousVisaNumber",
+        "sectionId": "travel",
+        "label": "Last Indian Visa No/Currently valid Indian Visa No.",
+        "description": "For a previous e-Visa, use the ETA (Electronic Travel Authorization) number as the previous visa number. The Application ID is a separate tracking number.",
+        "evidenceStatus": "REPORTED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [
+          "eta-or-application-id"
+        ],
+        "hint": {
+          "hint": "For a previous e-Visa, enter the ETA number as your previous visa number.",
+          "explanation": "ETA means Electronic Travel Authorization. Use the ETA number on your issued e-Visa; the Application ID is the application’s tracking number. For a regular visa, use the visa number printed on it.",
+          "prompt": "Previous visa / ETA number"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "previousVisaType",
+        "sectionId": "travel",
+        "label": "Type of Visa (previous visa)",
+        "description": "Select the appropriate type on the current portal.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Select the appropriate type on the current portal."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "previousVisaPlace",
+        "sectionId": "travel",
+        "label": "Place of Issue (previous visa)",
+        "description": "For a previous Indian e-Visa, you can enter New Delhi. For a regular visa, use the place of issue printed on it.",
+        "evidenceStatus": "REPORTED",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [
+          "visa-place-of-issue"
+        ],
+        "hint": {
+          "hint": "For a previous Indian e-Visa, you can enter New Delhi.",
+          "explanation": "For a regular visa, use the place of issue printed on it. The place of issue is separate from the airport where you arrived.",
+          "prompt": "Place of issue on the visa"
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "previousVisaDate",
+        "sectionId": "travel",
+        "label": "Date of Issue (previous visa)",
+        "description": "Use the issue date on the earlier visa.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Use the issue date on the earlier visa."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "refusedIndia",
+        "sectionId": "travel",
+        "label": "Has permission to visit or to extend stay in India previously been refused?",
+        "description": "Answer truthfully based on your history.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer truthfully based on your history."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "refusalDetails",
+        "sectionId": "travel",
+        "label": "If so, when and by whom",
+        "description": "Include the control number and date if requested.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Include the control number and date if requested."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "countriesVisited",
+        "sectionId": "travel",
+        "label": "Countries Visited in Last 10 years",
+        "description": "Prepare a list to compare with the live selector.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "List the countries you visited in the last 10 years."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "saarcVisited",
+        "sectionId": "travel",
+        "label": "Have you visited SAARC countries (except your own country) during last 3 years?",
+        "description": "Check the exact country list and time period on the current form.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer for visits in the last 3 years, excluding your own country."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "saarcDetails",
+        "sectionId": "travel",
+        "label": "SAARC visit details",
+        "description": "Prepare the country, year and duration details requested on your form.",
+        "evidenceStatus": "NEEDS_VERIFICATION",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Have the country, year and length of each relevant visit ready."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "referenceIndiaName",
+        "sectionId": "travel",
+        "label": "Reference Name in India",
+        "description": "Prepare the reference details requested for your stay.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Prepare the reference details requested for your stay."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "referenceIndiaAddress",
+        "sectionId": "travel",
+        "label": "Reference Address in India",
+        "description": "Prepare the reference details requested for your stay.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Enter your Indian reference’s full address, including the PIN code.",
+          "explanation": "Some cities have multiple names: Gurgaon is also called Gurugram. Use the address your reference provides and match any dropdown to the same place."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "referenceIndiaPhone",
+        "sectionId": "travel",
+        "label": "Reference Phone in India",
+        "description": "Prepare the reference details requested for your stay.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Prepare the reference details requested for your stay."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "referenceHomeName",
+        "sectionId": "travel",
+        "label": "Reference Name in home country",
+        "description": "Prepare contact details for a reference in your home country.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Prepare contact details for a reference in your home country."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "referenceHomeAddress",
+        "sectionId": "travel",
+        "label": "Reference Address in home country",
+        "description": "Prepare contact details for a reference in your home country.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Prepare contact details for a reference in your home country."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "referenceHomePhone",
+        "sectionId": "travel",
+        "label": "Reference Phone in home country",
+        "description": "Prepare contact details for a reference in your home country.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Prepare contact details for a reference in your home country."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "arrested",
+        "sectionId": "background",
+        "label": "Have you ever been arrested / prosecuted / convicted by Court of Law of any country?",
+        "description": "From the official sample; compare exact wording with the current form. No answer is selected for you.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer the full question. If you select Yes, complete the details below it."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "arrestedDetails",
+        "sectionId": "background",
+        "label": "Details for the preceding question",
+        "description": "Give accurate details if you answered Yes.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Give accurate details if you answered Yes."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "deported",
+        "sectionId": "background",
+        "label": "Have you ever been refused entry / deported by any country including India?",
+        "description": "From the official sample; compare exact wording with the current form. No answer is selected for you.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer the full question. If you select Yes, complete the details below it."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "deportedDetails",
+        "sectionId": "background",
+        "label": "Details for the preceding question",
+        "description": "Give accurate details if you answered Yes.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Give accurate details if you answered Yes."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "trafficking",
+        "sectionId": "background",
+        "label": "Have you ever been engaged in Human trafficking / Drug trafficking / Child abuse / Crime against women / Economic offense / Financial fraud?",
+        "description": "From the official sample; compare exact wording with the current form. No answer is selected for you.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer the full question. If you select Yes, complete the details below it."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "traffickingDetails",
+        "sectionId": "background",
+        "label": "Details for the preceding question",
+        "description": "Give accurate details if you answered Yes.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Give accurate details if you answered Yes."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "violence",
+        "sectionId": "background",
+        "label": "Have you ever been engaged in Cyber crime / Terrorist activities / Sabotage / Espionage / Genocide / Political killing / other act of violence?",
+        "description": "From the official sample; compare exact wording with the current form. No answer is selected for you.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer the full question. If you select Yes, complete the details below it."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "violenceDetails",
+        "sectionId": "background",
+        "label": "Details for the preceding question",
+        "description": "Give accurate details if you answered Yes.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Give accurate details if you answered Yes."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "terrorViews",
+        "sectionId": "background",
+        "label": "Have you ever expressed views that justify or glorify terrorist violence or may encourage others to terrorist acts or other serious criminal acts?",
+        "description": "From the official sample; compare exact wording with the current form. No answer is selected for you.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer the full question. If you select Yes, complete the details below it."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "terrorViewsDetails",
+        "sectionId": "background",
+        "label": "Details for the preceding question",
+        "description": "Give accurate details if you answered Yes.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Give accurate details if you answered Yes."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "asylum",
+        "sectionId": "background",
+        "label": "Have you sought asylum (political or otherwise) in any country?",
+        "description": "From the official sample; compare exact wording with the current form. No answer is selected for you.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Answer the full question. If you select Yes, complete the details below it."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      },
+      {
+        "id": "asylumDetails",
+        "sectionId": "background",
+        "label": "Details for the preceding question",
+        "description": "Give accurate details if you answered Yes.",
+        "evidenceStatus": "OFFICIAL",
+        "helpSources": [
+          "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
+        ],
+        "knownIssueIds": [],
+        "hint": {
+          "hint": "Give accurate details if you answered Yes."
+        },
+        "currentOptionsVerified": false,
+        "currentRequirednessVerified": false
+      }
+    ],
+    "portalObservations": {
+      "gatePassport": {
+        "label": "Passport No",
+        "control": "Text field",
+        "elementId": "gate_passport",
+        "maxLength": 14,
+        "context": "Initial passport/name gate, before Continue. This limit applies only to this gate field."
+      },
+      "gateNationality": {
+        "label": "Select Country/Region",
+        "control": "Dropdown",
+        "elementId": "gate_nationality",
+        "choices": [
+          "ALBANIA",
+          "ANDORRA",
+          "ANGOLA",
+          "ANGUILLA",
+          "ANTIGUA AND BARBUDA",
+          "ARGENTINA",
+          "ARMENIA",
+          "ARUBA",
+          "AUSTRALIA",
+          "AUSTRIA",
+          "AZERBAIJAN",
+          "BAHAMAS",
+          "BAHRAIN",
+          "BARBADOS",
+          "BELARUS",
+          "BELGIUM",
+          "BELIZE",
+          "BENIN",
+          "BOLIVIA",
+          "BOSNIA AND HERZEGOVINA",
+          "BOTSWANA",
+          "BRAZIL",
+          "BRUNEI",
+          "BULGARIA",
+          "BURUNDI",
+          "CAMBODIA",
+          "CAMEROON",
+          "CANADA",
+          "CAPE VERDE",
+          "CAYMAN ISLANDS",
+          "CHILE",
+          "CHINA-CHINA",
+          "CHINA- SAR HONGKONG",
+          "CHINA- SAR MACAU",
+          "COLOMBIA",
+          "COMOROS",
+          "COOK ISLANDS",
+          "COSTA RICA",
+          "COTE D\\'IVOIRE",
+          "CROATIA",
+          "CUBA",
+          "CYPRUS",
+          "CZECH REPUBLIC",
+          "DENMARK",
+          "DJIBOUTI",
+          "DOMINICA",
+          "DOMINICAN REPUBLIC",
+          "EAST TIMOR (DEMOCRATIC REPUBLIC OF)",
+          "ECUADOR",
+          "EL SALVADOR",
+          "EQUATORIAL GUINEA",
+          "ERITREA",
+          "ESTONIA",
+          "ESWATINI",
+          "FIJI",
+          "FINLAND",
+          "FRANCE",
+          "GABON",
+          "GAMBIA",
+          "GEORGIA",
+          "GERMANY",
+          "GHANA",
+          "GIBRALTAR",
+          "GREECE",
+          "GRENADA",
+          "GUATEMALA",
+          "GUERNSEY",
+          "GUINEA",
+          "GUYANA",
+          "HAITI",
+          "HONDURAS",
+          "HUNGARY",
+          "ICELAND",
+          "INDONESIA",
+          "IRELAND",
+          "ISLE OF MAN",
+          "ISRAEL",
+          "ITALY",
+          "JAMAICA",
+          "JAPAN",
+          "JERSEY",
+          "JORDAN",
+          "KAZAKHSTAN",
+          "KENYA",
+          "KIRIBATI",
+          "KUWAIT",
+          "KYRGYZSTAN",
+          "LAOS",
+          "LATVIA",
+          "LESOTHO",
+          "LIBERIA",
+          "LIECHTENSTEIN",
+          "LITHUANIA",
+          "LUXEMBOURG",
+          "MADAGASCAR",
+          "MALAWI",
+          "MALAYSIA",
+          "MALI",
+          "MALTA",
+          "MARSHALL ISLANDS",
+          "MAURITANIA",
+          "MAURITIUS",
+          "MEXICO",
+          "MICRONESIA (FEDERATED STATES OF)",
+          "MOLDOVA",
+          "MONACO",
+          "MONGOLIA",
+          "MONTENEGRO",
+          "MONTSERRAT",
+          "MOROCCO",
+          "MOZAMBIQUE",
+          "MYANMAR",
+          "NAMIBIA",
+          "NAURU",
+          "NETHERLANDS",
+          "NEW ZEALAND",
+          "NICARAGUA",
+          "NIGER",
+          "NIUE ISLAND",
+          "NORWAY",
+          "OMAN",
+          "PALAU",
+          "PALESTINE",
+          "PANAMA",
+          "PAPUA NEW GUINEA",
+          "PARAGUAY",
+          "PERU",
+          "PHILIPPINES",
+          "POLAND",
+          "PORTUGAL",
+          "QATAR",
+          "REPUBLIC OF KOREA",
+          "REPUBLIC OF NORTH MACEDONIA",
+          "ROMANIA",
+          "RUSSIAN FEDERATION",
+          "RWANDA",
+          "SAINT KITTS AND NEVIS",
+          "SAINT LUCIA",
+          "SAINT VINCENT AND THE GRENADINES",
+          "SAN MARINO",
+          "SAUDI ARABIA",
+          "SENEGAL",
+          "SERBIA",
+          "SEYCHELLES",
+          "SIERRA LEONE",
+          "SINGAPORE",
+          "SLOVAKIA",
+          "SLOVENIA",
+          "SOLOMON ISLANDS",
+          "SOUTH AFRICA",
+          "SPAIN",
+          "SRI LANKA",
+          "SURINAME",
+          "SWEDEN",
+          "SWITZERLAND",
+          "TAIWAN",
+          "TAJIKISTAN",
+          "TANZANIA",
+          "TEST",
+          "THAILAND",
+          "TOGO",
+          "TONGA",
+          "TRINIDAD AND TOBAGO",
+          "TURKS AND CAICOS ISL",
+          "TUVALU",
+          "UGANDA",
+          "UKRAINE",
+          "UNITED ARAB EMIRATES",
+          "UNITED KINGDOM",
+          "UNITED STATES OF AMERICA",
+          "URUGUAY",
+          "UZBEKISTAN",
+          "VANUATU",
+          "VATICAN CITY STATE ( HOLY SEE)",
+          "VENEZUELA",
+          "VIETNAM",
+          "WEST SAMOA",
+          "ZAMBIA",
+          "ZIMBABWE"
+        ],
+        "context": "Initial passport/name gate, before Continue. This limit applies only to this gate field."
+      },
+      "gateName": {
+        "label": "Name as in passport",
+        "control": "Text field",
+        "elementId": "gate_name",
+        "maxLength": 100,
+        "context": "Initial passport/name gate, before Continue. This limit applies only to this gate field."
+      },
+      "nationality": {
+        "label": "Nationality/Region",
+        "control": "Dropdown",
+        "elementId": "nationality_id",
+        "choices": [
+          "ALBANIA",
+          "ANDORRA",
+          "ANGOLA",
+          "ANGUILLA",
+          "ANTIGUA AND BARBUDA",
+          "ARGENTINA",
+          "ARMENIA",
+          "ARUBA",
+          "AUSTRALIA",
+          "AUSTRIA",
+          "AZERBAIJAN",
+          "BAHAMAS",
+          "BAHRAIN",
+          "BARBADOS",
+          "BELARUS",
+          "BELGIUM",
+          "BELIZE",
+          "BENIN",
+          "BOLIVIA",
+          "BOSNIA AND HERZEGOVINA",
+          "BOTSWANA",
+          "BRAZIL",
+          "BRUNEI",
+          "BULGARIA",
+          "BURUNDI",
+          "CAMBODIA",
+          "CAMEROON",
+          "CANADA",
+          "CAPE VERDE",
+          "CAYMAN ISLANDS",
+          "CHILE",
+          "CHINA-CHINA",
+          "CHINA- SAR HONGKONG",
+          "CHINA- SAR MACAU",
+          "COLOMBIA",
+          "COMOROS",
+          "COOK ISLANDS",
+          "COSTA RICA",
+          "COTE D\\'IVOIRE",
+          "CROATIA",
+          "CUBA",
+          "CYPRUS",
+          "CZECH REPUBLIC",
+          "DENMARK",
+          "DJIBOUTI",
+          "DOMINICA",
+          "DOMINICAN REPUBLIC",
+          "EAST TIMOR (DEMOCRATIC REPUBLIC OF)",
+          "ECUADOR",
+          "EL SALVADOR",
+          "EQUATORIAL GUINEA",
+          "ERITREA",
+          "ESTONIA",
+          "ESWATINI",
+          "FIJI",
+          "FINLAND",
+          "FRANCE",
+          "GABON",
+          "GAMBIA",
+          "GEORGIA",
+          "GERMANY",
+          "GHANA",
+          "GIBRALTAR",
+          "GREECE",
+          "GRENADA",
+          "GUATEMALA",
+          "GUERNSEY",
+          "GUINEA",
+          "GUYANA",
+          "HAITI",
+          "HONDURAS",
+          "HUNGARY",
+          "ICELAND",
+          "INDONESIA",
+          "IRELAND",
+          "ISLE OF MAN",
+          "ISRAEL",
+          "ITALY",
+          "JAMAICA",
+          "JAPAN",
+          "JERSEY",
+          "JORDAN",
+          "KAZAKHSTAN",
+          "KENYA",
+          "KIRIBATI",
+          "KUWAIT",
+          "KYRGYZSTAN",
+          "LAOS",
+          "LATVIA",
+          "LESOTHO",
+          "LIBERIA",
+          "LIECHTENSTEIN",
+          "LITHUANIA",
+          "LUXEMBOURG",
+          "MADAGASCAR",
+          "MALAWI",
+          "MALAYSIA",
+          "MALI",
+          "MALTA",
+          "MARSHALL ISLANDS",
+          "MAURITANIA",
+          "MAURITIUS",
+          "MEXICO",
+          "MICRONESIA (FEDERATED STATES OF)",
+          "MOLDOVA",
+          "MONACO",
+          "MONGOLIA",
+          "MONTENEGRO",
+          "MONTSERRAT",
+          "MOROCCO",
+          "MOZAMBIQUE",
+          "MYANMAR",
+          "NAMIBIA",
+          "NAURU",
+          "NETHERLANDS",
+          "NEW ZEALAND",
+          "NICARAGUA",
+          "NIGER",
+          "NIUE ISLAND",
+          "NORWAY",
+          "OMAN",
+          "PALAU",
+          "PALESTINE",
+          "PANAMA",
+          "PAPUA NEW GUINEA",
+          "PARAGUAY",
+          "PERU",
+          "PHILIPPINES",
+          "POLAND",
+          "PORTUGAL",
+          "QATAR",
+          "REPUBLIC OF KOREA",
+          "REPUBLIC OF NORTH MACEDONIA",
+          "ROMANIA",
+          "RUSSIAN FEDERATION",
+          "RWANDA",
+          "SAINT KITTS AND NEVIS",
+          "SAINT LUCIA",
+          "SAINT VINCENT AND THE GRENADINES",
+          "SAN MARINO",
+          "SAUDI ARABIA",
+          "SENEGAL",
+          "SERBIA",
+          "SEYCHELLES",
+          "SIERRA LEONE",
+          "SINGAPORE",
+          "SLOVAKIA",
+          "SLOVENIA",
+          "SOLOMON ISLANDS",
+          "SOUTH AFRICA",
+          "SPAIN",
+          "SRI LANKA",
+          "SURINAME",
+          "SWEDEN",
+          "SWITZERLAND",
+          "TAIWAN",
+          "TAJIKISTAN",
+          "TANZANIA",
+          "TEST",
+          "THAILAND",
+          "TOGO",
+          "TONGA",
+          "TRINIDAD AND TOBAGO",
+          "TURKS AND CAICOS ISL",
+          "TUVALU",
+          "UGANDA",
+          "UKRAINE",
+          "UNITED ARAB EMIRATES",
+          "UNITED KINGDOM",
+          "UNITED STATES OF AMERICA",
+          "URUGUAY",
+          "UZBEKISTAN",
+          "VANUATU",
+          "VATICAN CITY STATE ( HOLY SEE)",
+          "VENEZUELA",
+          "VIETNAM",
+          "WEST SAMOA",
+          "ZAMBIA",
+          "ZIMBABWE"
+        ],
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      },
+      "passportType": {
+        "label": "Passport Type",
+        "control": "Dropdown",
+        "elementId": "ppt_type_id",
+        "choices": [
+          "ORDINARY PASSPORT",
+          "OFFICIAL PASSPORT",
+          "DIPLOMATIC PASSPORT",
+          "SERVICE PASSPORT",
+          "SPECIAL PASSPORT"
+        ],
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      },
+      "arrivalPort": {
+        "label": "Port Of Arrival",
+        "control": "Dropdown",
+        "elementId": "missioncode_id",
+        "choices": [
+          "AGARTALA LANDPORT",
+          "AGATTI SEAPORT",
+          "AHMEDABAD AIRPORT",
+          "ALANG SEAPORT",
+          "AMRITSAR AIRPORT",
+          "BAGDOGRA AIRPORT",
+          "BEDI BANDAR SEAPORT",
+          "BENGALURU AIRPORT",
+          "BHAVNAGAR SEAPORT",
+          "BHOGAPURAM AIRPORT",
+          "BHOPAL AIRPORT",
+          "BHUBANESHWAR AIRPORT",
+          "CALICUT AIRPORT",
+          "CALICUT SEAPORT",
+          "CHANDIGARH AIRPORT",
+          "CHENNAI AIRPORT",
+          "CHENNAI SEAPORT",
+          "COCHIN AIRPORT",
+          "COCHIN SEAPORT",
+          "COIMBATORE AIRPORT",
+          "CUDDALORE SEAPORT",
+          "DAHEJ SEAPORT",
+          "DARRANGA LANDPORT",
+          "DAWKI LANDPORT",
+          "DELHI AIRPORT",
+          "DHAMRA SEAPORT",
+          "GAYA AIRPORT",
+          "GEDE LANDPORT",
+          "GHOJADANGA LANDPORT",
+          "GOA AIRPORT(DABOLIM)",
+          "GOA AIRPORT (MOPA)",
+          "GOA SEAPORT",
+          "GUWAHATI AIRPORT",
+          "HALDIA SEAPORT",
+          "HARIDASPUR LANDPORT",
+          "HAZIRA SEAPORT",
+          "HYDERABAD AIRPORT",
+          "INDORE AIRPORT",
+          "JAIGAON LANDPORT",
+          "JAIPUR AIRPORT",
+          "JOGBANI LANDPORT",
+          "KAKINADA SEAPORT",
+          "KAMARAJAR SEAPORT",
+          "KANDLA SEAPORT",
+          "KANNUR AIRPORT",
+          "KARAIKAL SEAPORT",
+          "KATTUPALI SEAPORT",
+          "KOLKATA AIRPORT",
+          "KOLKATA SEAPORT",
+          "KOLLAM SEAPORT",
+          "KRISHNAPATNAM SEAPORT",
+          "LUCKNOW AIRPORT",
+          "MADURAI AIRPORT",
+          "MANDVI SEAPORT",
+          "MANGALORE AIRPORT",
+          "MANGALORE SEAPORT",
+          "MOREH LANDPORT",
+          "MUMBAI AIRPORT",
+          "MUMBAI SEAPORT",
+          "MUNDRA SEAPORT",
+          "NAGAPATTINAM SEAPORT",
+          "NAGPUR AIRPORT",
+          "NAVI MUMBAI AIRPORT",
+          "NHAVA SHEVA SEAPORT",
+          "PARADEEP SEAPORT",
+          "PIPAVAV SEAPORT",
+          "PORBANDAR SEAPORT",
+          "PORTBLAIR AIRPORT",
+          "PORT BLAIR SEAPORT",
+          "PUNE AIRPORT",
+          "RAXAUL LANDPORT",
+          "RUPAIDIHA LANDPORT",
+          "SIKKA SEAPORT",
+          "SURAT AIRPORT",
+          "TIRUCHIRAPALLI AIRPORT",
+          "TIRUPATI AIRPORT",
+          "TRIVANDRUM AIRPORT",
+          "TUNA TEKRA SEAPORT",
+          "TUTICORIN SEAPORT",
+          "VALLARPADAM SEAPORT",
+          "VARANASI AIRPORT",
+          "VIJAYAWADA AIRPORT",
+          "VISHAKHAPATNAM AIRPORT",
+          "VISHAKHAPATNAM SEAPORT",
+          "VIZHINJAM INTERNATIONAL SEAPORT",
+          "VIZHINJAM SEAPORT"
+        ],
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      },
+      "dob": {
+        "label": "Date of Birth",
+        "control": "Date field",
+        "elementId": "dob_id",
+        "format": "DD/MM/YYYY",
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      },
+      "email": {
+        "label": "Email ID",
+        "control": "Text field",
+        "elementId": "email_id",
+        "maxLength": 50,
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      },
+      "emailConfirm": {
+        "label": "Re-enter Email ID",
+        "control": "Text field",
+        "elementId": "email_re_id",
+        "maxLength": 50,
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      },
+      "arrivalDate": {
+        "label": "Expected Date of Arrival",
+        "control": "Date field",
+        "elementId": "jouryney_id",
+        "format": "DD/MM/YYYY",
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      },
+      "captcha": {
+        "label": "Please enter above text",
+        "control": "Text field",
+        "elementId": "captcha",
+        "maxLength": 6,
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      },
+      "instructions": {
+        "label": "I have read the instructions ,I have all the required documents in scanned pdf format and photograph in jpg/jpeg format.",
+        "control": "Checkbox",
+        "elementId": "read_instructions_check",
+        "context": "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested."
+      }
+    },
+    "observationDate": "2026-10-17",
+    "observationSource": "https://indianvisaonline.gov.in/evisa/Registration",
+    "caveat": "Labels and guidance may be sample-based or provisional. Observed records contain directly checked choices and limits. Reported choices are separately sourced and have not been live verified. Unverified preparation options and validation rules are not exported. No complete live-form mapping is claimed."
+  }
+}

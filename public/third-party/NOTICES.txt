@@ -1,0 +1,18 @@
+Local HEIC decoder
+
+heic-to 1.6.6, by Hopper Gee and contributors
+License: GNU Lesser General Public License, version 3 or later.
+Included license: /third-party/heic-to-LICENSE.txt
+Source and build instructions: https://github.com/hoppergee/heic-to
+Exact npm release: https://www.npmjs.com/package/heic-to/v/1.6.6
+
+The CSP build includes libheif 1.23.6 and libde265 1.0.16.
+Upstream source and license notices:
+https://github.com/strukturag/libheif/tree/v1.23.6
+https://github.com/strukturag/libde265/tree/v1.0.16
+
+These libraries are provided without warranty under their respective licenses.
+The unmodified heic-to/csp package is bundled as an on-demand local JavaScript
+asset. It decodes images in the browser; it does not send them to a server.
+The website source, lockfile and README document how to rebuild with a different
+decoder version. No cloud conversion service or remotely loaded CDN code is used.
