@@ -715,7 +715,11 @@ for (const place of ["India", "home country"])
       place === "India"
         ? "Prepare the reference details requested for your stay."
         : "Prepare contact details for a reference in your home country.",
-      { type: suffix === "Address" ? "textarea" : "text" },
+      {
+        type: suffix === "Address" ? "textarea" : "text",
+        knownIssueIds:
+          place === "India" && suffix === "Name" ? ["reference-in-india"] : [],
+      },
     );
 const questions = [
   [
@@ -838,6 +842,7 @@ export const fields: VisaField[] = seeds.map((f, order) => ({
   })),
 }));
 const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
+  lastReviewedAt?: string;
   otherSources?: string[];
 })[] = [
   {
@@ -1011,6 +1016,26 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
       "A city name alone does not identify a street’s PIN code. Keep the PIN supplied with the full address.",
   },
   {
+    id: "reference-in-india",
+    title: "Who do I use as my reference in India?",
+    answer:
+      "You can provide the name of a family member or friend in India, or the hotel where you’re staying.",
+    sectionIds: ["travel"],
+    fieldIds: ["referenceIndiaName"],
+    symptoms:
+      "You are unsure who to list as your Indian reference or whether you can use your hotel.",
+    explanation:
+      "The user supplied guidance that a reference can be a family member or friend in India, or the hotel where the applicant is staying.",
+    workaround:
+      "Provide the name of your family member, friend or hotel in India.",
+    evidenceStatus: "REPORTED",
+    officialUrls: [],
+    otherSources: ["User-provided reference guidance · 19 October 2026"],
+    lastReviewedAt: "2026-10-19",
+    caveats:
+      "This is user-provided guidance, not an independently verified portal acceptance rule.",
+  },
+  {
     id: "national-id",
     title: "What if I don’t have a National ID number?",
     answer:
@@ -1089,7 +1114,7 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
 ];
 export const issues: KnownIssue[] = issueSeed.map((i) => ({
   ...i,
-  lastReviewedAt: i.otherSources ? CLARIFIED_AT : REVIEWED_AT,
+  lastReviewedAt: i.lastReviewedAt ?? (i.otherSources ? CLARIFIED_AT : REVIEWED_AT),
   otherSources: i.otherSources ?? [],
 }));
 export const locations: LocationAlias[] = arrivalPorts.map((port) => ({

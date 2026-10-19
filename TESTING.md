@@ -1,3 +1,11 @@
+# India reference FAQ — 19 October 2026
+
+Added “Who do I use as my reference in India?” to Common questions, both local searches and the reference field’s related links, using the user-provided family/friend/hotel guidance. Its review date is recorded separately from live verification. Build (including TypeScript), lint, all 47 unit tests and three FAQ/shared-guidance Chromium journeys passed (5.6 seconds). Coverage includes all 13 inline and standalone FAQs, hotel/reference search, existing dates, responsive accessibility and local-only FAQ search. The in-app preview confirmed the field link opens the new answer. Screenshot: `test-results/reference-india-faq.jpg`. The full browser suite was not rerun.
+
+# Walkthrough tool callouts — 19 October 2026
+
+The photo and passport upload sections now lead with large blue and green preparation callouts, each with an icon, description, local-processing note and prominent tool button. Build (including TypeScript), lint, all 47 unit tests and all four walkthrough Chromium journeys passed (7.3 seconds). Browser coverage opens both buttons in separate tabs and checks the correct tool page, plus navigation, responsive accessibility, shared guidance and local-only scratch input. The recent India-reference guidance is included in the shared rendering check. Desktop and 320px mobile callouts were visually inspected; screenshots: `test-results/walkthrough-photo-callout-desktop.jpg`, `test-results/walkthrough-photo-callout-mobile.jpg` and `test-results/walkthrough-passport-callout-mobile.jpg`. The full browser suite was not rerun for these changes.
+
 # Combined changes before push — 19 October 2026
 
 The final home, walkthrough, dropdown-alias and FAQ changes passed the production build (including TypeScript), lint and all 47 unit tests. The complete 39-test Chromium suite then passed in 35.6 seconds, including local search, responsive accessibility, exact dropdown selection/copying, FAQ parity, walkthrough navigation and privacy/no-upload checks for both file tools. Safari, Firefox and real mobile hardware remain untested.

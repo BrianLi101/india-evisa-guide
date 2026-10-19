@@ -30,7 +30,15 @@ export type WalkthroughPage = {
   evidenceStatus: EvidenceStatus;
   groups: WalkthroughGroup[];
   nextAction: string;
-  tool?: { href: string; label: string };
+  tool?: {
+    href: string;
+    label: string;
+    callout?: {
+      theme: "photo" | "passport";
+      title: string;
+      description: string;
+    };
+  };
 };
 
 // Registration and applicant screens follow the synthetic session on 2026-10-18.
@@ -77,6 +85,7 @@ const helpFields = new Set([
   "previousVisaNumber",
   "previousVisaPlace",
   "previousVisaType",
+  "referenceIndiaName",
   "referenceIndiaState",
   "referenceIndiaDistrict",
   "referenceIndiaAddress",
@@ -209,7 +218,16 @@ export const walkthroughPages: WalkthroughPage[] = [
     ],
     nextAction:
       "Follow the official photo preview and any crop/confirmation steps it displays. Continue after the portal accepts the upload.",
-    tool: { href: "/tools/photo-jpeg/", label: "Prepare photo locally" },
+    tool: {
+      href: "/tools/photo-jpeg/",
+      label: "Open photo tool",
+      callout: {
+        theme: "photo",
+        title: "Get your photo ready",
+        description:
+          "Crop and resize your photo to a square JPEG, then upload it on the official form.",
+      },
+    },
   },
   {
     id: "documents",
@@ -250,7 +268,13 @@ export const walkthroughPages: WalkthroughPage[] = [
       "Use Confirm on the official page once the upload and document checks are complete.",
     tool: {
       href: "/tools/passport-pdf/",
-      label: "Prepare passport PDF locally",
+      label: "Open passport PDF tool",
+      callout: {
+        theme: "passport",
+        title: "Make your passport PDF",
+        description:
+          "Crop your passport’s photo and details page and convert it to a PDF for the official form.",
+      },
     },
   },
   {

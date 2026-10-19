@@ -198,6 +198,27 @@
       "lastReviewedAt": "2026-10-17"
     },
     {
+      "id": "reference-in-india",
+      "title": "Who do I use as my reference in India?",
+      "answer": "You can provide the name of a family member or friend in India, or the hotel where you’re staying.",
+      "sectionIds": [
+        "travel"
+      ],
+      "fieldIds": [
+        "referenceIndiaName"
+      ],
+      "symptoms": "You are unsure who to list as your Indian reference or whether you can use your hotel.",
+      "explanation": "The user supplied guidance that a reference can be a family member or friend in India, or the hotel where the applicant is staying.",
+      "workaround": "Provide the name of your family member, friend or hotel in India.",
+      "evidenceStatus": "REPORTED",
+      "officialUrls": [],
+      "otherSources": [
+        "User-provided reference guidance · 19 October 2026"
+      ],
+      "lastReviewedAt": "2026-10-19",
+      "caveats": "This is user-provided guidance, not an independently verified portal acceptance rule."
+    },
+    {
       "id": "national-id",
       "title": "What if I don’t have a National ID number?",
       "answer": "Enter your national identity number if you have one, or NA if it does not apply. Americans, for example, do not have national ID numbers and should specify “NA”.",

@@ -231,6 +231,11 @@ const hints: Record<string, FieldHint> = {
     explanation:
       "Older and newer place names can refer to the same area. Match both the place and the administrative level requested.",
   },
+  // Reference guidance supplied by the user on 19 October 2026.
+  referenceIndiaName: {
+    hint: "You can provide the name of a family member or friend in India, or the hotel where you’re staying.",
+    prompt: "Person or hotel name",
+  },
   referenceIndiaAddress: {
     hint: "Enter your Indian reference’s full address, including the PIN code.",
     explanation:

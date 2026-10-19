@@ -10,6 +10,7 @@ const faqIds = [
   "visa-place-of-issue",
   "airport-names",
   "address-mapping",
+  "reference-in-india",
   "national-id",
   "upload-action",
   "document-requirements",
@@ -49,7 +50,10 @@ test("all FAQs show a concise answer and recorded date, inline and at their exis
       await expect(answer.getByRole("listitem")).toHaveCount(0);
     }
     const date = faq.locator(".faq-verified time");
-    await expect(date).toHaveAttribute("datetime", /^2026-10-1[67]$/);
+    await expect(date).toHaveAttribute(
+      "datetime",
+      id === "reference-in-india" ? "2026-10-19" : /^2026-10-1[67]$/,
+    );
     const dateBox = await date.boundingBox();
     const answerBox = await answer.boundingBox();
     expect(dateBox!.y).toBeGreaterThan(answerBox!.y + answerBox!.height);
@@ -93,6 +97,12 @@ test("FAQ search and keyboard help stay local and fit desktop and mobile", async
     await search.fill(query);
     await expect(page.locator("#airport-names")).toBeVisible();
   }
+  await search.fill("hotel");
+  await expect(page.getByRole("status")).toHaveText("1 question");
+  await page.locator("#reference-in-india > summary").click();
+  await expect(page.locator("#reference-in-india .faq-answer")).toHaveText(
+    "You can provide the name of a family member or friend in India, or the hotel where you’re staying.",
+  );
   await search.fill("save exit");
   await expect(page.getByRole("status")).toHaveText("1 question");
   await page.locator("#saved-application-fields > summary").click();
@@ -174,4 +184,11 @@ test("FAQ search and keyboard help stay local and fit desktop and mobile", async
     })
     .click();
   await expect(page.getByRole("listitem")).toHaveCount(5);
+  await page.goto("/");
+  await page.getByRole("searchbox").fill("reference India");
+  await page
+    .getByRole("link", { name: "FAQ Who do I use as my reference in India?" })
+    .click();
+  await expect(page).toHaveURL("/problems/reference-in-india/");
+  await expect(page.locator(".faq-answer")).toContainText("hotel where you’re staying");
 });

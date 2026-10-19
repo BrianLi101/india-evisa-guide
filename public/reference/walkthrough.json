@@ -1057,8 +1057,8 @@
               "id": "referenceIndiaName",
               "fieldId": "referenceIndiaName",
               "label": "Reference Name in India",
-              "hint": "Prepare the reference details requested for your stay.",
-              "help": false,
+              "hint": "You can provide the name of a family member or friend in India, or the hotel where you’re staying.",
+              "help": true,
               "evidenceStatus": "LIVE_VERIFIED"
             },
             {
@@ -1295,7 +1295,12 @@
       "nextAction": "Follow the official photo preview and any crop/confirmation steps it displays. Continue after the portal accepts the upload.",
       "tool": {
         "href": "/tools/photo-jpeg/",
-        "label": "Prepare photo locally"
+        "label": "Open photo tool",
+        "callout": {
+          "theme": "photo",
+          "title": "Get your photo ready",
+          "description": "Crop and resize your photo to a square JPEG, then upload it on the official form."
+        }
       }
     },
     {
@@ -1343,7 +1348,12 @@
       "nextAction": "Use Confirm on the official page once the upload and document checks are complete.",
       "tool": {
         "href": "/tools/passport-pdf/",
-        "label": "Prepare passport PDF locally"
+        "label": "Open passport PDF tool",
+        "callout": {
+          "theme": "passport",
+          "title": "Make your passport PDF",
+          "description": "Crop your passport’s photo and details page and convert it to a PDF for the official form."
+        }
       }
     },
     {

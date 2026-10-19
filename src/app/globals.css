@@ -3318,6 +3318,8 @@ textarea.field-example {
 }
 .walkthrough-tool {
   display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 14px;
   margin-top: 18px;
   border: 1px solid var(--line);
@@ -3325,6 +3327,66 @@ textarea.field-example {
   background: var(--soft);
   font-size: 13px;
   font-weight: 600;
+}
+.walkthrough-tool-callout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 170px;
+  margin-top: 22px;
+  padding: 26px;
+  border-radius: 14px;
+  background: var(--tool-background);
+  color: var(--tool-ink);
+}
+.walkthrough-tool-photo {
+  --tool-background: #e3ebf1;
+  --tool-ink: #29495c;
+  --tool-hover: #1d3543;
+}
+.walkthrough-tool-passport {
+  --tool-background: #e3ecdf;
+  --tool-ink: #294934;
+  --tool-hover: #1e3526;
+}
+.walkthrough-tool-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.walkthrough-tool-title svg,
+.walkthrough-tool-action svg {
+  flex-shrink: 0;
+}
+.walkthrough-tool-title h3 {
+  margin: 0;
+  color: inherit;
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+.walkthrough-tool-description {
+  max-width: 530px;
+  margin: 12px 0 0;
+  font-size: 15px;
+}
+.walkthrough-tool-privacy {
+  margin: 10px 0 0;
+  font-size: 12px;
+}
+.walkthrough-tool-action {
+  min-height: 56px;
+  padding: 16px 20px;
+  border-color: var(--tool-ink);
+  background: var(--tool-ink);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+.walkthrough-tool-action:hover {
+  border-color: var(--tool-hover);
+  background: var(--tool-hover);
 }
 .walkthrough-group {
   margin-top: 26px;
@@ -3437,6 +3499,13 @@ textarea.field-example {
   text-align: center;
 }
 @media (max-width: 800px) {
+  .walkthrough-tool-callout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .walkthrough-tool-action {
+    justify-self: start;
+  }
   .walkthrough-steps {
     padding: 8px 0 10px;
     margin-top: 18px;
@@ -3490,6 +3559,15 @@ textarea.field-example {
   }
   .walkthrough-section-heading h2 {
     font-size: 25px;
+  }
+  .walkthrough-tool-callout {
+    padding: 20px;
+  }
+  .walkthrough-tool-title h3 {
+    font-size: 20px;
+  }
+  .walkthrough-tool-action {
+    width: 100%;
   }
   .walkthrough-field > summary,
   .walkthrough-field-static {

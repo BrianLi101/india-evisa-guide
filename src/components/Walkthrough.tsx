@@ -1,12 +1,56 @@
 "use client";
 
 import { useEffect, useRef, useState, type MouseEvent } from "react";
-import { ChevronDown } from "lucide-react";
+import {
+  ArrowUpRight,
+  ChevronDown,
+  FileText,
+  Image as ImageIcon,
+} from "lucide-react";
 import { fields, SAMPLE } from "@/content/data";
-import { walkthroughPages, type WalkthroughField } from "@/content/walkthrough";
+import {
+  walkthroughPages,
+  type WalkthroughField,
+  type WalkthroughPage,
+} from "@/content/walkthrough";
 import FieldReference from "./FieldReference";
 import { fieldGuideId } from "@/content/fieldHints";
 import { OfficialLink } from "./ui";
+
+function ToolLink({ tool }: { tool: NonNullable<WalkthroughPage["tool"]> }) {
+  const link = (
+    <a
+      className={
+        tool.callout ? "button walkthrough-tool-action" : "walkthrough-tool"
+      }
+      href={tool.href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {tool.label}
+      <ArrowUpRight size={20} aria-hidden="true" />
+      <span className="sr-only"> (opens a new tab)</span>
+    </a>
+  );
+  if (!tool.callout) return link;
+  const Icon = tool.callout.theme === "photo" ? ImageIcon : FileText;
+  return (
+    <aside
+      className={`walkthrough-tool-callout walkthrough-tool-${tool.callout.theme}`}
+      aria-labelledby={`${tool.callout.theme}-tool-heading`}
+    >
+      <div>
+        <div className="walkthrough-tool-title">
+          <Icon size={36} strokeWidth={1.5} aria-hidden="true" />
+          <h3 id={`${tool.callout.theme}-tool-heading`}>{tool.callout.title}</h3>
+        </div>
+        <p className="walkthrough-tool-description">{tool.callout.description}</p>
+        <p className="walkthrough-tool-privacy">On your device. Never uploaded.</p>
+      </div>
+      {link}
+    </aside>
+  );
+}
 
 function FieldRow({ item }: { item: WalkthroughField }) {
   // Inline dependent fields are rendered by the same component as their parent.
@@ -190,17 +234,7 @@ export default function Walkthrough() {
               <h2 id={`heading-${page.id}`} tabIndex={-1}>
                 {page.title}
               </h2>
-              {page.tool && (
-                <a
-                  className="walkthrough-tool"
-                  href={page.tool.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {page.tool.label} ↗
-                  <span className="sr-only"> (opens a new tab)</span>
-                </a>
-              )}
+              {page.tool && <ToolLink tool={page.tool} />}
             </header>
             {page.groups.map((group) => (
               <section

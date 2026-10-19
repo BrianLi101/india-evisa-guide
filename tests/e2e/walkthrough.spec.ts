@@ -142,9 +142,19 @@ test("walkthrough keeps simple labels and selective help with working anchors an
       exact: true,
     }),
   ).toHaveCount(0);
-  await expect(
-    page.getByRole("link", { name: /Prepare photo locally/ }),
-  ).toHaveAttribute("target", "_blank");
+  for (const [label, url, heading] of [
+    ["Open photo tool", "/tools/photo-jpeg/", "Prepare your photo"],
+    ["Open passport PDF tool", "/tools/passport-pdf/", "Passport PDF"],
+  ]) {
+    const link = page.getByRole("link", { name: `${label} (opens a new tab)` });
+    await expect(link).toHaveAttribute("target", "_blank");
+    const popupPromise = page.waitForEvent("popup");
+    await link.click();
+    const toolPage = await popupPromise;
+    await expect(toolPage).toHaveURL(url);
+    await expect(toolPage.getByRole("heading", { level: 1 })).toHaveText(heading);
+    await toolPage.close();
+  }
   await expect(page.locator(".walkthrough-group-provisional")).toHaveCount(0);
 
   await page.goto("/walkthrough/#religionOther");

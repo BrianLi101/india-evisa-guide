@@ -7249,7 +7249,9 @@
         "helpSources": [
           "https://indianvisaonline.gov.in/evisa/VisaDetails"
         ],
-        "knownIssueIds": [],
+        "knownIssueIds": [
+          "reference-in-india"
+        ],
         "observed": {
           "label": "Reference Name in India",
           "control": "Text field",
@@ -7263,7 +7265,8 @@
           "readOnly": false
         },
         "hint": {
-          "hint": "Prepare the reference details requested for your stay."
+          "hint": "You can provide the name of a family member or friend in India, or the hotel where you’re staying.",
+          "prompt": "Person or hotel name"
         },
         "currentOptionsVerified": false,
         "requiredMarker": true,
