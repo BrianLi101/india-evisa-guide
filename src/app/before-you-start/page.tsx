@@ -63,7 +63,8 @@ export default function Page() {
             Name, full address and phone number.
           </Item>
           <Item title="Travel history">
-            Countries visited in the last 10 years.
+            Countries visited in the last 10 years. Check previous passports and
+            entry stamps to help recall trips; stamps may not record every visit.
           </Item>
         </section>
         <section aria-labelledby="prep-contacts">

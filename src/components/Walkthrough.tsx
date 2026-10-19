@@ -7,7 +7,7 @@ import {
   FileText,
   Image as ImageIcon,
 } from "lucide-react";
-import { fields, SAMPLE } from "@/content/data";
+import { fields, issues, SAMPLE } from "@/content/data";
 import {
   walkthroughPages,
   type WalkthroughField,
@@ -42,10 +42,16 @@ function ToolLink({ tool }: { tool: NonNullable<WalkthroughPage["tool"]> }) {
       <div>
         <div className="walkthrough-tool-title">
           <Icon size={36} strokeWidth={1.5} aria-hidden="true" />
-          <h3 id={`${tool.callout.theme}-tool-heading`}>{tool.callout.title}</h3>
+          <h3 id={`${tool.callout.theme}-tool-heading`}>
+            {tool.callout.title}
+          </h3>
         </div>
-        <p className="walkthrough-tool-description">{tool.callout.description}</p>
-        <p className="walkthrough-tool-privacy">On your device. Never uploaded.</p>
+        <p className="walkthrough-tool-description">
+          {tool.callout.description}
+        </p>
+        <p className="walkthrough-tool-privacy">
+          On your device. Never uploaded.
+        </p>
       </div>
       {link}
     </aside>
@@ -83,7 +89,21 @@ function FieldRow({ item }: { item: WalkthroughField }) {
         {record ? (
           <FieldReference embedded field={record} />
         ) : (
-          <p>{item.hint}</p>
+          <>
+            <p>{item.hint}</p>
+            {item.issueIds?.length ? (
+              <ul>
+                {item.issueIds.map((id) => {
+                  const issue = issues.find((entry) => entry.id === id)!;
+                  return (
+                    <li key={id}>
+                      <a href={`/problems/${id}/`}>{issue.title}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+          </>
         )}
       </div>
     </details>

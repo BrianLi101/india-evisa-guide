@@ -1,3 +1,13 @@
+# Phone spacing clarification — 19 October 2026
+
+Updated all five phone-field hints and the phone FAQ to exclude dashes, parentheses and `+`, while noting that spaces may be accepted. Removed the digits-only wording and corrected the source notes. Production build (including TypeScript), lint, all 48 unit tests and all six FAQ/walkthrough Chromium journeys passed (10.3 seconds), including shared field rendering and preservation of literal phone input. The full browser suite was not rerun for this copy correction.
+
+# Payment and trip-preparation guidance — 19 October 2026
+
+Added six searchable FAQs for payment references, PayPal within SBI ePay, phone formatting, estimated arrival, previous visa validity and payment retry restrictions. Expanded the upload FAQ, all five phone-field hints, arrival/identification-mark/travel-history help and the preparation checklist. Payment and document-upload walkthrough notes now link directly to relevant FAQs. User reports remain distinct from official published timing and validity rules; no live payment or file upload was attempted.
+
+Production build (including TypeScript), lint, all 48 unit tests and the full 39-test Chromium suite passed (35.9 seconds). Coverage checks all 19 FAQs inline and individually, both local searches, walkthrough-to-FAQ navigation, preserved punctuation in synthetic phone input, shared home/walkthrough field rendering, responsive accessibility and existing privacy/no-upload journeys. The mobile payment section and retry FAQ were visually inspected in the in-app preview. Screenshot: `test-results/payment-retry-guidance.jpg`. Safari, Firefox and real mobile hardware remain untested.
+
 # India reference FAQ — 19 October 2026
 
 Added “Who do I use as my reference in India?” to Common questions, both local searches and the reference field’s related links, using the user-provided family/friend/hotel guidance. Its review date is recorded separately from live verification. Build (including TypeScript), lint, all 47 unit tests and three FAQ/shared-guidance Chromium journeys passed (5.6 seconds). Coverage includes all 13 inline and standalone FAQs, hotel/reference search, existing dates, responsive accessibility and local-only FAQ search. The in-app preview confirmed the field link opens the new answer. Screenshot: `test-results/reference-india-faq.jpg`. The full browser suite was not rerun.

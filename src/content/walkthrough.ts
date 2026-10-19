@@ -12,6 +12,7 @@ export type WalkthroughField = {
   hint: string;
   help: boolean;
   fieldId?: string;
+  issueIds?: string[];
   when?: string;
   evidenceStatus: EvidenceStatus;
 };
@@ -78,10 +79,12 @@ const helpFields = new Set([
   "maritalStatus",
   "occupation",
   "employer",
+  "employerPhone",
   "designation",
   "visaArrival",
   "exitPort",
   "previousCities",
+  "countriesVisited",
   "previousVisaNumber",
   "previousVisaPlace",
   "previousVisaType",
@@ -89,6 +92,8 @@ const helpFields = new Set([
   "referenceIndiaState",
   "referenceIndiaDistrict",
   "referenceIndiaAddress",
+  "referenceIndiaPhone",
+  "referenceHomePhone",
   "photoFile",
   "photoUpload",
   "documentFile",
@@ -119,13 +124,21 @@ function field(id: string, overrides: FieldPlacement = {}): WalkthroughField {
     ...overrides,
   };
 }
-function note(id: string, label: string, hint: string): WalkthroughField {
+function note(
+  id: string,
+  label: string,
+  hint: string,
+  options: Pick<WalkthroughField, "issueIds"> & {
+    evidenceStatus?: EvidenceStatus;
+  } = {},
+): WalkthroughField {
   return {
     id,
     label,
     hint,
     help: helpFields.has(id),
     evidenceStatus: "OFFICIAL",
+    ...options,
   };
 }
 export const walkthroughPages: WalkthroughPage[] = [
@@ -249,7 +262,8 @@ export const walkthroughPages: WalkthroughPage[] = [
           note(
             "documentUpload",
             "Upload Document",
-            "Use the separate upload action after choosing the file.",
+            "Use the separate upload action after choosing the file. The tiny orange upload button has been reported to overlap the file selector; look carefully for it, then check the upload status.",
+            { issueIds: ["upload-action"], evidenceStatus: "REPORTED" },
           ),
           note(
             "documentStatus",
@@ -297,7 +311,8 @@ export const walkthroughPages: WalkthroughPage[] = [
           note(
             "paymentId",
             "Application Id",
-            "Keep the application ID from the portal for status checks.",
+            "Keep your Application ID for visa status checks. Payment may generate a separate reference or transaction ID; save that and the receipt as well.",
+            { issueIds: ["payment-reference"] },
           ),
           note(
             "generateApplication",
@@ -317,7 +332,11 @@ export const walkthroughPages: WalkthroughPage[] = [
           note(
             "payNow",
             "Pay Now / Pay Later",
-            "Follow the current official payment instructions and check payment status before retrying a payment.",
+            "Selecting PayPal may still open SBI ePay. Scroll through its payment options to find PayPal if it is not immediately visible. Follow any retry waiting message and check payment status before another attempt.",
+            {
+              issueIds: ["paypal-sbi-epay", "payment-retry", "payment-pending"],
+              evidenceStatus: "REPORTED",
+            },
           ),
         ],
       },

@@ -152,7 +152,9 @@ test("walkthrough keeps simple labels and selective help with working anchors an
     await link.click();
     const toolPage = await popupPromise;
     await expect(toolPage).toHaveURL(url);
-    await expect(toolPage.getByRole("heading", { level: 1 })).toHaveText(heading);
+    await expect(toolPage.getByRole("heading", { level: 1 })).toHaveText(
+      heading,
+    );
     await toolPage.close();
   }
   await expect(page.locator(".walkthrough-group-provisional")).toHaveCount(0);
@@ -220,6 +222,11 @@ test("opening help and retaining scratch text stays local through collapsing and
   );
   await expect(explanation).toHaveValue("SYNTHETIC EXPLANATION");
   await expect(input).toHaveValue("  SYNTHETIC, O’EXAMPLE  ");
+  const referencePhone = await openField(page, "referenceIndiaPhone");
+  await expect(referencePhone).toContainText("Avoid dashes, parentheses and +");
+  const phoneInput = referencePhone.getByRole("textbox");
+  await phoneInput.fill("+1 (202) 555-0100");
+  await expect(phoneInput).toHaveValue("+1 (202) 555-0100");
   expect(requests).toEqual([]);
   expect(
     await page.evaluate(async () => ({

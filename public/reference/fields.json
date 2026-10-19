@@ -785,7 +785,9 @@
           "https://indianvisaonline.gov.in/evisa/Registration",
           "https://indianvisaonline.gov.in/evisa/tvoa.html"
         ],
-        "knownIssueIds": [],
+        "knownIssueIds": [
+          "uncertain-arrival-date"
+        ],
         "observed": {
           "label": "Expected Date of Arrival",
           "control": "Date field",
@@ -798,8 +800,8 @@
           "htmlRequired": false
         },
         "hint": {
-          "hint": "Enter the date you expect to arrive in India, in DD/MM/YYYY format.",
-          "explanation": "Apply at least 4 days before arrival. Once approved, follow the entry dates printed on your ETA.",
+          "hint": "Enter your best estimate of arrival in India, in DD/MM/YYYY format.",
+          "explanation": "Apply at least 4 days before arrival. Entering an earlier date does not necessarily give you more flexibility; follow the entry window on your approved ETA.",
           "prompt": "DD/MM/YYYY"
         },
         "currentOptionsVerified": false,
@@ -1601,7 +1603,8 @@
         },
         "hint": {
           "hint": "Describe a visible identifying mark, such as a scar or mole.",
-          "prompt": "Visible scar or mole, if applicable"
+          "explanation": "If you have no visible identification marks, enter NONE or NA.",
+          "prompt": "Visible mark, NONE or NA"
         },
         "currentOptionsVerified": false,
         "requiredMarker": true,
@@ -3282,7 +3285,9 @@
         "helpSources": [
           "https://indianvisaonline.gov.in/evisa/FamilyDetails"
         ],
-        "knownIssueIds": [],
+        "knownIssueIds": [
+          "phone-format"
+        ],
         "observed": {
           "label": "Phone No.",
           "control": "Text field",
@@ -3297,6 +3302,7 @@
         },
         "hint": {
           "hint": "Enter your contact number. Complete Mobile No. as well if the portal requires it.",
+          "explanation": "Avoid dashes, parentheses and + in phone numbers. Spaces may be accepted. Follow any separate country-code prompt.",
           "prompt": "Contact number"
         },
         "currentOptionsVerified": false,
@@ -3313,7 +3319,9 @@
         "helpSources": [
           "https://indianvisaonline.gov.in/evisa/FamilyDetails"
         ],
-        "knownIssueIds": [],
+        "knownIssueIds": [
+          "phone-format"
+        ],
         "observed": {
           "label": "Mobile No.",
           "control": "Text field",
@@ -3328,6 +3336,7 @@
         },
         "hint": {
           "hint": "Enter your mobile number; the tested form required it even with Phone No. filled.",
+          "explanation": "Avoid dashes, parentheses and + in phone numbers. Spaces may be accepted. Follow any separate country-code prompt.",
           "prompt": "Mobile number"
         },
         "currentOptionsVerified": false,
@@ -6667,7 +6676,8 @@
           "https://indianvisaonline.gov.in/evisa/VisaDetails"
         ],
         "knownIssueIds": [
-          "eta-or-application-id"
+          "eta-or-application-id",
+          "previous-visa-validity"
         ],
         "observed": {
           "label": "Last Indian Visa No/Currently valid Indian Visa No.",
@@ -6700,7 +6710,9 @@
         "helpSources": [
           "https://indianvisaonline.gov.in/evisa/VisaDetails"
         ],
-        "knownIssueIds": [],
+        "knownIssueIds": [
+          "previous-visa-validity"
+        ],
         "observed": {
           "label": "Type of Visa",
           "control": "Dropdown",
@@ -7162,7 +7174,8 @@
           "multiple": true
         },
         "hint": {
-          "hint": "List the countries you visited in the last 10 years."
+          "hint": "List the countries you visited in the last 10 years.",
+          "explanation": "Check previous passports and entry stamps to help recall trips. Stamps may not record every visit."
         },
         "currentOptionsVerified": true,
         "requiredMarker": false,
@@ -7313,7 +7326,9 @@
         "helpSources": [
           "https://indianvisaonline.gov.in/evisa/VisaDetails"
         ],
-        "knownIssueIds": [],
+        "knownIssueIds": [
+          "phone-format"
+        ],
         "observed": {
           "label": "Phone No/Mobile No",
           "control": "Text field",
@@ -7327,7 +7342,8 @@
           "readOnly": false
         },
         "hint": {
-          "hint": "Prepare the reference details requested for your stay."
+          "hint": "Enter the phone number of your reference in India.",
+          "explanation": "Avoid dashes, parentheses and + in phone numbers. Spaces may be accepted. Follow any separate country-code prompt."
         },
         "currentOptionsVerified": false,
         "requiredMarker": true,
@@ -7404,7 +7420,9 @@
         "helpSources": [
           "https://indianvisaonline.gov.in/evisa/VisaDetails"
         ],
-        "knownIssueIds": [],
+        "knownIssueIds": [
+          "phone-format"
+        ],
         "observed": {
           "label": "Phone No/Mobile No",
           "control": "Text field",
@@ -7418,7 +7436,8 @@
           "readOnly": false
         },
         "hint": {
-          "hint": "Prepare contact details for a reference in your home country."
+          "hint": "Enter the phone number of your reference in your home country.",
+          "explanation": "Avoid dashes, parentheses and + in phone numbers. Spaces may be accepted. Follow any separate country-code prompt."
         },
         "currentOptionsVerified": false,
         "requiredMarker": true,
@@ -8316,7 +8335,9 @@
         "helpSources": [
           "https://indianvisaonline.gov.in/evisa/FamilyDetails"
         ],
-        "knownIssueIds": [],
+        "knownIssueIds": [
+          "phone-format"
+        ],
         "observed": {
           "label": "Phone",
           "control": "Text field",
@@ -8330,7 +8351,8 @@
           "readOnly": false
         },
         "hint": {
-          "hint": "Your employer’s phone number. This field is optional."
+          "hint": "Your employer’s phone number. This field is optional.",
+          "explanation": "Avoid dashes, parentheses and + in phone numbers. Spaces may be accepted. Follow any separate country-code prompt."
         },
         "currentOptionsVerified": false,
         "requiredMarker": false,

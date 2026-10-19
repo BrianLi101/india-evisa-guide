@@ -37,6 +37,19 @@ describe("field guide discovery and evidence", () => {
         searchGuides(query).some((result) => result.url === "/#arrivalPort"),
       ).toBe(true);
   });
+  it("finds payment and trip-planning help from common applicant questions", () => {
+    for (const [query, id] of [
+      ["transaction ID", "payment-reference"],
+      ["PayPal", "paypal-sbi-epay"],
+      ["12 minutes", "payment-retry"],
+      ["expired visa", "previous-visa-validity"],
+      ["uncertain arrival", "uncertain-arrival-date"],
+      ["phone punctuation", "phone-format"],
+    ])
+      expect(
+        searchGuides(query).some((result) => result.url === `/problems/${id}/`),
+      ).toBe(true);
+  });
   it("keeps reported lists separate from live observations and searchable", () => {
     expect(reportedChoices.religion.evidenceStatus).toBe("REPORTED");
     expect(reportedChoices.religion.labels).toHaveLength(11);

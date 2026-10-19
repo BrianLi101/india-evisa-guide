@@ -77,6 +77,10 @@ type FieldHint = {
   example?: string;
   prompt?: string;
 };
+// Reported punctuation restriction; spaces may be accepted.
+const phoneFormattingGuidance =
+  "Avoid dashes, parentheses and + in phone numbers. Spaces may be accepted. Follow any separate country-code prompt.";
+
 const hints: Record<string, FieldHint> = {
   gatePassport: {
     hint: "Use the passport you’ll travel with.",
@@ -100,9 +104,9 @@ const hints: Record<string, FieldHint> = {
   },
   dob: { hint: "Day first, then month and year.", prompt: "DD/MM/YYYY" },
   arrivalDate: {
-    hint: "Enter the date you expect to arrive in India, in DD/MM/YYYY format.",
+    hint: "Enter your best estimate of arrival in India, in DD/MM/YYYY format.",
     explanation:
-      "Apply at least 4 days before arrival. Once approved, follow the entry dates printed on your ETA.",
+      "Apply at least 4 days before arrival. Entering an earlier date does not necessarily give you more flexibility; follow the entry window on your approved ETA.",
     prompt: "DD/MM/YYYY",
   },
   visaService: {
@@ -175,7 +179,10 @@ const hints: Record<string, FieldHint> = {
   },
   identificationMarks: {
     hint: "Describe a visible identifying mark, such as a scar or mole.",
-    prompt: "Visible scar or mole, if applicable",
+    // No-marks guidance supplied by the user on 19 October 2026.
+    explanation:
+      "If you have no visible identification marks, enter NONE or NA.",
+    prompt: "Visible mark, NONE or NA",
   },
   education: {
     hint: "Choose the option that matches your highest qualification.",
@@ -243,14 +250,25 @@ const hints: Record<string, FieldHint> = {
   },
   phone: {
     hint: "Enter your contact number. Complete Mobile No. as well if the portal requires it.",
+    explanation: phoneFormattingGuidance,
     prompt: "Contact number",
   },
   mobile: {
     hint: "Enter your mobile number; the tested form required it even with Phone No. filled.",
+    explanation: phoneFormattingGuidance,
     prompt: "Mobile number",
   },
   employerPhone: {
     hint: "Your employer’s phone number. This field is optional.",
+    explanation: phoneFormattingGuidance,
+  },
+  referenceIndiaPhone: {
+    hint: "Enter the phone number of your reference in India.",
+    explanation: phoneFormattingGuidance,
+  },
+  referenceHomePhone: {
+    hint: "Enter the phone number of your reference in your home country.",
+    explanation: phoneFormattingGuidance,
   },
   referenceIndiaState: {
     hint: "Choose the state in your Indian reference’s address.",
@@ -314,6 +332,8 @@ const hints: Record<string, FieldHint> = {
   },
   countriesVisited: {
     hint: "List the countries you visited in the last 10 years.",
+    explanation:
+      "Check previous passports and entry stamps to help recall trips. Stamps may not record every visit.",
   },
   previousCities: {
     hint: "Separate the cities you previously visited with commas.",

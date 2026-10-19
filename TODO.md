@@ -15,6 +15,7 @@ This is a searchable field guide and continuous walkthrough with local file tool
 - Expand the 11 source-backed airport alias/code mappings. Arrival and exit lists match exactly in this capture, but dropdown presence does not establish entry eligibility.
 - Neighborhood-to-district and PIN mappings remain outside this guide. Gurgaon/Gurugram are alternate names; do not infer an address mapping from that alone.
 - Initial PhotoUpload independently confirms JPEG, 10 KB–1 MB and at least 350 × 350 pixels. Passport PDF limits and actual upload acceptance have not been retested in the live upload flow.
+- The 19 October PayPal scrolling, approximately 12-minute retry restriction, phone punctuation guidance, no-marks entries and overlapping upload button remain user-reported guidance. Official public instructions support SBI ePay’s PayPal channel and 25-minute transaction interval; no live payment/upload acceptance was tested. Keep those timings distinct from the two-hour payment-status allowance.
 
 ## Browser and product coverage
 

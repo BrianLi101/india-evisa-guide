@@ -119,7 +119,7 @@
               "id": "arrivalDate",
               "fieldId": "arrivalDate",
               "label": "Expected Date of Arrival",
-              "hint": "Enter the date you expect to arrive in India, in DD/MM/YYYY format.",
+              "hint": "Enter your best estimate of arrival in India, in DD/MM/YYYY format.",
               "help": true,
               "evidenceStatus": "LIVE_VERIFIED"
             }
@@ -737,7 +737,7 @@
               "fieldId": "employerPhone",
               "label": "Phone",
               "hint": "Your employer’s phone number. This field is optional.",
-              "help": false,
+              "help": true,
               "evidenceStatus": "LIVE_VERIFIED"
             },
             {
@@ -1005,7 +1005,7 @@
               "fieldId": "countriesVisited",
               "label": "Countries Visited in Last 10 years",
               "hint": "List the countries you visited in the last 10 years.",
-              "help": false,
+              "help": true,
               "evidenceStatus": "LIVE_VERIFIED"
             }
           ]
@@ -1097,8 +1097,8 @@
               "id": "referenceIndiaPhone",
               "fieldId": "referenceIndiaPhone",
               "label": "Phone No/Mobile No",
-              "hint": "Prepare the reference details requested for your stay.",
-              "help": false,
+              "hint": "Enter the phone number of your reference in India.",
+              "help": true,
               "evidenceStatus": "LIVE_VERIFIED"
             },
             {
@@ -1129,8 +1129,8 @@
               "id": "referenceHomePhone",
               "fieldId": "referenceHomePhone",
               "label": "Phone No/Mobile No",
-              "hint": "Prepare contact details for a reference in your home country.",
-              "help": false,
+              "hint": "Enter the phone number of your reference in your home country.",
+              "help": true,
               "evidenceStatus": "LIVE_VERIFIED"
             }
           ]
@@ -1324,9 +1324,12 @@
             {
               "id": "documentUpload",
               "label": "Upload Document",
-              "hint": "Use the separate upload action after choosing the file.",
+              "hint": "Use the separate upload action after choosing the file. The tiny orange upload button has been reported to overlap the file selector; look carefully for it, then check the upload status.",
               "help": true,
-              "evidenceStatus": "OFFICIAL"
+              "evidenceStatus": "REPORTED",
+              "issueIds": [
+                "upload-action"
+              ]
             },
             {
               "id": "documentStatus",
@@ -1377,9 +1380,12 @@
             {
               "id": "paymentId",
               "label": "Application Id",
-              "hint": "Keep the application ID from the portal for status checks.",
+              "hint": "Keep your Application ID for visa status checks. Payment may generate a separate reference or transaction ID; save that and the receipt as well.",
               "help": true,
-              "evidenceStatus": "OFFICIAL"
+              "evidenceStatus": "OFFICIAL",
+              "issueIds": [
+                "payment-reference"
+              ]
             },
             {
               "id": "generateApplication",
@@ -1405,9 +1411,14 @@
             {
               "id": "payNow",
               "label": "Pay Now / Pay Later",
-              "hint": "Follow the current official payment instructions and check payment status before retrying a payment.",
+              "hint": "Selecting PayPal may still open SBI ePay. Scroll through its payment options to find PayPal if it is not immediately visible. Follow any retry waiting message and check payment status before another attempt.",
               "help": true,
-              "evidenceStatus": "OFFICIAL"
+              "evidenceStatus": "REPORTED",
+              "issueIds": [
+                "paypal-sbi-epay",
+                "payment-retry",
+                "payment-pending"
+              ]
             }
           ]
         }

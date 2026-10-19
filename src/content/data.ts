@@ -197,6 +197,7 @@ add(
     ...date,
     validationRules: ["date", "future"],
     helpSources: [REGISTRATION, VISA_INSTRUCTIONS],
+    knownIssueIds: ["uncertain-arrival-date"],
   },
 );
 add(
@@ -651,10 +652,12 @@ for (const [id, label, help] of [
       : {}),
     knownIssueIds:
       id === "previousVisaNumber"
-        ? ["eta-or-application-id"]
+        ? ["eta-or-application-id", "previous-visa-validity"]
         : id === "previousVisaPlace"
           ? ["visa-place-of-issue"]
-          : [],
+          : id === "previousVisaType"
+            ? ["previous-visa-validity"]
+            : [],
   });
 add(
   "travel",
@@ -827,6 +830,19 @@ for (const observed of liveFields) {
       observed.help ??
       `Use the ${observed.label.toLowerCase()} requested by the form.`;
 }
+// These phone fields share the reported punctuation advice, without changing
+// the independently captured field metadata or silently formatting answers.
+for (const id of [
+  "phone",
+  "mobile",
+  "employerPhone",
+  "referenceIndiaPhone",
+  "referenceHomePhone",
+]) {
+  const seed = seeds.find((field) => field.id === id);
+  if (seed) seed.knownIssueIds = ["phone-format"];
+}
+
 export const fields: VisaField[] = seeds.map((f, order) => ({
   type: "text",
   required: true,
@@ -1061,17 +1077,23 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
     title: "Why does my file still say “Not Uploaded”?",
     answer:
       "After choosing the file, click Upload Photo or Upload Document and check that the uploaded preview appears before continuing.",
+    answerBullets: [
+      "The tiny orange upload button has been reported to overlap the file selector. Look carefully for the separate upload action; choosing a filename alone does not upload it.",
+    ],
     sectionIds: [],
     fieldIds: [],
     symptoms:
       "A selected filename appears but the official site still says Not Uploaded.",
     explanation:
-      "Choosing a file and uploading it are separate steps. After selecting your file, use the displayed Upload Photo or Upload Document action.",
+      "The official sample distinguishes choosing a file from uploading it. The user reported an overlapping orange upload button on 19 October 2026; that layout was not independently reproduced.",
     workaround:
       "On the official site, select the prepared file, perform the displayed upload action, and inspect its status and preview before continuing.",
-    evidenceStatus: "OFFICIAL",
+    evidenceStatus: "REPORTED",
     officialUrls: [SAMPLE],
-    lastVerifiedAt: REVIEWED_AT,
+    otherSources: [
+      "User-reported overlapping upload controls · 19 October 2026",
+    ],
+    lastReviewedAt: "2026-10-19",
     caveats:
       "Before continuing, make sure the file status shows it has uploaded and the preview displays the correct file. This companion never performs the upload.",
   },
@@ -1094,6 +1116,147 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
       "Passing technical bounds cannot establish visual quality or official acceptance. HEIC/HEIF decoding runs locally; damaged or unsupported files need a fresh JPEG/PNG export.",
   },
   {
+    id: "phone-format",
+    title: "Why is the portal rejecting my phone number?",
+    answer:
+      "Avoid dashes, parentheses and + in phone numbers, including reference and employer numbers. Spaces may be accepted. Follow any separate country-code prompt.",
+    sectionIds: ["family", "employment", "travel"],
+    fieldIds: [
+      "phone",
+      "mobile",
+      "employerPhone",
+      "referenceIndiaPhone",
+      "referenceHomePhone",
+    ],
+    symptoms:
+      "A contact, mobile or reference phone number with punctuation is rejected.",
+    explanation:
+      "The user reported rejection of dashes, parentheses and +, and clarified that spaces may be accepted. A complete server-side character whitelist has not been independently tested.",
+    workaround:
+      "Remove dashes, parentheses and + yourself; the companion preserves the number you type.",
+    evidenceStatus: "REPORTED",
+    officialUrls: [],
+    otherSources: ["User-reported phone formatting guidance · 19 October 2026"],
+    lastReviewedAt: "2026-10-19",
+    caveats:
+      "Do not infer a country-code prefix or universal phone-length rule from this report.",
+  },
+  {
+    id: "uncertain-arrival-date",
+    title: "What if I don’t know my exact arrival date yet?",
+    answer:
+      "Use your best estimate of arrival. Entering an earlier date does not necessarily increase flexibility: you must travel within the entry window on your approved ETA.",
+    sectionIds: ["registration"],
+    fieldIds: ["arrivalDate"],
+    symptoms:
+      "My travel plans are uncertain and my expected arrival date may change.",
+    explanation:
+      "Using an estimate is user-provided preparation guidance. The official FAQ distinguishes the ETA’s first-entry window from visa validity; an estimated date does not override the issued conditions.",
+    workaround:
+      "Use a realistic planned arrival date and check the approved ETA before booking or changing travel.",
+    evidenceStatus: "REPORTED",
+    officialUrls: [VISA_INSTRUCTIONS],
+    otherSources: [
+      "User-provided estimated arrival guidance · 19 October 2026; official FAQ Q9 reviewed the same day",
+    ],
+    lastReviewedAt: "2026-10-19",
+    caveats:
+      "This does not promise a particular entry window or guarantee that every date change is permitted.",
+  },
+  {
+    id: "previous-visa-validity",
+    title: "Is my previous e-Visa still valid, or do I need a new one?",
+    answer:
+      "Check your issued ETA, passport entry stamp and official visa status before applying again. The visa’s duration alone does not tell you whether it covers another trip.",
+    answerBullets: [
+      "30-day e-Tourist: first entry must fall within the ETA’s entry window. After first arrival, validity runs for 30 days; check the stamped expiry and permitted entries.",
+      "1-year e-Tourist: validity runs for 365 days from the grant of the ETA, not your first arrival.",
+      "5-year e-Tourist: validity runs for five years from the grant of the ETA. Check its expiry and stay limits before each trip.",
+      "If it has expired or no longer covers your trip, you need a new appropriate visa. If it is still valid and your trip meets its entry and stay conditions, a new application may not be needed.",
+    ],
+    sectionIds: ["travel"],
+    fieldIds: ["previousVisaNumber", "previousVisaType"],
+    symptoms:
+      "I have an old or expired 30-day, 1-year or 5-year tourist e-Visa and want to return to India.",
+    explanation:
+      "Official FAQ Q8–Q10 describes status checks, validity and non-extension. The application decision is a practical inference from those conditions, not an assessment of a particular traveler’s eligibility.",
+    workaround:
+      "Check the ETA and official visa status; contact the official helpdesk if the dates or conditions are unclear.",
+    evidenceStatus: "OFFICIAL",
+    officialUrls: [VISA_INSTRUCTIONS],
+    lastVerifiedAt: "2026-10-19",
+    lastReviewedAt: "2026-10-19",
+    caveats:
+      "Visa validity is distinct from permitted length of stay. Follow the conditions on the issued document; this guide cannot decide individual eligibility.",
+  },
+  {
+    id: "payment-reference",
+    title: "Is my Payment ID the same as my Application ID?",
+    answer:
+      "No. Payment may generate a separate reference or transaction ID. Save it and the receipt alongside your Application ID: one identifies the payment, the other your visa application.",
+    sectionIds: [],
+    fieldIds: [],
+    symptoms:
+      "The payment gateway shows a different ID or transaction number from the application.",
+    explanation:
+      "The official SBI ePay FAQ describes a payment-success reference number and transactions against an application ID.",
+    workaround:
+      "Save both identifiers and the receipt on your own device for status checks or payment support.",
+    evidenceStatus: "OFFICIAL",
+    officialUrls: [VISA_INSTRUCTIONS],
+    lastVerifiedAt: "2026-10-19",
+    lastReviewedAt: "2026-10-19",
+    caveats:
+      "Payment references are not ETA numbers or evidence that the visa has been granted.",
+  },
+  {
+    id: "paypal-sbi-epay",
+    title: "Why does choosing PayPal take me to SBI ePay?",
+    answer:
+      "SBI ePay offers PayPal within its payment page, so selecting PayPal may still take you there. If PayPal is not immediately visible, scroll down through the payment options to find it.",
+    sectionIds: [],
+    fieldIds: [],
+    symptoms:
+      "PayPal seems missing or hidden after the portal opens the SBI ePay gateway.",
+    explanation:
+      "The official SBI ePay FAQ confirms PayPal is an offered channel. The user reported that its option required scrolling; that layout was not independently reproduced.",
+    workaround:
+      "Look through the SBI ePay payment options and scroll for PayPal, if offered in your session.",
+    evidenceStatus: "REPORTED",
+    officialUrls: [VISA_INSTRUCTIONS],
+    otherSources: [
+      "User-reported PayPal placement inside SBI ePay · 19 October 2026",
+    ],
+    lastReviewedAt: "2026-10-19",
+    caveats: "Gateway layout and available payment methods can change.",
+  },
+  {
+    id: "payment-retry",
+    title: "Why can’t I retry my payment straight away?",
+    answer:
+      "A reported session temporarily blocked retries for about 12 minutes. That is not a guaranteed timeout; follow the portal’s current message and check payment status before trying again.",
+    answerBullets: [
+      "The official SBI ePay FAQ specifies a minimum 25-minute gap between transactions. The reported 12-minute restriction is not permission to retry earlier.",
+      "If you were charged or payment is pending, allow up to two hours for the status update and use Verify Payment / Pay e-Visa Fee before another attempt.",
+    ],
+    sectionIds: [],
+    fieldIds: [],
+    symptoms:
+      "The payment retry is locked, disabled or shows a waiting period after an attempt.",
+    explanation:
+      "The user reported an approximately 12-minute retry restriction. Official SBI ePay FAQ 11 separately specifies a 25-minute transaction gap; general instructions allow two hours for status updates.",
+    workaround:
+      "Follow the displayed wait and official gateway instructions, then verify status before retrying. Contact payment support if unresolved.",
+    evidenceStatus: "REPORTED",
+    officialUrls: [VISA_INSTRUCTIONS],
+    otherSources: [
+      "User-reported temporary payment retry restriction · 19 October 2026",
+    ],
+    lastReviewedAt: "2026-10-19",
+    caveats:
+      "The report does not establish a universal timeout or guarantee that a retry is safe when that time has elapsed.",
+  },
+  {
     id: "payment-pending",
     title: "What if I was charged but payment is still pending?",
     answer:
@@ -1114,7 +1277,8 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
 ];
 export const issues: KnownIssue[] = issueSeed.map((i) => ({
   ...i,
-  lastReviewedAt: i.lastReviewedAt ?? (i.otherSources ? CLARIFIED_AT : REVIEWED_AT),
+  lastReviewedAt:
+    i.lastReviewedAt ?? (i.otherSources ? CLARIFIED_AT : REVIEWED_AT),
   otherSources: i.otherSources ?? [],
 }));
 export const locations: LocationAlias[] = arrivalPorts.map((port) => ({

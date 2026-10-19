@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { fields } from "../../src/content/data";
+import { fields, issues } from "../../src/content/data";
 import {
   walkthroughPages,
   walkthroughPageForHash,
@@ -24,6 +24,8 @@ describe("walkthrough coverage and source boundaries", () => {
     for (const item of entries) {
       expect(item.label.trim()).not.toBe("");
       expect(item.hint.trim()).not.toBe("");
+      for (const id of item.issueIds ?? [])
+        expect(issues.some((issue) => issue.id === id)).toBe(true);
     }
   });
   it("keeps conditional prompts after their trigger and on its page", () => {

@@ -1,5 +1,23 @@
 # Source observation log
 
+## Payment and trip-preparation guidance — 19 October 2026
+
+Reviewed the public [official instructions and FAQs](https://indianvisaonline.gov.in/evisa/tvoa.html). General FAQ Q8–Q10 supports checking status and the distinction between the 30-day first-arrival period and the 1-year/5-year grant-based validity periods. The issued ETA and immigration stamp govern entry, expiry, entries and stay limits. The new-application guidance is a practical inference from those conditions, not an eligibility determination.
+
+The same page’s SBI ePay FAQ confirms PayPal as a payment channel, a payment-success reference separate from the application identifier, and a minimum 25-minute interval between transactions (Q11). General payment instructions retain the two-hour status-update allowance. These are OFFICIAL published statements, not a live payment test.
+
+The user supplied the following guidance and firsthand reports on 19 October; preserve them as REPORTED, separately from the official facts:
+
+- PayPal may require scrolling inside SBI ePay after selecting it on the portal.
+- A payment retry was temporarily blocked for approximately 12 minutes. This is not a universal or guaranteed timeout and does not override the published SBI ePay interval.
+- Phone inputs can reject dashes, parentheses and `+`. The user clarified that spaces may be accepted; do not describe phone input as digits-only or claim spaces are forbidden. Apply this hint to contact, mobile, employer and both reference phones without changing literal applicant input or inventing a country-code rule.
+- Expected arrival can be a best estimate; selecting an earlier date does not necessarily expand flexibility. The official ETA entry conditions still apply.
+- Applicants without visible identification marks can enter `NONE` or `NA`.
+- The tiny orange upload button can overlap the file selector. The official sample separately supports the distinction between choosing and uploading a file.
+- Previous passports and entry stamps are practical aids for recalling countries visited in the last ten years; they may not contain every trip.
+
+No files were uploaded, no payment attempted and no live acceptance rule tested for this update. Preserve the earlier field-capture dates and limitations. FAQ and walkthrough payment links share stable issue IDs; source metadata remains available in the exported issue records.
+
 ## Authorized synthetic portal inspection — 18 October 2026
 
 This entry supersedes older “no session entered” and sample/provisional claims for the screens actually reached. The user requested a fabricated passport walkthrough and separately authorized the CAPTCHA, then the legally worded background declaration and Continue. A synthetic draft was created. No real applicant data was used. The session reached [Upload Photograph](https://indianvisaonline.gov.in/evisa/PhotoUpload); no photo or document was uploaded, no final application submitted and no payment made. No applicant answers, temporary application IDs or session tokens are retained in the repository.

@@ -14,8 +14,24 @@ const faqIds = [
   "national-id",
   "upload-action",
   "document-requirements",
+  "phone-format",
+  "uncertain-arrival-date",
+  "previous-visa-validity",
+  "payment-reference",
+  "paypal-sbi-epay",
+  "payment-retry",
   "payment-pending",
 ];
+const reviewedToday = new Set([
+  "reference-in-india",
+  "upload-action",
+  "phone-format",
+  "uncertain-arrival-date",
+  "previous-visa-validity",
+  "payment-reference",
+  "paypal-sbi-epay",
+  "payment-retry",
+]);
 const removedCopy =
   /SPEC\.md|initial user research|not official evidence|What we know|Your next step|Keep in mind|Sources & review/i;
 
@@ -47,12 +63,19 @@ test("all FAQs show a concise answer and recorded date, inline and at their exis
         "Mangaluru / Mangalore (IXE) — MANGALORE AIRPORT.",
       ]);
     } else {
-      await expect(answer.getByRole("listitem")).toHaveCount(0);
+      const bulletCounts: Record<string, number> = {
+        "upload-action": 1,
+        "previous-visa-validity": 4,
+        "payment-retry": 2,
+      };
+      await expect(answer.getByRole("listitem")).toHaveCount(
+        bulletCounts[id] ?? 0,
+      );
     }
     const date = faq.locator(".faq-verified time");
     await expect(date).toHaveAttribute(
       "datetime",
-      id === "reference-in-india" ? "2026-10-19" : /^2026-10-1[67]$/,
+      reviewedToday.has(id) ? "2026-10-19" : /^2026-10-1[67]$/,
     );
     const dateBox = await date.boundingBox();
     const answerBox = await answer.boundingBox();
@@ -75,6 +98,19 @@ test("all FAQs show a concise answer and recorded date, inline and at their exis
   }
   await page.getByRole("link", { name: "All common problems" }).click();
   await expect(page.locator(".faq-item")).toHaveCount(faqIds.length);
+  for (const [field, issue] of [
+    ["paymentId", "payment-reference"],
+    ["payNow", "paypal-sbi-epay"],
+    ["payNow", "payment-retry"],
+    ["documentUpload", "upload-action"],
+  ]) {
+    await page.goto(`/walkthrough/#${field}`);
+    await page.locator(`#${field} a[href="/problems/${issue}/"]`).click();
+    await expect(page).toHaveURL(`/problems/${issue}/`);
+    await expect(page.locator(".faq-answer")).toHaveText(answers.get(issue)!, {
+      useInnerText: true,
+    });
+  }
 });
 
 test("FAQ search and keyboard help stay local and fit desktop and mobile", async ({
@@ -96,6 +132,17 @@ test("FAQ search and keyboard help stay local and fit desktop and mobile", async
   for (const query of ["Bangalore", "Kochi", "CCJ", "IXE"]) {
     await search.fill(query);
     await expect(page.locator("#airport-names")).toBeVisible();
+  }
+  for (const [query, id] of [
+    ["transaction ID", "payment-reference"],
+    ["PayPal", "paypal-sbi-epay"],
+    ["12 minutes", "payment-retry"],
+    ["expired", "previous-visa-validity"],
+    ["uncertain", "uncertain-arrival-date"],
+    ["phone punctuation", "phone-format"],
+  ]) {
+    await search.fill(query);
+    await expect(page.locator(`#${id}`)).toBeVisible();
   }
   await search.fill("hotel");
   await expect(page.getByRole("status")).toHaveText("1 question");
@@ -190,5 +237,7 @@ test("FAQ search and keyboard help stay local and fit desktop and mobile", async
     .getByRole("link", { name: "FAQ Who do I use as my reference in India?" })
     .click();
   await expect(page).toHaveURL("/problems/reference-in-india/");
-  await expect(page.locator(".faq-answer")).toContainText("hotel where you’re staying");
+  await expect(page.locator(".faq-answer")).toContainText(
+    "hotel where you’re staying",
+  );
 });
