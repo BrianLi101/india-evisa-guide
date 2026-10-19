@@ -1,4 +1,11 @@
+import {
+  liveFields,
+  liveChoices,
+  LIVE_SCOPE,
+  LIVE_OBSERVED_AT,
+} from "./livePortal";
 import { arrivalPorts } from "./arrivalPorts";
+import { visaPurposeLabels } from "./visaPurposes";
 
 // Read-only inspection of the public Registration DOM, 17 October 2026
 // (America/Toronto). No applicant details, gate submission or CAPTCHA.
@@ -189,12 +196,27 @@ export const nationalityLabels = [
 
 export type PortalObservation = {
   label: string;
-  control: "Dropdown" | "Text field" | "Date field" | "Checkbox";
+  displayLabel?: string;
+  control:
+    | "Dropdown"
+    | "Text field"
+    | "Date field"
+    | "Checkbox"
+    | "Radio buttons"
+    | "Read-only";
   elementId: string;
   context: string;
   choices?: readonly string[];
   maxLength?: number;
   format?: string;
+  observedAt?: string;
+  note?: string;
+  source?: string;
+  requiredMarker?: boolean;
+  requiredMarkerObservedAt?: string;
+  htmlRequired?: boolean;
+  readOnly?: boolean;
+  multiple?: boolean;
 };
 const registration =
   "Public registration page before completing the passport/name gate. Nationality-dependent changes and server validation have not been tested.";
@@ -277,6 +299,16 @@ export const portalObservations: Record<string, PortalObservation> = {
     format: "DD/MM/YYYY",
     context: registration,
   },
+  purpose: {
+    label: "Visiting India for",
+    control: "Dropdown",
+    elementId: "visaPurposeDropdown",
+    choices: visaPurposeLabels,
+    observedAt: "2026-10-18",
+    context:
+      "Public registration DOM before the passport/name gate. The purpose row is initially hidden. All 67 non-placeholder options were read; 62 distinct labels remain after collapsing HTML whitespace and identical duplicates. The synthetic U.S. ordinary-passport session then displayed 55 choices; the exact nationality-to-purpose filter was not fully cataloged. A 30-day tourist sightseeing choice was selected successfully.",
+    note: "Available purposes depend on nationality. This list preserves the public form’s unfiltered labels.",
+  },
   captcha: {
     label: "Please enter above text",
     control: "Text field",
@@ -292,3 +324,68 @@ export const portalObservations: Record<string, PortalObservation> = {
     context: registration,
   },
 };
+
+// Later-screen limits come from their own controls, not from registration gates.
+for (const field of liveFields) {
+  portalObservations[field.id] = {
+    label: field.label,
+    control:
+      field.control === "select"
+        ? "Dropdown"
+        : field.control === "radio"
+          ? "Radio buttons"
+          : field.control === "checkbox"
+            ? "Checkbox"
+            : field.control === "readonly"
+              ? "Read-only"
+              : field.control === "date"
+                ? "Date field"
+                : "Text field",
+    elementId: field.elementId,
+    context: `${LIVE_SCOPE} ${field.headings.join(" → ")}${field.when ? `. ${field.when}` : ""}`,
+    choices: liveChoices(field),
+    maxLength: field.maxLength,
+    format: field.control === "date" ? "DD/MM/YYYY" : undefined,
+    observedAt: LIVE_OBSERVED_AT,
+    source: field.source,
+    requiredMarker: field.requiredMarker,
+    htmlRequired: field.htmlRequired,
+    readOnly: field.control === "readonly",
+    multiple: field.multiple,
+  };
+}
+portalObservations.visaService = {
+  label: "Visa Service",
+  control: "Read-only",
+  elementId: "",
+  context: `${LIVE_SCOPE} Derived from Visiting India for; not a separate selector.`,
+  observedAt: LIVE_OBSERVED_AT,
+  source: OBSERVED_SOURCE,
+  readOnly: true,
+};
+portalObservations.arrivalDate = {
+  ...portalObservations.arrivalDate,
+  observedAt: LIVE_OBSERVED_AT,
+  context: `${LIVE_SCOPE} Read-only calendar input. Earliest selectable date was 22 October on 18 October 2026; year menu showed 2026 and 2027. Full maximum window not tested.`,
+  readOnly: true,
+  requiredMarker: true,
+  htmlRequired: false,
+};
+
+portalObservations.referenceHomeName.displayLabel =
+  "Reference Name in your home country";
+
+for (const id of [
+  "nationality",
+  "passportType",
+  "arrivalPort",
+  "dob",
+  "email",
+  "emailConfirm",
+  "purpose",
+  "captcha",
+]) {
+  portalObservations[id].requiredMarker = true;
+  portalObservations[id].requiredMarkerObservedAt = LIVE_OBSERVED_AT;
+  portalObservations[id].htmlRequired = false;
+}

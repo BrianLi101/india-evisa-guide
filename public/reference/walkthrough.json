@@ -1,0 +1,1412 @@
+{
+  "version": 2,
+  "reviewedAt": "2026-10-18",
+  "records": [
+    {
+      "id": "registration",
+      "title": "Registration",
+      "portalTitle": "e-Visa Application",
+      "introduction": "Start with your passport and travel basics. If a passport/name gate appears, complete it on the official portal first.",
+      "source": "https://indianvisaonline.gov.in/evisa/Registration",
+      "evidenceStatus": "LIVE_VERIFIED",
+      "groups": [
+        {
+          "title": "Passport / name gate",
+          "note": "Before registration, if shown. Observed separately from the main form.",
+          "fields": [
+            {
+              "id": "gatePassport",
+              "fieldId": "gatePassport",
+              "label": "Passport No",
+              "hint": "Use the passport you’ll travel with.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "gateNationality",
+              "fieldId": "gateNationality",
+              "label": "Select Country/Region",
+              "hint": "Choose the country/region of your passport.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "gateName",
+              "fieldId": "gateName",
+              "label": "Name as in passport",
+              "hint": "Match the full name in your passport.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "Application registration",
+          "note": "Order observed on 18 October 2026 after selecting U.S. nationality and an ordinary passport. Purpose and Visa Service are derived read-only summaries.",
+          "fields": [
+            {
+              "id": "nationality",
+              "fieldId": "nationality",
+              "label": "Nationality/Region",
+              "hint": "Use the nationality of the passport you’ll travel on.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "passportType",
+              "fieldId": "passportType",
+              "label": "Passport Type",
+              "hint": "Check the passport type printed in your travel document.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "arrivalPort",
+              "fieldId": "arrivalPort",
+              "label": "Port Of Arrival",
+              "hint": "Search by city, airport name or code. Choose the matching portal entry.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "dob",
+              "fieldId": "dob",
+              "label": "Date of Birth",
+              "hint": "Day first, then month and year.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "email",
+              "fieldId": "email",
+              "label": "Email ID",
+              "hint": "Use an inbox you can access for visa updates.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "emailConfirm",
+              "fieldId": "emailConfirm",
+              "label": "Re-enter Email ID",
+              "hint": "Repeat your email address to catch typos before visa updates are sent.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "purpose",
+              "fieldId": "purpose",
+              "label": "Visiting India for",
+              "hint": "Search your reason for visiting, then match the service and duration on your form.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "purposeSummary",
+              "label": "Purpose",
+              "hint": "The portal fills this from Visiting India for.",
+              "help": false,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "visaService",
+              "fieldId": "visaService",
+              "label": "Visa Service",
+              "hint": "Visa Service is filled automatically from your Visiting India for choice.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "arrivalDate",
+              "fieldId": "arrivalDate",
+              "label": "Expected Date of Arrival",
+              "hint": "Enter the date you expect to arrive in India, in DD/MM/YYYY format.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        }
+      ],
+      "nextAction": "On the official portal, review the details and use Continue. Complete the CAPTCHA there."
+    },
+    {
+      "id": "applicant",
+      "title": "Personal & passport",
+      "portalTitle": "Applicant Details Form",
+      "introduction": "",
+      "source": "https://indianvisaonline.gov.in/evisa/BasicDetails",
+      "evidenceStatus": "LIVE_VERIFIED",
+      "groups": [
+        {
+          "title": "Applicant Details",
+          "fields": [
+            {
+              "id": "surname",
+              "fieldId": "surname",
+              "label": "Surname (exactly as in your Passport)",
+              "hint": "Your family name, exactly as printed in your passport.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "givenNames",
+              "fieldId": "givenNames",
+              "label": "Given Name/s (exactly as in your Passport)",
+              "hint": "Include all first and middle names in passport order.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "nameChanged",
+              "fieldId": "nameChanged",
+              "label": "Have you ever changed your name? If yes, click the box and give details.",
+              "hint": "Include a legal name change, such as a surname changed after marriage.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "previousName",
+              "fieldId": "previousName",
+              "label": "Previous Surname",
+              "hint": "Use your former names if the form asks for them.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If name change is checked"
+            },
+            {
+              "id": "previousGivenNames",
+              "fieldId": "previousGivenNames",
+              "label": "Previous Name",
+              "hint": "Previous given name",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If name change is checked"
+            },
+            {
+              "id": "gender",
+              "fieldId": "gender",
+              "label": "Gender",
+              "hint": "Choose the option that matches the gender recorded in your passport.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "applicantDob",
+              "fieldId": "applicantDob",
+              "label": "Date of Birth",
+              "hint": "Date of Birth as in Passport in DD/MM/YYYY format",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "birthCity",
+              "fieldId": "birthCity",
+              "label": "Town/City of birth",
+              "hint": "Match the place of birth recorded in your passport.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "birthCountry",
+              "fieldId": "birthCountry",
+              "label": "Country/Region of birth",
+              "hint": "Choose your country of birth.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "nationalId",
+              "fieldId": "nationalId",
+              "label": "Citizenship/National Id No.",
+              "hint": "U.S. applicant without a national ID? Enter NA.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "religion",
+              "fieldId": "religion",
+              "label": "Religion",
+              "hint": "Agnostic, atheist or non-religious? Choose OTHERS and fill in the explanation.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "religionOther",
+              "fieldId": "religionOther",
+              "label": "If Others, Please specify",
+              "hint": "Enter your explanation, or NA if not applicable.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If Religion is OTHERS"
+            },
+            {
+              "id": "identificationMarks",
+              "fieldId": "identificationMarks",
+              "label": "Visible identification marks",
+              "hint": "Describe a visible identifying mark, such as a scar or mole.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "education",
+              "fieldId": "education",
+              "label": "Educational Qualification",
+              "hint": "Choose the option that matches your highest qualification.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "acquiredQualification",
+              "fieldId": "acquiredQualification",
+              "label": "Qualification acquired from College/University",
+              "hint": "Complete Qualification acquired from College/University as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "applicantNationality",
+              "fieldId": "applicantNationality",
+              "label": "Nationality/Region",
+              "hint": "Complete Nationality/Region as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "nationalityAcquired",
+              "fieldId": "nationalityAcquired",
+              "label": "Did you acquire Nationality by birth or by naturalization?",
+              "hint": "Choose how you acquired your current citizenship.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "previousNationality",
+              "fieldId": "previousNationality",
+              "label": "Prev. Nationality/Region",
+              "hint": "If naturalized, give your previous nationality when requested.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If nationality acquired by Naturalization"
+            },
+            {
+              "id": "residentTwoYears",
+              "fieldId": "residentTwoYears",
+              "label": "Have you lived for at least two years in the country where you are applying visa?",
+              "hint": "Answer for your country of application.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "Passport Details",
+          "fields": [
+            {
+              "id": "passportNumber",
+              "fieldId": "passportNumber",
+              "label": "Passport Number",
+              "hint": "Use the number on the passport you’ll travel with.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "passportPlace",
+              "fieldId": "passportPlace",
+              "label": "Place of Issue",
+              "hint": "Use the place or issuing country shown in your passport.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "passportIssued",
+              "fieldId": "passportIssued",
+              "label": "Date of Issue",
+              "hint": "Use the passport issue date.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "passportExpiry",
+              "fieldId": "passportExpiry",
+              "label": "Date of Expiry",
+              "hint": "Use the expiry date printed in your passport.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "otherPassport",
+              "fieldId": "otherPassport",
+              "label": "Any other valid Passport/Identity Certificate(IC) held,",
+              "hint": "If yes, prepare details of the other valid document.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "otherPassportCountry",
+              "fieldId": "otherPassportCountry",
+              "label": "Country of Issue",
+              "hint": "Use the details on the other valid document.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If another valid Passport/Identity Certificate is held"
+            },
+            {
+              "id": "otherPassportNumber",
+              "fieldId": "otherPassportNumber",
+              "label": "Passport/IC No.",
+              "hint": "Use the details on the other valid document.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If another valid Passport/Identity Certificate is held"
+            },
+            {
+              "id": "otherPassportIssued",
+              "fieldId": "otherPassportIssued",
+              "label": "Date of Issue",
+              "hint": "Use the issue date of the other document.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If another valid Passport/Identity Certificate is held"
+            },
+            {
+              "id": "otherPassportPlace",
+              "fieldId": "otherPassportPlace",
+              "label": "Place of Issue",
+              "hint": "Use the details on the other valid document.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If another valid Passport/Identity Certificate is held"
+            },
+            {
+              "id": "otherPassportNationality",
+              "fieldId": "otherPassportNationality",
+              "label": "Nationality mentioned therein",
+              "hint": "Use the details on the other valid document.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If another valid Passport/Identity Certificate is held"
+            }
+          ]
+        }
+      ],
+      "nextAction": "Continue on the official portal after checking your answers."
+    },
+    {
+      "id": "address-family",
+      "title": "Address & family",
+      "portalTitle": "Applicant Details Form",
+      "introduction": "",
+      "source": "https://indianvisaonline.gov.in/evisa/FamilyDetails",
+      "evidenceStatus": "LIVE_VERIFIED",
+      "groups": [
+        {
+          "title": "Present Address",
+          "fields": [
+            {
+              "id": "addressStreet",
+              "fieldId": "addressStreet",
+              "label": "House No./Street",
+              "hint": "Keep each address line within 35 characters.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "addressCity",
+              "fieldId": "addressCity",
+              "label": "Village/Town/City",
+              "hint": "Use your city or town, not your neighborhood.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "addressCountry",
+              "fieldId": "addressCountry",
+              "label": "Country",
+              "hint": "Country of your current residence.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "addressRegion",
+              "fieldId": "addressRegion",
+              "label": "State/Province/District",
+              "hint": "Use the state, province or district for your address.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "addressPostcode",
+              "fieldId": "addressPostcode",
+              "label": "Postal/Zip Code",
+              "hint": "Keep leading zeros and any required letters or spaces.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "phone",
+              "fieldId": "phone",
+              "label": "Phone No.",
+              "hint": "Enter your contact number. Complete Mobile No. as well if the portal requires it.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "mobile",
+              "fieldId": "mobile",
+              "label": "Mobile No.",
+              "hint": "Enter your mobile number; the tested form required it even with Phone No. filled.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "addressEmail",
+              "fieldId": "addressEmail",
+              "label": "Email Address",
+              "hint": "Complete Email Address as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "sameAddress",
+              "fieldId": "sameAddress",
+              "label": "Click here for same address",
+              "hint": "Use this checkbox on the official form only if your permanent and present addresses are the same.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "Permanent Address",
+          "fields": [
+            {
+              "id": "permanentStreet",
+              "fieldId": "permanentStreet",
+              "label": "House No./Street",
+              "hint": "Enter your permanent address, including its postal / ZIP code as requested.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "permanentCity",
+              "fieldId": "permanentCity",
+              "label": "Village/Town/City",
+              "hint": "Use the city or town in your permanent address.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "permanentRegion",
+              "fieldId": "permanentRegion",
+              "label": "State/Province/District",
+              "hint": "Use the state, province or district for your permanent address.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "Father's Details",
+          "fields": [
+            {
+              "id": "fatherName",
+              "fieldId": "fatherName",
+              "label": "Name",
+              "hint": "Name as recorded in your family documents.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "fatherNationality",
+              "fieldId": "fatherNationality",
+              "label": "Nationality/Region",
+              "hint": "Current nationality.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "fatherPreviousNationality",
+              "fieldId": "fatherPreviousNationality",
+              "label": "Previous Nationality/Region",
+              "hint": "Previous nationality, if applicable.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "fatherBirthplace",
+              "fieldId": "fatherBirthplace",
+              "label": "Place of birth",
+              "hint": "Town or city of birth.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "fatherBirthCountry",
+              "fieldId": "fatherBirthCountry",
+              "label": "Country/Region of birth",
+              "hint": "Country of birth.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "Mother's Details",
+          "fields": [
+            {
+              "id": "motherName",
+              "fieldId": "motherName",
+              "label": "Name",
+              "hint": "Name as recorded in your family documents.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "motherNationality",
+              "fieldId": "motherNationality",
+              "label": "Nationality/Region",
+              "hint": "Current nationality.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "motherPreviousNationality",
+              "fieldId": "motherPreviousNationality",
+              "label": "Previous Nationality/Region",
+              "hint": "Previous nationality, if applicable.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "motherBirthplace",
+              "fieldId": "motherBirthplace",
+              "label": "Place of birth",
+              "hint": "Town or city of birth.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "motherBirthCountry",
+              "fieldId": "motherBirthCountry",
+              "label": "Country/Region of birth",
+              "hint": "Country of birth.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "Family Details",
+          "fields": [
+            {
+              "id": "maritalStatus",
+              "fieldId": "maritalStatus",
+              "label": "Applicant's Marital Status",
+              "hint": "Use your current status. Married applicants may need spouse details.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "Spouse's Details",
+          "fields": [
+            {
+              "id": "spouseName",
+              "fieldId": "spouseName",
+              "label": "Name",
+              "hint": "Use your spouse’s full name.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If marital status is MARRIED"
+            },
+            {
+              "id": "spouseNationality",
+              "fieldId": "spouseNationality",
+              "label": "Nationality/Region",
+              "hint": "Use your spouse’s citizenship.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If marital status is MARRIED"
+            },
+            {
+              "id": "spousePreviousNationality",
+              "fieldId": "spousePreviousNationality",
+              "label": "Previous Nationality/Region",
+              "hint": "Complete Previous Nationality/Region as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If marital status is MARRIED"
+            },
+            {
+              "id": "spouseBirthplace",
+              "fieldId": "spouseBirthplace",
+              "label": "Place of birth",
+              "hint": "Use your spouse’s place of birth.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If marital status is MARRIED"
+            },
+            {
+              "id": "spouseBirthCountry",
+              "fieldId": "spouseBirthCountry",
+              "label": "Country/Region of birth",
+              "hint": "Use your spouse’s country of birth.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If marital status is MARRIED"
+            }
+          ]
+        },
+        {
+          "title": "Family Details",
+          "fields": [
+            {
+              "id": "pakistanFamily",
+              "fieldId": "pakistanFamily",
+              "label": "Were your Parents/Grandparents (paternal/maternal) Pakistan Nationals or Belong to Pakistan held area.",
+              "hint": "Read the full live question and answer accurately.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "pakistanDetails",
+              "fieldId": "pakistanDetails",
+              "label": "If Yes, give details",
+              "hint": "Provide the details requested by the portal.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If Pakistan family question is Yes"
+            }
+          ]
+        },
+        {
+          "title": "Profession / Occupation Details of Applicant",
+          "fields": [
+            {
+              "id": "occupation",
+              "fieldId": "occupation",
+              "label": "Present Occupation",
+              "hint": "Choose your current occupation from the official form.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "occupationOther",
+              "fieldId": "occupationOther",
+              "label": "Other occupation",
+              "hint": "Complete Other occupation as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If Present Occupation is OTHERS"
+            },
+            {
+              "id": "occupationOwner",
+              "fieldId": "occupationOwner",
+              "label": "Specify below occupation details of",
+              "hint": "In case of HouseWife/Student/Minor Please specify Spouse/Parent's Occupation details.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "Shown for STUDENT; help also mentions HouseWife/Student/Minor"
+            },
+            {
+              "id": "employer",
+              "fieldId": "employer",
+              "label": "Employer Name/business",
+              "hint": "Keep the employer or business name accurate.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "designation",
+              "fieldId": "designation",
+              "label": "Designation",
+              "hint": "Designation means your job title, such as Software Engineer, Teacher or Manager.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "employerAddress",
+              "fieldId": "employerAddress",
+              "label": "Address",
+              "hint": "Use your employer’s full address.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "employerPhone",
+              "fieldId": "employerPhone",
+              "label": "Phone",
+              "hint": "Your employer’s phone number. This field is optional.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "pastOccupation",
+              "fieldId": "pastOccupation",
+              "label": "Past Occupation, if any",
+              "hint": "Complete Past Occupation, if any as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "pastOccupationOther",
+              "fieldId": "pastOccupationOther",
+              "label": "Other past occupation",
+              "hint": "Complete Other past occupation as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If Past Occupation is OTHERS"
+            },
+            {
+              "id": "military",
+              "fieldId": "military",
+              "label": "Are/were you in a Military/Semi-Military/Police/Security. Organization?",
+              "hint": "Read the full question; include past service if asked.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "militaryDetails",
+              "fieldId": "militaryDetails",
+              "label": "Organization",
+              "hint": "Give the service details requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If military / police / security service is Yes"
+            },
+            {
+              "id": "militaryDesignation",
+              "fieldId": "militaryDesignation",
+              "label": "Designation",
+              "hint": "Complete Designation as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If military / police / security service is Yes"
+            },
+            {
+              "id": "militaryRank",
+              "fieldId": "militaryRank",
+              "label": "Rank",
+              "hint": "Complete Rank as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If military / police / security service is Yes"
+            },
+            {
+              "id": "militaryPosting",
+              "fieldId": "militaryPosting",
+              "label": "Place of Posting",
+              "hint": "Complete Place of Posting as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If military / police / security service is Yes"
+            }
+          ]
+        }
+      ],
+      "nextAction": "Continue on the official portal after checking your answers."
+    },
+    {
+      "id": "visa",
+      "title": "Visit & references",
+      "portalTitle": "Visa Details Form",
+      "introduction": "",
+      "source": "https://indianvisaonline.gov.in/evisa/VisaDetails",
+      "evidenceStatus": "LIVE_VERIFIED",
+      "groups": [
+        {
+          "title": "Details of Visa Sought",
+          "fields": [
+            {
+              "id": "places",
+              "fieldId": "places",
+              "label": "Places to be visited",
+              "hint": "List your planned places. Check official guidance before visiting restricted areas.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "placesLine2",
+              "fieldId": "placesLine2",
+              "label": "Places to be visited line 2",
+              "hint": "Complete Places to be visited line 2 as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "tourOperator",
+              "fieldId": "tourOperator",
+              "label": "Have you booked any room in Hotel/Resort etc. through any Tour Operator?",
+              "hint": "Answer based on your actual booking.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "operatorDetails",
+              "fieldId": "operatorDetails",
+              "label": "Name of the tour operator",
+              "hint": "Use the tour operator details from your booking.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If booked through a tour operator"
+            },
+            {
+              "id": "operatorAddress",
+              "fieldId": "operatorAddress",
+              "label": "Address of the tour operator",
+              "hint": "Complete Address of the tour operator as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If booked through a tour operator"
+            },
+            {
+              "id": "operatorHotel",
+              "fieldId": "operatorHotel",
+              "label": "Name of Hotel/Resort etc",
+              "hint": "Complete Name of Hotel/Resort etc as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If booked through a tour operator"
+            },
+            {
+              "id": "operatorHotelCity",
+              "fieldId": "operatorHotelCity",
+              "label": "Place/City of Hotel/Resort etc",
+              "hint": "Complete Place/City of Hotel/Resort etc as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If booked through a tour operator"
+            },
+            {
+              "id": "visaArrival",
+              "fieldId": "visaArrival",
+              "label": "Port of Arrival in India",
+              "hint": "Search by airport code, airport name or city, then choose the label used on your form.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "exitPort",
+              "fieldId": "exitPort",
+              "label": "Expected Port of Exit from India",
+              "hint": "Enter the airport or port you plan to leave India from.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "Previous Visa/Currently valid Visa Details",
+          "fields": [
+            {
+              "id": "visitedIndia",
+              "fieldId": "visitedIndia",
+              "label": "Have you ever visited India before?",
+              "hint": "If yes, gather earlier visa and visit records.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "previousAddress",
+              "fieldId": "previousAddress",
+              "label": "Address",
+              "hint": "Enter the address of your last stay in India across the lines shown.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If you have visited India before"
+            },
+            {
+              "id": "previousAddressLine2",
+              "fieldId": "previousAddressLine2",
+              "label": "Address line 2",
+              "hint": "Complete Address line 2 as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If you have visited India before"
+            },
+            {
+              "id": "previousAddressLine3",
+              "fieldId": "previousAddressLine3",
+              "label": "Address line 3",
+              "hint": "Complete Address line 3 as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If you have visited India before"
+            },
+            {
+              "id": "previousCities",
+              "fieldId": "previousCities",
+              "label": "Cities previously visited in India",
+              "hint": "Separate the cities you previously visited with commas.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If you have visited India before"
+            },
+            {
+              "id": "previousVisaNumber",
+              "fieldId": "previousVisaNumber",
+              "label": "Last Indian Visa No/Currently valid Indian Visa No.",
+              "hint": "For a previous e-Visa, enter the ETA number as your previous visa number.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If you have visited India before"
+            },
+            {
+              "id": "previousVisaType",
+              "fieldId": "previousVisaType",
+              "label": "Type of Visa",
+              "hint": "Select the appropriate type on the current portal.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If you have visited India before"
+            },
+            {
+              "id": "previousVisaPlace",
+              "fieldId": "previousVisaPlace",
+              "label": "Place of Issue",
+              "hint": "For a previous Indian e-Visa, you can enter New Delhi.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If you have visited India before"
+            },
+            {
+              "id": "previousVisaDate",
+              "fieldId": "previousVisaDate",
+              "label": "Date of Issue",
+              "hint": "Use the issue date on the earlier visa.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If you have visited India before"
+            },
+            {
+              "id": "refusedIndia",
+              "fieldId": "refusedIndia",
+              "label": "Has permission to visit or to extend stay in India previously been refused?",
+              "hint": "Answer truthfully based on your history.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "refusalDetails",
+              "fieldId": "refusalDetails",
+              "label": "If so, when and by whom (Mention Control No. and date also)",
+              "hint": "Include the control number and date if requested.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If permission was refused"
+            }
+          ]
+        },
+        {
+          "title": "Other Information",
+          "fields": [
+            {
+              "id": "countriesVisited",
+              "fieldId": "countriesVisited",
+              "label": "Countries Visited in Last 10 years",
+              "hint": "List the countries you visited in the last 10 years.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        },
+        {
+          "title": "SAARC Country Visit Details",
+          "fields": [
+            {
+              "id": "saarcVisited",
+              "fieldId": "saarcVisited",
+              "label": "Have you visited SAARC countries (except your own country) during last 3 years?",
+              "hint": "Answer for visits in the last 3 years, excluding your own country.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "saarcDetails",
+              "fieldId": "saarcDetails",
+              "label": "Name of SAARC country",
+              "hint": "Prepare the country, year and number of visits for each relevant SAARC country.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If SAARC visits is Yes"
+            },
+            {
+              "id": "saarcYear",
+              "fieldId": "saarcYear",
+              "label": "Year",
+              "hint": "Complete Year as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If SAARC visits is Yes"
+            },
+            {
+              "id": "saarcVisitCount",
+              "fieldId": "saarcVisitCount",
+              "label": "No. of visits",
+              "hint": "Complete No. of visits as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If SAARC visits is Yes"
+            }
+          ]
+        },
+        {
+          "title": "Reference",
+          "fields": [
+            {
+              "id": "referenceIndiaName",
+              "fieldId": "referenceIndiaName",
+              "label": "Reference Name in India",
+              "hint": "Prepare the reference details requested for your stay.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceIndiaAddress",
+              "fieldId": "referenceIndiaAddress",
+              "label": "Address",
+              "hint": "Enter your Indian reference’s full address, including the PIN code.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceIndiaAddressLine2",
+              "fieldId": "referenceIndiaAddressLine2",
+              "label": "Address line 2",
+              "hint": "Complete Address line 2 as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceIndiaState",
+              "fieldId": "referenceIndiaState",
+              "label": "State",
+              "hint": "Choose the state in your Indian reference’s address.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceIndiaDistrict",
+              "fieldId": "referenceIndiaDistrict",
+              "label": "District",
+              "hint": "Choose the district after selecting the state on the official form.",
+              "help": true,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceIndiaPhone",
+              "fieldId": "referenceIndiaPhone",
+              "label": "Phone No/Mobile No",
+              "hint": "Prepare the reference details requested for your stay.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceHomeName",
+              "fieldId": "referenceHomeName",
+              "label": "Reference Name in your home country",
+              "hint": "The portal inserts your country in this label. Prepare a contact there.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceHomeAddress",
+              "fieldId": "referenceHomeAddress",
+              "label": "Address",
+              "hint": "Prepare contact details for a reference in your home country.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceHomeAddressLine2",
+              "fieldId": "referenceHomeAddressLine2",
+              "label": "Address line 2",
+              "hint": "Complete Address line 2 as requested on the official form.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "referenceHomePhone",
+              "fieldId": "referenceHomePhone",
+              "label": "Phone No/Mobile No",
+              "hint": "Prepare contact details for a reference in your home country.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        }
+      ],
+      "nextAction": "Continue on the official portal after checking your answers."
+    },
+    {
+      "id": "background",
+      "title": "Additional questions",
+      "portalTitle": "Additional Question Details",
+      "introduction": "",
+      "source": "https://indianvisaonline.gov.in/evisa/AdditionalQuestions",
+      "evidenceStatus": "LIVE_VERIFIED",
+      "groups": [
+        {
+          "title": "Please provide below given details. Please give details if marked YES.",
+          "fields": [
+            {
+              "id": "arrested",
+              "fieldId": "arrested",
+              "label": "Have you ever been arrested/ prosecuted/ convicted by Court of Law of any country?",
+              "hint": "Answer the full question. If you select Yes, complete the details below it.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "arrestedDetails",
+              "fieldId": "arrestedDetails",
+              "label": "Please give details",
+              "hint": "Give accurate details if you answered Yes.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If question 1 is Yes"
+            },
+            {
+              "id": "deported",
+              "fieldId": "deported",
+              "label": "Have you ever been refused entry / deported by any country including India?",
+              "hint": "Answer the full question. If you select Yes, complete the details below it.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "deportedDetails",
+              "fieldId": "deportedDetails",
+              "label": "Please give details",
+              "hint": "Give accurate details if you answered Yes.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If question 2 is Yes"
+            },
+            {
+              "id": "trafficking",
+              "fieldId": "trafficking",
+              "label": "Have you ever been engaged in Human trafficking/ Drug trafficking/ Child abuse/ Crime against women/ Economic offense / Financial fraud?",
+              "hint": "Answer the full question. If you select Yes, complete the details below it.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "traffickingDetails",
+              "fieldId": "traffickingDetails",
+              "label": "Please give details",
+              "hint": "Give accurate details if you answered Yes.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If question 3 is Yes"
+            },
+            {
+              "id": "violence",
+              "fieldId": "violence",
+              "label": "Have you ever been engaged in Cyber crime/ Terrorist activities/ Sabotage/ Espionage/ Genocide/ Political killing/ other act of violence?",
+              "hint": "Answer the full question. If you select Yes, complete the details below it.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "violenceDetails",
+              "fieldId": "violenceDetails",
+              "label": "Please give details",
+              "hint": "Give accurate details if you answered Yes.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If question 4 is Yes"
+            },
+            {
+              "id": "terrorViews",
+              "fieldId": "terrorViews",
+              "label": "Have you ever by any means or medium, expressed views that justify or glorify terrorist violence or that may encourage others to terrorist acts or other serious criminal acts?",
+              "hint": "Answer the full question. If you select Yes, complete the details below it.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "terrorViewsDetails",
+              "fieldId": "terrorViewsDetails",
+              "label": "Please give details",
+              "hint": "Give accurate details if you answered Yes.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If question 5 is Yes"
+            },
+            {
+              "id": "asylum",
+              "fieldId": "asylum",
+              "label": "Have you sought asylum (political or otherwise)in any country?",
+              "hint": "Answer the full question. If you select Yes, complete the details below it.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            },
+            {
+              "id": "asylumDetails",
+              "fieldId": "asylumDetails",
+              "label": "Please give details",
+              "hint": "Give accurate details if you answered Yes.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED",
+              "when": "If question 6 is Yes"
+            },
+            {
+              "id": "backgroundDeclaration",
+              "fieldId": "backgroundDeclaration",
+              "label": "Declaration",
+              "hint": "Answer the full question. If you select Yes, complete the details below it.",
+              "help": false,
+              "evidenceStatus": "LIVE_VERIFIED"
+            }
+          ]
+        }
+      ],
+      "nextAction": "Continue on the official portal after checking your answers."
+    },
+    {
+      "id": "photo",
+      "title": "Upload photograph",
+      "portalTitle": "Upload Photograph",
+      "introduction": "Prepare your photo locally, then choose and upload the finished JPEG on the official portal.",
+      "source": "https://indianvisaonline.gov.in/evisa/PhotoUpload",
+      "evidenceStatus": "LIVE_VERIFIED",
+      "groups": [
+        {
+          "title": "Photograph",
+          "fields": [
+            {
+              "id": "photoFile",
+              "label": "Choose the Photo To Upload",
+              "hint": "Choose a clear, front-facing JPEG, 10 KB–1 MB and at least 350 × 350 pixels, with a white or light background.",
+              "help": true,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "photoUpload",
+              "label": "Upload Photo",
+              "hint": "Choosing a file is only the first step. Use the separate Upload Photo action shown on the official page and check the result.",
+              "help": true,
+              "evidenceStatus": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "nextAction": "Follow the official photo preview and any crop/confirmation steps it displays. Continue after the portal accepts the upload.",
+      "tool": {
+        "href": "/tools/photo-jpeg/",
+        "label": "Prepare photo locally"
+      }
+    },
+    {
+      "id": "documents",
+      "title": "Upload passport",
+      "portalTitle": "Document Upload",
+      "introduction": "Use the biodata page of the same passport entered in Passport Details. Check the document is legible before uploading it on the official portal.",
+      "source": "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf#page=6",
+      "evidenceStatus": "OFFICIAL",
+      "groups": [
+        {
+          "title": "Document description",
+          "fields": [
+            {
+              "id": "documentFile",
+              "label": "Copy of Passport page containing personal particulars",
+              "hint": "Choose your passport PDF on the official page. Published guidance specifies 10 KB–300 KB.",
+              "help": true,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "documentUpload",
+              "label": "Upload Document",
+              "hint": "Use the separate upload action after choosing the file.",
+              "help": true,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "documentStatus",
+              "label": "Status",
+              "hint": "Check the upload status; do not continue while it still shows Not Uploaded.",
+              "help": true,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "documentDeclaration",
+              "label": "I have verified that all the documents are uploaded as per the requirement.",
+              "hint": "Check the uploaded file and all document requirements before selecting this confirmation on the official page.",
+              "help": false,
+              "evidenceStatus": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "nextAction": "Use Confirm on the official page once the upload and document checks are complete.",
+      "tool": {
+        "href": "/tools/passport-pdf/",
+        "label": "Prepare passport PDF locally"
+      }
+    },
+    {
+      "id": "payment",
+      "title": "Payment",
+      "portalTitle": "Online VISA Fee Payment",
+      "introduction": "Finish payment only through the official portal. The companion never collects payment details or submits your application.",
+      "source": "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf#page=8",
+      "evidenceStatus": "OFFICIAL",
+      "groups": [
+        {
+          "title": "Official payment page",
+          "fields": [
+            {
+              "id": "paymentApplicant",
+              "label": "Applicant Name",
+              "hint": "Check the name displayed on the official page.",
+              "help": false,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "paymentId",
+              "label": "Application Id",
+              "hint": "Keep the application ID from the portal for status checks.",
+              "help": true,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "generateApplication",
+              "label": "Generate Application Form",
+              "hint": "Use the official page’s download action if you want a copy of the application.",
+              "help": false,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "paymentDisclaimer",
+              "label": "Disclaimer",
+              "hint": "Read the complete current disclaimer on the portal.",
+              "help": false,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "paymentUndertaking",
+              "label": "Undertaking",
+              "hint": "Read the full undertaking before selecting Yes or No on the official page.",
+              "help": false,
+              "evidenceStatus": "OFFICIAL"
+            },
+            {
+              "id": "payNow",
+              "label": "Pay Now / Pay Later",
+              "hint": "Follow the current official payment instructions and check payment status before retrying a payment.",
+              "help": true,
+              "evidenceStatus": "OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "nextAction": "Completing this guide does not mean your visa is approved. Check your application status on the official portal and keep your ETA when approved.",
+      "tool": {
+        "href": "/after-approval/",
+        "label": "After approval: prepare your ETA"
+      }
+    }
+  ]
+}

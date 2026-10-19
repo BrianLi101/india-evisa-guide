@@ -36,6 +36,7 @@ export type VisaField = {
 export type KnownIssue = {
   id: string;
   title: string;
+  answer: string;
   sectionIds: string[];
   fieldIds: string[];
   symptoms: string;

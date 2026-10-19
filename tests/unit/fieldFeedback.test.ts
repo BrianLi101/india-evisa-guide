@@ -8,35 +8,32 @@ import {
 const field = (id: string) => fields.find((item) => item.id === id)!;
 
 describe("single-field text feedback", () => {
-  it("scopes observed limits to the gate rather than all passport fields", () => {
+  it("uses separately observed gate and passport limits without truncation", () => {
     expect(textLimit(field("gatePassport"))?.max).toBe(14);
-    expect(textFeedback(field("gatePassport"), "A".repeat(14)).errors).toEqual(
+    expect(textLimit(field("passportNumber"))?.max).toBe(14);
+    expect(textLimit(field("passportPlace"))?.max).toBe(20);
+    for (const id of ["gatePassport", "passportNumber"]) {
+      expect(textFeedback(field(id), "A".repeat(14)).errors).toEqual([]);
+      expect(textFeedback(field(id), "A".repeat(15)).errors).toEqual([
+        "1 character over the 14-character limit.",
+      ]);
+    }
+    const original = "A".repeat(21);
+    expect(textFeedback(field("passportPlace"), original).errors).toHaveLength(
+      1,
+    );
+    expect(original).toHaveLength(21);
+  });
+  it("uses the live single-line address limits rather than the old combined sample", () => {
+    expect(textFeedback(field("addressStreet"), "A".repeat(35)).errors).toEqual(
       [],
     );
-    expect(textFeedback(field("gatePassport"), "A".repeat(15)).errors).toEqual([
-      "1 character over the 14-character limit.",
-    ]);
-    expect(textLimit(field("passportNumber"))).toBeUndefined();
-    expect(
-      textFeedback(field("passportNumber"), "A".repeat(15)).errors,
-    ).toEqual([]);
-  });
-  it("warns per address line based on the sample without rejecting a multi-line address", () => {
-    expect(
-      textFeedback(
-        field("addressStreet"),
-        `${"A".repeat(35)}\n${"B".repeat(35)}`,
-      ).warnings,
-    ).toEqual([]);
-    const result = textFeedback(
-      field("addressStreet"),
-      `Short\n${"B".repeat(36)}`,
+    expect(textFeedback(field("addressStreet"), "A".repeat(36)).errors).toEqual(
+      ["1 character over the 35-character limit."],
     );
-    expect(result.errors).toEqual([]);
-    expect(result.warnings).toEqual([
-      "Line 2 is over 35 characters. Split the address across lines without omitting details.",
-    ]);
-    expect(textLimit(field("employerAddress"))).toBeUndefined();
+    expect(textLimit(field("employerAddress"))?.max).toBe(50);
+    expect(textLimit(field("referenceIndiaAddress"))?.max).toBe(200);
+    expect(textLimit(field("referenceHomeAddress"))?.max).toBe(35);
   });
   it("offers explicit employer cleanup while preserving letters and the original input", () => {
     const value = "  SYNTHETIC O’Bríen, Inc.  ";

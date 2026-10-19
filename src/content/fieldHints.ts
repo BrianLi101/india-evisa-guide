@@ -97,7 +97,17 @@ const hints: Record<string, FieldHint> = {
       "Some Indian cities go by multiple names: Thiruvananthapuram is also Trivandrum, Bengaluru is Bangalore, and Kochi is Cochin. Search either name or the airport code to find the label used on the form.",
   },
   dob: { hint: "Day first, then month and year.", prompt: "DD/MM/YYYY" },
-  arrivalDate: { hint: "Use your planned arrival date.", prompt: "DD/MM/YYYY" },
+  arrivalDate: {
+    hint: "Enter the date you expect to arrive in India, in DD/MM/YYYY format.",
+    explanation:
+      "Apply at least 4 days before arrival. Once approved, follow the entry dates printed on your ETA.",
+    prompt: "DD/MM/YYYY",
+  },
+  visaService: {
+    hint: "Visa Service is filled automatically from your Visiting India for choice.",
+    explanation:
+      "For a tourist visit, e-Tourist offers 30-day, 1-year and 5-year options. Visa validity and the length of each permitted stay are different; check the conditions for your chosen service.",
+  },
   email: {
     hint: "Use an inbox you can access for visa updates.",
     example: "traveler@example.test",
@@ -106,7 +116,11 @@ const hints: Record<string, FieldHint> = {
     hint: "Repeat your email address to catch typos before visa updates are sent.",
     example: "traveler@example.test",
   },
-  purpose: { hint: "Choose the purpose that matches your visit." },
+  purpose: {
+    hint: "Search your reason for visiting, then match the service and duration on your form.",
+    explanation:
+      "Tourist purposes include sightseeing, meeting friends or relatives, and short-term yoga. Keep the exact option that fits your plans.",
+  },
   captcha: {
     hint: "Type the code displayed on the official page.",
     prompt: "Code from the image",
@@ -127,9 +141,11 @@ const hints: Record<string, FieldHint> = {
   },
   previousName: {
     hint: "Use your former names if the form asks for them.",
-    prompt: "Previous given names and surname",
+    prompt: "Previous surname",
   },
-  gender: { hint: "Use the applicable option on your official form." },
+  gender: {
+    hint: "Choose the option that matches the gender recorded in your passport.",
+  },
   birthCity: {
     hint: "Match the place of birth recorded in your passport.",
     prompt: "Place of birth",
@@ -170,8 +186,10 @@ const hints: Record<string, FieldHint> = {
     prompt: "Passport number",
   },
   passportPlace: {
-    hint: "Use the issuing place in your passport, not your arrival airport.",
-    prompt: "Place of issue",
+    hint: "Use the place or issuing country shown in your passport.",
+    explanation:
+      "The field allows 20 characters. Use the issuing place or country recorded in your passport; if it shows an issuing authority, follow that wording.",
+    prompt: "Place / country of issue",
   },
   passportExpiry: { hint: "Use the expiry date printed in your passport." },
   addressStreet: {
@@ -212,11 +230,33 @@ const hints: Record<string, FieldHint> = {
       "Some cities have multiple names: Gurgaon is also called Gurugram. Use the address your reference provides and match any dropdown to the same place.",
   },
   phone: {
-    hint: "Provide at least one contact number: phone or mobile.",
+    hint: "Enter your contact number. Complete Mobile No. as well if the portal requires it.",
     prompt: "Contact number",
   },
+  mobile: {
+    hint: "Enter your mobile number; the tested form required it even with Phone No. filled.",
+    prompt: "Mobile number",
+  },
+  employerPhone: {
+    hint: "Your employer’s phone number. This field is optional.",
+  },
+  referenceIndiaState: {
+    hint: "Choose the state in your Indian reference’s address.",
+  },
+  referenceIndiaDistrict: {
+    hint: "Choose the district after selecting the state on the official form.",
+  },
   sameAddress: {
-    hint: "Use the same-address option only if both addresses match.",
+    hint: "Use this checkbox on the official form only if your permanent and present addresses are the same.",
+  },
+  permanentStreet: {
+    hint: "Enter your permanent address, including its postal / ZIP code as requested.",
+  },
+  previousAddress: {
+    hint: "Enter the address of your last stay in India across the lines shown.",
+  },
+  referenceHomeName: {
+    hint: "The portal inserts your country in this label. Prepare a contact there.",
   },
   maritalStatus: {
     hint: "Use your current status. Married applicants may need spouse details.",
@@ -241,6 +281,15 @@ const hints: Record<string, FieldHint> = {
     hint: "Use your employer’s full address.",
     prompt: "Employer address",
   },
+  designation: {
+    hint: "Designation means your job title, such as Software Engineer, Teacher or Manager.",
+    prompt: "Your job title",
+  },
+  visaArrival: {
+    hint: "Search by airport code, airport name or city, then choose the label used on your form.",
+    explanation:
+      "This is carried over from registration on the official form. Use the search here to check its full airport or seaport label.",
+  },
   military: { hint: "Read the full question; include past service if asked." },
   militaryDetails: {
     hint: "Give the service details requested on the official form.",
@@ -262,7 +311,7 @@ const hints: Record<string, FieldHint> = {
     hint: "Answer for visits in the last 3 years, excluding your own country.",
   },
   saarcDetails: {
-    hint: "Have the country, year and length of each relevant visit ready.",
+    hint: "Prepare the country, year and number of visits for each relevant SAARC country.",
   },
   previousVisaNumber: {
     hint: "For a previous e-Visa, enter the ETA number as your previous visa number.",
@@ -286,4 +335,9 @@ export function fieldHint(field: VisaField): FieldHint {
     };
   }
   return { hint: field.description };
+}
+
+// The explanation is part of Religion's shared guide, including at its own deep link.
+export function fieldGuideId(id: string): string {
+  return id === "religionOther" ? "religion" : id;
 }

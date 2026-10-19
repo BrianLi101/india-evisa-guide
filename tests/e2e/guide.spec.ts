@@ -80,14 +80,17 @@ test("search stays local and opens selectable field guidance", async ({
     "Agnostic · Atheist · Non-religious · Not religious",
   );
   await page.keyboard.press("Escape");
+  await expect(religion.locator(".field-verified")).toBeHidden();
   await religion.getByText("Details & source", { exact: true }).click();
+  await expect(religion.locator(".field-verified")).toBeVisible();
   await expect(
-    religion.getByRole("link", { name: "Option-list source" }),
+    religion.getByRole("link", { name: "Official source" }).first(),
   ).toHaveAttribute(
     "href",
-    "https://www.visatraveler.com/blog/india-e-visa-application/",
+    "https://indianvisaonline.gov.in/evisa/BasicDetails",
   );
-  await expect(religion).toContainText("Reviewed: 17 October 2026");
+  await expect(religion).toContainText("Verified At: 18 October 2026");
+  await religion.screenshot({ path: "test-results/field-source-date.png" });
   await expect(page.locator('a[href^="/worksheet/"]')).toHaveCount(0);
   await page.screenshot({ path: "test-results/religion-guide.png" });
   expect(requests).toEqual([]);
@@ -118,7 +121,8 @@ test("observed choices and limits are exact and explicitly scoped", async ({
 }) => {
   await page.goto("/#passportType");
   const passport = page.locator("#passportType");
-  await expect(passport.locator("option:not([value=''])")).toHaveText([
+  await passport.getByRole("combobox").click();
+  await expect(passport.getByRole("option")).toHaveText([
     "ORDINARY PASSPORT",
     "OFFICIAL PASSPORT",
     "DIPLOMATIC PASSPORT",
@@ -129,12 +133,15 @@ test("observed choices and limits are exact and explicitly scoped", async ({
   await expect(page.locator("#email")).toContainText("50 characters");
   await page.goto("/#gatePassport");
   await expect(page.locator("#gatePassport")).toContainText("14 characters");
+  await expect(page.locator("#gatePassport .field-verified")).toBeHidden();
   await page.locator("#gatePassport").getByText("Details & source").click();
+  await expect(page.locator("#gatePassport .field-verified")).toBeVisible();
   await expect(page.locator("#gatePassport")).toContainText(
     "Verified At: 17 October 2026",
   );
   await page.goto("/#nationality");
-  await expect(page.locator("#nationality option:not([value=''])")).toHaveCount(
+  await page.locator("#nationality").getByRole("combobox").click();
+  await expect(page.locator("#nationality").getByRole("option")).toHaveCount(
     179,
   );
   await page.goto("/#arrivalPort");
@@ -201,7 +208,8 @@ test("compact hints support editable text and keep conditional NA guidance", asy
   await page.getByRole("searchbox").fill("education");
   await page.locator('.search-results a[href="/#education"]').click();
   const education = page.locator("#education");
-  await expect(education.locator("option:not([value=''])")).toHaveText([
+  await education.getByRole("combobox").click();
+  await expect(education.getByRole("option")).toHaveText([
     "BELOW MATRICULATION",
     "GRADUATE",
     "HIGHER SECONDARY",
@@ -209,7 +217,7 @@ test("compact hints support editable text and keep conditional NA guidance", asy
     "MATRICULATION",
     "NA BEING MINOR",
     "OTHERS",
-    "POSTGRADUATE",
+    "POST GRADUATE",
     "PROFESSIONAL",
   ]);
 
@@ -331,7 +339,7 @@ test("text feedback preserves input, offers undoable formatting and stays local"
   page.on("request", (request) => requests.push(request.url()));
   await page.route("**/*", (route) => route.abort());
   const employer = page.getByRole("textbox", {
-    name: "Employer name / business",
+    name: "Employer Name/business",
     exact: true,
   });
   const original = "SYNTHETIC O’Bríen, Inc.";
@@ -344,7 +352,9 @@ test("text feedback preserves input, offers undoable formatting and stays local"
     "SYNTHETIC OBríen Inc",
   );
   await expect(employer).toHaveAttribute("aria-invalid", "false");
-  await expect(page.locator("#employer-rules")).toHaveText("23 characters");
+  await expect(page.locator("#employer-rules")).toHaveText(
+    "23 / 50 characters",
+  );
   await expect(page.locator("article#employer")).not.toContainText(
     "not verified",
   );
@@ -438,17 +448,17 @@ test("text feedback preserves input, offers undoable formatting and stays local"
   await search.fill("House No");
   await page.locator('.search-results a[href="/#addressStreet"]').click();
   const address = page.getByRole("textbox", {
-    name: "House No./Street (present address)",
+    name: "House No./Street",
     exact: true,
   });
-  await address.fill("A".repeat(36) + "\nSecond line");
+  await address.fill("A".repeat(36));
   await expectInlineCopy(
     address,
     page.getByRole("button", { name: "Copy", exact: true }),
   );
-  await expect(address).toHaveValue("A".repeat(36) + "\nSecond line");
+  await expect(address).toHaveValue("A".repeat(36));
   await expect(page.locator("#addressStreet-feedback")).toContainText(
-    "Line 1 is over 35 characters",
+    "1 character over the 35-character limit",
   );
 
   await search.fill("Email ID");
@@ -508,7 +518,7 @@ test("copy failure keeps the original and offers manual copying", async ({
   });
   await page.goto("/#employer");
   const input = page.getByRole("textbox", {
-    name: "Employer name / business",
+    name: "Employer Name/business",
     exact: true,
   });
   await expect(

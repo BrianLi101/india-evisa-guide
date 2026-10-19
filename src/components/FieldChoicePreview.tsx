@@ -44,33 +44,14 @@ export default function FieldChoicePreview({
 
   return (
     <>
-      {id === "religion" ? (
-        <SearchableChoicePreview
-          id={id}
-          label={label}
-          choices={choices}
-          aliases={religionAliases}
-          value={selected}
-          onChange={setSelected}
-        />
-      ) : (
-        <select
-          id={`${id}-sample`}
-          className="field-example field-select"
-          aria-label={label}
-          aria-describedby={`${id}-hint`}
-          autoComplete="off"
-          value={selected}
-          onChange={(event) => setSelected(event.target.value)}
-        >
-          <option value="">Select an option</option>
-          {choices.map((choice) => (
-            <option key={choice} value={choice}>
-              {choice}
-            </option>
-          ))}
-        </select>
-      )}
+      <SearchableChoicePreview
+        id={id}
+        label={label}
+        choices={choices}
+        aliases={id === "religion" ? religionAliases : undefined}
+        value={selected}
+        onChange={setSelected}
+      />
       {showSecondary && secondary && secondaryField && (
         <div id={secondary.id} ref={secondaryRef} className="secondary-field">
           <label htmlFor={`${secondary.id}-sample`}>{secondary.label}</label>

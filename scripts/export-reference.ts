@@ -1,4 +1,14 @@
+import {
+  liveCapture,
+  liveFields,
+  LIVE_OBSERVED_AT,
+} from "../src/content/livePortal";
+import liveChoices from "../src/content/livePortalChoices.json" with { type: "json" };
 import { fieldHint, reportedChoices } from "../src/content/fieldHints";
+import {
+  walkthroughPages,
+  WALKTHROUGH_REVIEWED_AT,
+} from "../src/content/walkthrough";
 import {
   portalObservations,
   OBSERVED_AT,
@@ -9,7 +19,7 @@ import {
   PORTS_OBSERVED_AT,
   PORTS_SOURCE,
 } from "../src/content/arrivalPorts";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, readFile } from "node:fs/promises";
 import {
   fields,
   sections,
@@ -37,24 +47,90 @@ for (const [file, records] of [
         knownIssueIds: field.knownIssueIds,
         observed: portalObservations[field.id],
         hint: fieldHint(field),
-        reportedChoices: reportedChoices[field.id],
+        reportedChoices: portalObservations[field.id]?.choices
+          ? undefined
+          : reportedChoices[field.id],
         currentOptionsVerified: !!portalObservations[field.id]?.choices,
-        currentRequirednessVerified: false,
+        requiredMarker: portalObservations[field.id]?.requiredMarker,
+        htmlRequired: portalObservations[field.id]?.htmlRequired,
+        currentRequirednessVerified: false, // Markers are not exhaustive server tests.
       })),
       portalObservations,
       observationDate: OBSERVED_AT,
       observationSource: OBSERVED_SOURCE,
       caveat:
-        "Labels and guidance may be sample-based or provisional. Observed records contain directly checked choices and limits. Reported choices are separately sourced and have not been live verified. Unverified preparation options and validation rules are not exported. No complete live-form mapping is claimed.",
+        "Live observations are scoped to their own source, date and tested route. Required markers and HTML limits do not prove full server validation. Upload and payment coverage beyond PhotoUpload remains sample-based. See portal-capture.json for complete metadata and observed validation errors.",
     },
   ],
   ["known-issues", issues],
   ["airports", locations],
+  ["walkthrough", walkthroughPages],
+  [
+    "portal-capture",
+    {
+      ...liveCapture,
+      registration: {
+        source: OBSERVED_SOURCE,
+        observedAt: LIVE_OBSERVED_AT,
+        gate: ["Passport No", "Select Country/Region", "Name as in passport"],
+        healthQuestion: {
+          label:
+            "Q-1. Whether visited Democratic Republic of Congo or South Sudan in last 21 days?",
+          choices: ["Yes", "No"],
+          note: "Appeared after gate entry; answer path not verified.",
+        },
+        order: [
+          "Nationality/Region",
+          "Passport Type",
+          "Port Of Arrival",
+          "Date of Birth",
+          "Email ID",
+          "Re-enter Email ID",
+          "Visiting India for",
+          "Purpose",
+          "Visa Service",
+          "Expected Date of Arrival",
+          "Please enter above text",
+          "Instructions checkbox",
+        ],
+        derivedFields: ["Purpose", "Visa Service"],
+        observations: Object.fromEntries(
+          Object.entries(portalObservations).filter(
+            ([id]) => !liveFields.some((field) => field.id === id),
+          ),
+        ),
+      },
+      choices: {
+        ...liveChoices,
+        ports: arrivalPorts.map(({ label }) => ({ label, value: label })),
+        districtsBeforeState: (
+          await readFile(
+            "reference/portal/district-labels-2026-10-18.txt",
+            "utf8",
+          )
+        )
+          .trim()
+          .split("\n")
+          .map((label) => ({ label, value: label })),
+      },
+      placeholderPolicy:
+        "Choice catalogs omit empty-value prompts. Country prompt: Select Country; previous nationality prompt may differ. District initial prompt: Select District; DELHI-filtered prompt: Select district.",
+    },
+  ],
 ] as const)
   await writeFile(
     `public/reference/${file}.json`,
     JSON.stringify(
-      { version: CONTENT_VERSION, reviewedAt: REVIEWED_AT, records },
+      {
+        version: CONTENT_VERSION,
+        reviewedAt:
+          file === "portal-capture"
+            ? LIVE_OBSERVED_AT
+            : file === "walkthrough"
+              ? WALKTHROUGH_REVIEWED_AT
+              : REVIEWED_AT,
+        records,
+      },
       null,
       2,
     ) + "\n",
@@ -74,7 +150,7 @@ await writeFile(
 );
 await writeFile(
   "public/agents/index.md",
-  `# India e-Visa Companion public reference\n\nSearchable field guidance. No applicant answer entry. Not a government service.\n\n- [Field schema](/reference/fields.json)\n- [Known issues](/reference/known-issues.json)\n- [Location aliases](/reference/airports.json)\n- [Observed arrival choices](/reference/arrival-ports.json)\n\nReviewed ${REVIEWED_AT}. OFFICIAL denotes published government guidance (often the sample form, not the current UI). LIVE_VERIFIED denotes an observed interface detail. REPORTED is user research. NEEDS_VERIFICATION is unresolved. Preserve those distinctions.\n\nPublic registration labels, nationality/passport-type/arrival choices and selected HTML input limits were observed on 17 October 2026. Religion choices are unverified; no applicant session was entered. Alternate-name/code mappings have separate primary sources; unmapped aliases and district research remain incomplete. Later screens are sample-based and occupation fields are provisional. Nothing here proves eligibility or acceptance. Applicant answers and files must never be transmitted to a server.\n`,
+  `# India e-Visa Companion public reference\n\nSearchable field guidance. No applicant answer entry. Not a government service.\n\n- [Field schema](/reference/fields.json)\n- [Known issues](/reference/known-issues.json)\n- [Location aliases](/reference/airports.json)\n- [Observed arrival choices](/reference/arrival-ports.json)\n- [Full live metadata](/reference/portal-capture.json)\n\nReviewed ${REVIEWED_AT}. OFFICIAL denotes published government guidance (often the sample form, not the current UI). LIVE_VERIFIED denotes an observed interface detail. REPORTED is user research. NEEDS_VERIFICATION is unresolved. Preserve those distinctions.\n\nPublic registration metadata was observed on 17–18 October 2026. A user-authorized synthetic U.S. ordinary-passport, 30-day tourist walkthrough on 18 October captured applicant, address/family/employment, travel/reference, additional-question and initial photo-upload screens. Exact choices, visible required markers, HTML limits, conditions, section order and tested validation errors are retained in portal-capture.json. Required markers are not proof of all server rules. No applicant answers, application IDs, files or session tokens are included. Later upload, review and payment behavior remains sample-based. Nothing here proves eligibility or acceptance. Applicant answers and files must never be transmitted to a server.\n`,
 );
 await writeFile(
   "public/robots.txt",
@@ -85,6 +161,7 @@ const routes = [
   "/before-you-start/",
   "/after-approval/",
   "/guide/",
+  "/walkthrough/",
   "/problems/",
   "/tools/passport-pdf/",
   "/tools/photo-jpeg/",

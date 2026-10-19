@@ -1,22 +1,20 @@
 # Remaining verification and follow-up
 
-This is a searchable field guide with local file tools, not a fully live-verified mapping of every government flow.
+This is a searchable field guide and continuous walkthrough with local file tools, not a fully live-verified mapping of every government flow.
 
 ## Official form research blockers
 
-- Religion option-list provenance: the full transcription comes from a published walkthrough. The user already verified the OTHERS explanation and use of NA in an actual applicant session; do not re-list those behaviors as unchecked. Any future capture of the complete list or field limits should record its own source and context. The agent's blocked gate access is not evidence against the user's observations.
-- All later field labels, options, character restrictions and nationality/visa-specific branches still need a complete live comparison. Existing sample/provisional records are useful guidance, not an exact current form mapping.
-- Registration HTML limits and lists were rechecked; server-side validation, hidden dependent controls and nationality-specific availability are not verified.
-
-- After-approval result screen: verify the reported “Print Status” button and PDF download through an authorized session or redacted observation. The public status form and official instruction to print the ETA were checked on 17 October 2026; no applicant details or CAPTCHA were submitted. Airline acceptance and airport printing experiences remain reported, not universal policies.
-
-- Full live walkthrough beyond registration: the portal presents passport/name gating and CAPTCHA. No CAPTCHA was solved, no applicant session was completed, and no government application was submitted. Later pages are based on the public official sample. The sample already differs from the observed registration order.
-- Verify all nationality-specific purpose choices, current requiredness/field order, gender/religion/education dropdowns, spouse/occupation/service questions, dependent travel details and current upload steps using an authorized session or redacted user-provided observations.
-- Employment punctuation and dependent-control resets are reported only. Reproduce safely before changing their evidence status. Never alter a legal name silently.
-- Resolved by user confirmation on 17 October 2026: use the ETA (Electronic Travel Authorization) number for a previous e-Visa number and New Delhi for its place of issue. U.S. applicants without a national ID can use NA. These are reflected in the field hints and troubleshooting articles; user-confirmed guidance retains its source attribution.
-- Arrival dropdown now contains all 86 options observed before the applicant gate on 17 October 2026, with 11 source-backed airport alias/code mappings. Expand mappings for remaining ports, spelling variants and seaport names. Recheck nationality/session-dependent choices and separately verify published authorized entry; dropdown presence does not prove eligibility.
-- Gurgaon/Gurugram is a confirmed alternate-name pair, now explained beside city/region/reference-address fields and indexed in search. Detailed neighborhood-to-district and PIN mappings are still outside the current guide; do not infer them from the city alias.
-- Recheck file requirements, including the sample's 350 × 350 photo minimum, on a live upload screen. Current numerical bounds are sourced to public instructions/sample as of 16 October 2026.
+- Completed 18 October 2026: user-authorized synthetic U.S. ordinary-passport, 30-day tourist inspection through initial PhotoUpload. Saved screen/header/field order, required markers, all observed choices, HTML limits, conditional branches and three validation outcomes. See `public/reference/portal-capture.json` and `reference/SOURCES.md`.
+- Stopped at file selection. No photo/document uploaded, crop/confirmation flow inspected, final application submitted or payment attempted. Later document upload, review and payment remain sample-based. Further traversal requires a file upload; do not silently promote those pages to live evidence.
+- Recheck nationality/service variants. Registration exposed 62 unique unfiltered purpose labels, while the U.S. session showed 55 choices. The complete nationality-to-purpose mapping was not captured. Gate health-question behavior, all education branches and minor/non-tourist categories are not fully tested.
+- HTML maxlength and required markers are not comprehensive server validation. Tested rejections: a hyphen in surname, a period in given names, mobile left blank with Phone filled, and pipe characters introduced into an Indian-reference address line after a failed save. Do not infer a universal whitelist or a guaranteed workaround.
+- The country catalog and all 821 initial District entries are preserved; only the DELHI State filter was exercised. Do not use the unfiltered catalog as a state-to-district mapping. SAARC displayed eight possible DOM rows; plus/minus operations were not exercised.
+- Employer punctuation and dependent-radio reset reports retain REPORTED attribution. The separate name-punctuation reset observed in this session does not verify every reported reset cause.
+- After-approval result screen still needs verification of Print Status and PDF download. Earlier public instructions and applicant-reported airport/airline experiences retain their own evidence scope.
+- User-confirmed ETA-number/New Delhi guidance and the U.S. National ID example remain attributed to the user. Live National ID help independently says “If not applicable Please Type NA.”
+- Expand the 11 source-backed airport alias/code mappings. Arrival and exit lists match exactly in this capture, but dropdown presence does not establish entry eligibility.
+- Neighborhood-to-district and PIN mappings remain outside this guide. Gurgaon/Gurugram are alternate names; do not infer an address mapping from that alone.
+- Initial PhotoUpload independently confirms JPEG, 10 KB–1 MB and at least 350 × 350 pixels. Passport PDF limits and actual upload acceptance have not been retested in the live upload flow.
 
 ## Browser and product coverage
 

@@ -4,7 +4,12 @@
   "records": [
     {
       "id": "employer-punctuation",
-      "title": "The form clears after an employer name",
+      "title": "Why does the form clear after I enter my employer’s name?",
+      "answer": "Remove periods and commas from the employer name, keeping the name accurate, then re-enter any cleared fields and try again.",
+      "lastVerifiedAt": "2026-10-17",
+      "otherSources": [
+        "Firsthand applicant confirmation · 17 October 2026"
+      ],
       "sectionIds": [
         "employment"
       ],
@@ -17,14 +22,16 @@
       "evidenceStatus": "REPORTED",
       "officialUrls": [],
       "caveats": "Not a universal punctuation restriction. No silent substitutions or automatic name rewriting.",
-      "lastReviewedAt": "2026-10-16",
-      "otherSources": [
-        "Project SPEC.md · initial user research"
-      ]
+      "lastReviewedAt": "2026-10-17"
     },
     {
       "id": "religion-other",
-      "title": "“Other” religion needs an explanation",
+      "title": "What should I enter when I choose OTHERS for religion?",
+      "answer": "Enter your explanation in “If Others, Please specify,” or NA if not applicable, before continuing.",
+      "lastVerifiedAt": "2026-10-17",
+      "otherSources": [
+        "Firsthand applicant confirmation · 17 October 2026"
+      ],
       "sectionIds": [
         "identity"
       ],
@@ -40,14 +47,16 @@
         "https://indianvisaonline.gov.in/evisa/images/SampleForm.pdf"
       ],
       "caveats": "The user confirmed the conditional explanation field and use of NA in their session. Use NA only when it accurately applies.",
-      "lastReviewedAt": "2026-10-16",
-      "otherSources": [
-        "Project SPEC.md · initial user research"
-      ]
+      "lastReviewedAt": "2026-10-17"
     },
     {
       "id": "selections-reset",
-      "title": "A selection disappears after editing another field",
+      "title": "Why did my selection disappear?",
+      "answer": "Complete the form from top to bottom and recheck dropdowns and radio buttons after changing an earlier field.",
+      "lastVerifiedAt": "2026-10-17",
+      "otherSources": [
+        "Firsthand applicant confirmation · 17 October 2026"
+      ],
       "sectionIds": [
         "identity",
         "family",
@@ -60,14 +69,30 @@
       "evidenceStatus": "REPORTED",
       "officialUrls": [],
       "caveats": "This describes the user’s observed sequence; recheck selections after changing earlier fields.",
-      "lastReviewedAt": "2026-10-16",
+      "lastReviewedAt": "2026-10-17"
+    },
+    {
+      "id": "saved-application-fields",
+      "title": "Why are some fields blank after Save and Exit?",
+      "answer": "After using Save and Exit on the official application, some fields may be blank when you return, so check your answers and fill in anything missing before continuing.",
+      "lastVerifiedAt": "2026-10-17",
       "otherSources": [
-        "Project SPEC.md · initial user research"
-      ]
+        "User-reported Save and Exit behavior · 17 October 2026"
+      ],
+      "sectionIds": [],
+      "fieldIds": [],
+      "symptoms": "Fields or answers are cleared, blank or missing when you return to resume a saved application after Save and Exit.",
+      "explanation": "The user reported that some fields may be cleared when returning to the official application after Save and Exit.",
+      "workaround": "Check each section when reopening the application and fill in any missing answers before continuing.",
+      "evidenceStatus": "REPORTED",
+      "officialUrls": [],
+      "caveats": "The report does not identify every affected field or establish that this happens in every session.",
+      "lastReviewedAt": "2026-10-17"
     },
     {
       "id": "eta-or-application-id",
-      "title": "ETA number or Application ID?",
+      "title": "Should I enter my ETA number or Application ID?",
+      "answer": "For a previous Indian e-Visa, enter the ETA number from the issued document in the previous visa field, not the Application ID.",
       "sectionIds": [
         "travel"
       ],
@@ -91,7 +116,8 @@
     },
     {
       "id": "visa-place-of-issue",
-      "title": "What was the previous visa’s place of issue?",
+      "title": "What is the place of issue for my previous visa?",
+      "answer": "Enter New Delhi for a previous Indian e-Visa, or the place printed on your visa for a regular visa.",
       "sectionIds": [
         "travel"
       ],
@@ -115,7 +141,8 @@
     },
     {
       "id": "airport-names",
-      "title": "Trivandrum, Thiruvananthapuram… which one?",
+      "title": "Why is my arrival airport listed under a different name?",
+      "answer": "Search Port of Arrival by city, airport name or code to find the matching label, including alternate names such as Trivandrum and Thiruvananthapuram.",
       "sectionIds": [
         "registration"
       ],
@@ -137,7 +164,8 @@
     },
     {
       "id": "address-mapping",
-      "title": "City, district, state, or neighborhood?",
+      "title": "How do I split an address across the fields?",
+      "answer": "Use your accommodation’s address in the matching street, city, state or district and PIN fields, treating Gurgaon and Gurugram as the same city.",
       "sectionIds": [
         "family"
       ],
@@ -162,7 +190,8 @@
     },
     {
       "id": "national-id",
-      "title": "Citizenship / National ID is not your nationality",
+      "title": "What if I don’t have a National ID number?",
+      "answer": "Enter your national identity number if you have one, or NA if it does not apply. Americans, for example, do not have national ID numbers and should specify “NA”.",
       "sectionIds": [
         "identity"
       ],
@@ -185,7 +214,8 @@
     },
     {
       "id": "upload-action",
-      "title": "Choosing a file may not finish the upload",
+      "title": "Why does my file still say “Not Uploaded”?",
+      "answer": "After choosing the file, click Upload Photo or Upload Document and check that the uploaded preview appears before continuing.",
       "sectionIds": [],
       "fieldIds": [],
       "symptoms": "A selected filename appears but the official site still says Not Uploaded.",
@@ -202,7 +232,8 @@
     },
     {
       "id": "document-requirements",
-      "title": "The right file type and size",
+      "title": "What file types and sizes do I need?",
+      "answer": "Use a square JPEG photo of 10 KB–1 MB and at least 350 × 350 pixels, and a passport biodata PDF of 10–300 KB.",
       "sectionIds": [],
       "fieldIds": [],
       "symptoms": "A photo or passport scan is rejected for format or file size.",
@@ -220,7 +251,8 @@
     },
     {
       "id": "payment-pending",
-      "title": "Payment was taken but the status has not changed",
+      "title": "What if I was charged but payment is still pending?",
+      "answer": "Allow up to two hours for the status to update, then use Verify Payment / Pay e-Visa Fee on the official portal before trying another payment.",
       "sectionIds": [],
       "fieldIds": [],
       "symptoms": "The bank shows a charge but the government status is pending.",

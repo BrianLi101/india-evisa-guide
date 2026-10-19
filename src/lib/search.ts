@@ -21,18 +21,21 @@ export function normalizeSearch(value: string) {
 }
 const records = [
   ...fields.map((f) => ({
-    title: portalObservations[f.id]?.label ?? f.officialLabel,
+    title:
+      portalObservations[f.id]?.displayLabel ??
+      portalObservations[f.id]?.label ??
+      f.officialLabel,
     kind: "Field guide",
     section: sections.find((s) => s.id === f.sectionId)?.title ?? "",
     url: `/#${f.id}`,
-    terms: `${f.description} ${fieldHint(f).hint} ${fieldHint(f).explanation ?? ""} ${reportedChoices[f.id]?.labels.join(" ") ?? ""} ${aliases[f.id] ?? ""} ${portalObservations[f.id]?.choices?.join(" ") ?? ""}`,
+    terms: `${f.id.replace(/([a-z])([A-Z])/g, "$1 $2")} ${f.description} ${fieldHint(f).hint} ${fieldHint(f).explanation ?? ""} ${reportedChoices[f.id]?.labels.join(" ") ?? ""} ${aliases[f.id] ?? ""} ${portalObservations[f.id]?.choices?.join(" ") ?? ""}`,
   })),
   ...issues.map((i) => ({
     title: i.title,
-    kind: "Troubleshooting",
+    kind: "FAQ",
     section: "Common problems",
     url: `/problems/${i.id}/`,
-    terms: `${i.symptoms} ${i.workaround}`,
+    terms: `${i.symptoms} ${i.answer} ${i.workaround}`,
   })),
   {
     title: "After you’re approved",

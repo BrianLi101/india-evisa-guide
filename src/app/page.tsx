@@ -6,6 +6,7 @@ import {
   FileText,
   Image as ImageIcon,
   LockKeyhole,
+  PanelsTopLeft,
   Printer,
 } from "lucide-react";
 
@@ -17,7 +18,9 @@ export default function Home() {
           Your e-Visa,
           <br />a little clearer.
         </h1>
-        <p>Complete the official form. Get help with any field here.</p>
+        <p>
+          Complete the official form. Find a field or follow along with the guide.
+        </p>
         <Search />
         <div className="home-start-actions">
           <OfficialLink />
@@ -41,9 +44,23 @@ export default function Home() {
             Checklist <ArrowRight size={20} aria-hidden="true" />
           </span>
         </a>
+        <a className="home-tool-card walkthrough-card" href="/walkthrough/">
+          <span className="home-step" aria-hidden="true">
+            02 · Follow along
+          </span>
+          <PanelsTopLeft
+            className="home-tool-icon"
+            size={48}
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
+          <span className="home-tool-label">
+            Walk through the form <ArrowRight size={20} aria-hidden="true" />
+          </span>
+        </a>
         <a className="home-tool-card passport-card" href="/tools/passport-pdf/">
           <span className="home-step" aria-hidden="true">
-            02 · Your document
+            03 · Your document
           </span>
           <FileText
             className="home-tool-icon"
@@ -57,7 +74,7 @@ export default function Home() {
         </a>
         <a className="home-tool-card photo-card" href="/tools/photo-jpeg/">
           <span className="home-step" aria-hidden="true">
-            03 · Your photo
+            04 · Your photo
           </span>
           <ImageIcon
             className="home-tool-icon"
@@ -71,7 +88,7 @@ export default function Home() {
         </a>
         <a className="home-tool-card approval-card" href="/after-approval/">
           <span className="home-step" aria-hidden="true">
-            04 · Before you fly
+            05 · Before you fly
           </span>
           <Printer
             className="home-tool-icon"

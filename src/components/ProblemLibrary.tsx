@@ -1,64 +1,51 @@
 "use client";
 import { useState } from "react";
-import { Search, ArrowRight } from "lucide-react";
+import { Search, ChevronDown } from "lucide-react";
 import { issues } from "@/content/data";
-import { Evidence } from "./ui";
+import { normalizeSearch } from "@/lib/search";
+import ProblemAnswer from "./ProblemAnswer";
+
 export default function ProblemLibrary() {
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState("all");
-  const matches = issues.filter(
-    (i) =>
-      (filter === "all" || i.evidenceStatus === filter) &&
-      `${i.title} ${i.symptoms} ${i.workaround}`
-        .toLowerCase()
-        .includes(query.toLowerCase()),
-  );
+  const words = normalizeSearch(query).split(/\s+/).filter(Boolean);
+  const matches = issues.filter((issue) => {
+    const terms = normalizeSearch(
+      `${issue.title} ${issue.answer} ${issue.symptoms}`,
+    );
+    return words.every((word) => terms.includes(word));
+  });
   return (
     <>
       <label className="search-box">
-        <Search size={19} />
+        <Search size={19} aria-hidden="true" />
         <span className="sr-only">Search common problems</span>
         <input
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search symptoms, fields, or a question…"
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Search questions…"
+          autoComplete="off"
         />
       </label>
-      <details className="quiet-disclosure problem-filters">
-        <summary>Filter by source</summary>
-        <div className="filter-row" aria-label="Filter by evidence">
-          {[
-            ["all", "All guidance"],
-            ["OFFICIAL", "Official sources"],
-            ["LIVE_VERIFIED", "Live checked"],
-            ["REPORTED", "Reported issues"],
-          ].map(([v, l]) => (
-            <button
-              key={v}
-              aria-pressed={filter === v}
-              onClick={() => setFilter(v)}
-            >
-              {l}
-            </button>
-          ))}
-        </div>
-      </details>
       <p className="small muted" role="status">
-        {matches.length} guide{matches.length !== 1 ? "s" : ""}
+        {matches.length} question{matches.length !== 1 ? "s" : ""}
       </p>
-      <div className="problems-grid">
-        {matches.map((i) => (
-          <a className="problem-card" key={i.id} href={`/problems/${i.id}/`}>
-            <Evidence status={i.evidenceStatus} />
-            <h2>{i.title}</h2>
-            <ArrowRight size={16} />
-          </a>
+      <div className="faq-list">
+        {matches.map((issue) => (
+          <details className="faq-item" key={issue.id} id={issue.id}>
+            <summary>
+              <h2>{issue.title}</h2>
+              <ChevronDown size={18} aria-hidden="true" />
+            </summary>
+            <div className="faq-content">
+              <ProblemAnswer issue={issue} />
+            </div>
+          </details>
         ))}
       </div>
       {!matches.length && (
         <p className="empty-state">
-          No matching guides. Try a different phrase or evidence filter.
+          No matching questions. Try another word or phrase.
         </p>
       )}
     </>

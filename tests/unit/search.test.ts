@@ -42,7 +42,7 @@ describe("field guide discovery and evidence", () => {
     expect(reportedChoices.religion.labels).toHaveLength(11);
     expect(reportedChoices.religion.labels).toContain("OTHERS");
     expect(reportedChoices.education.labels).toHaveLength(9);
-    expect(portalObservations.religion).toBeUndefined();
+    expect(portalObservations.religion.source).toContain("/BasicDetails");
     expect(searchGuides("JAINISM")[0].url).toBe("/#religion");
     expect(
       searchGuides("US national ID").some((r) => r.url.endsWith("#nationalId")),
@@ -53,13 +53,14 @@ describe("field guide discovery and evidence", () => {
       expect(fields.find((f) => f.id === id)?.officialLabel).toBe(
         observation.label,
       );
-      expect(observation.elementId).toBeTruthy();
+      if (observation.control !== "Read-only")
+        expect(observation.elementId).toBeTruthy();
       expect(observation.context).toBeTruthy();
       if (observation.maxLength)
         expect(observation.maxLength).toBeGreaterThan(0);
     }
-    expect(portalObservations.religion).toBeUndefined();
-    expect(portalObservations.passportNumber).toBeUndefined(); // gate limit is not passport-details evidence
+    expect(portalObservations.religion.source).toContain("/BasicDetails");
+    expect(portalObservations.passportNumber.source).toContain("/BasicDetails"); // independently observed later control
     expect(portalObservations.gatePassport.maxLength).toBe(14);
     expect(portalObservations.email.maxLength).toBe(50);
     expect(nationalityLabels).toHaveLength(179);

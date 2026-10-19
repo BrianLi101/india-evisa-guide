@@ -1899,6 +1899,10 @@ small {
   background: #f3e5ce;
   color: #624822;
 }
+.home-tool-card.walkthrough-card {
+  background: var(--green);
+  color: var(--white);
+}
 .home-tool-card.approval-card {
   background: #eae5ee;
   color: #51425c;
@@ -2863,6 +2867,9 @@ progress::-moz-progress-bar {
   border-left: 0;
   padding-left: 0;
 }
+.field-reference-content {
+  font-size: 15px;
+}
 .compact-field-heading {
   display: flex;
   justify-content: space-between;
@@ -2984,12 +2991,6 @@ progress::-moz-progress-bar {
   display: inline-block;
   margin: 3px 12px 3px 0;
 }
-.field-guide-entry:target .field-example,
-.field-guide-entry:target .field-options > summary,
-.field-guide-entry:target .field-preview {
-  border-color: var(--green);
-  box-shadow: 0 0 0 1px var(--green);
-}
 @media (max-width: 600px) {
   .compact-field-heading {
     flex-wrap: wrap;
@@ -3020,9 +3021,6 @@ progress::-moz-progress-bar {
 }
 .field-reference .compact-field-details[open] > summary {
   margin-bottom: 4px;
-}
-.field-select {
-  cursor: pointer;
 }
 .secondary-field {
   margin: 12px 0 0;
@@ -3149,4 +3147,432 @@ textarea.field-example {
   background: var(--green);
   border-color: var(--green);
   color: white;
+}
+
+/* Continuous form guide, sized for a window beside the official form. */
+.guide-mode-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f0f3ed;
+  font-size: 13px;
+}
+.guide-mode-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 9px 15px;
+  border-radius: 7px;
+}
+.guide-mode-switch a[aria-current="page"] {
+  background: var(--white);
+  box-shadow: 0 1px 3px #263c3512;
+  color: var(--green);
+  font-weight: 600;
+}
+/* Keep the step bar and anchor offsets in sync at each breakpoint. */
+.walkthrough {
+  max-width: 1100px;
+  padding-top: 26px;
+  padding-bottom: 56px;
+}
+.walkthrough-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 26px 0 14px;
+}
+.walkthrough-title-row h1 {
+  font-size: clamp(27px, 3.4vw, 38px);
+  margin: 0 0 8px;
+}
+.walkthrough-title-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.walkthrough-title-row .official-link {
+  flex-shrink: 0;
+}
+.walkthrough-scope {
+  color: var(--muted);
+  font-size: 12px;
+}
+.walkthrough-scope summary {
+  cursor: pointer;
+  width: fit-content;
+  padding: 6px 0;
+}
+.walkthrough-scope p {
+  max-width: 750px;
+}
+.walkthrough-scope a,
+.walkthrough-section-notes a {
+  text-decoration: underline;
+}
+.walkthrough-steps {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin: 22px 0 24px;
+  padding: 16px 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.walkthrough-steps ol {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  padding: 0;
+  margin: 0;
+}
+.walkthrough-steps li {
+  position: relative;
+}
+.walkthrough-steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: var(--line);
+  top: 21px;
+  left: calc(50% + 24px);
+  width: calc(100% - 48px);
+}
+.walkthrough-steps a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 5px 3px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.35;
+}
+.walkthrough-step-number {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e9ede5;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+.walkthrough-step-label {
+  max-width: 88px;
+}
+.walkthrough-steps a:hover {
+  background: #edf1e980;
+}
+.walkthrough-steps a[aria-current="step"] {
+  color: var(--green);
+  font-weight: 600;
+}
+.walkthrough-steps a[aria-current="step"] .walkthrough-step-number {
+  color: white;
+  background: var(--green);
+}
+.walkthrough-active-step {
+  display: none;
+}
+.walkthrough-sections {
+  display: grid;
+  gap: 32px;
+}
+.walkthrough-section {
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  scroll-margin-top: 120px;
+}
+.walkthrough-section-heading h2 {
+  font:
+    650 28px/1.25 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+.walkthrough-tool {
+  display: inline-flex;
+  padding: 10px 14px;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+.walkthrough-group {
+  margin-top: 26px;
+}
+.walkthrough-group h3 {
+  font:
+    600 12px/1.5 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.walkthrough-group-provisional h3 {
+  color: #765522;
+}
+.walkthrough-group-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: -4px 0 14px;
+}
+.walkthrough-field {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--white);
+  margin-top: 9px;
+  scroll-margin-top: 120px;
+}
+.walkthrough-field > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 15px 19px;
+  list-style: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.walkthrough-field > summary::-webkit-details-marker {
+  display: none;
+}
+.walkthrough-field > summary:hover {
+  background: #edf1e970;
+}
+.walkthrough-field > summary > svg {
+  flex-shrink: 0;
+}
+.walkthrough-field[open] {
+  border-color: #8da48e;
+}
+.walkthrough-field[open] > summary {
+  background: var(--soft);
+  border-radius: 8px 8px 0 0;
+}
+.walkthrough-field[open] > summary > svg {
+  transform: rotate(180deg);
+}
+.walkthrough-field-static {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 15px 19px;
+}
+.walkthrough-field-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.walkthrough-field-static .walkthrough-field-label {
+  color: var(--muted);
+}
+.walkthrough-condition {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.walkthrough-field-body {
+  padding: 20px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.walkthrough-field-body > p {
+  margin: 0;
+}
+.walkthrough-field .field-guide-entry {
+  padding: 0;
+  border: 0;
+}
+.walkthrough-section-notes {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.walkthrough-section-notes summary {
+  cursor: pointer;
+  width: fit-content;
+}
+.walkthrough-privacy {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .walkthrough-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .walkthrough-steps {
+    padding: 8px 0 10px;
+    margin-top: 18px;
+  }
+  .walkthrough-steps a {
+    justify-content: center;
+    padding: 6px 0;
+  }
+  .walkthrough-step-label {
+    display: none;
+  }
+  .walkthrough-steps li:not(:last-child)::after {
+    top: 22px;
+  }
+  .walkthrough-active-step {
+    display: block;
+    margin: 2px 0 0;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .walkthrough-section,
+  .walkthrough-field {
+    scroll-margin-top: 84px;
+  }
+  .walkthrough-section {
+    padding: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .walkthrough {
+    padding-top: 20px;
+  }
+  .walkthrough-title-row {
+    margin-top: 22px;
+  }
+  .walkthrough-title-row p {
+    font-size: 13px;
+  }
+  .walkthrough-step-number {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+  .walkthrough-steps li:not(:last-child)::after {
+    display: none;
+  }
+  .walkthrough-section {
+    padding: 20px 14px;
+    border-radius: 11px;
+  }
+  .walkthrough-section-heading h2 {
+    font-size: 25px;
+  }
+  .walkthrough-field > summary,
+  .walkthrough-field-static {
+    padding: 14px;
+    gap: 10px;
+  }
+  .walkthrough-field-label {
+    font-size: 14px;
+  }
+  .walkthrough-field-body {
+    padding: 16px 14px;
+  }
+  .guide-mode-switch {
+    font-size: 12px;
+  }
+  .guide-mode-switch a {
+    padding: 9px 10px;
+  }
+  .site-header {
+    flex-wrap: wrap;
+  }
+  .site-header nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+/* Common questions: one answer and its recorded verification date. */
+.faq-list {
+  max-width: 760px;
+  margin: 24px 0 48px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-item > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 56px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item > summary h2 {
+  font:
+    600 15px/1.6 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  letter-spacing: 0;
+  margin: 0;
+}
+.faq-item > summary svg {
+  flex-shrink: 0;
+}
+.faq-item[open] > summary svg {
+  transform: rotate(180deg);
+}
+.faq-content {
+  padding: 0 32px 24px 0;
+}
+.faq-answer {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+.faq-verified {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 20px 0 0;
+}
+.faq-page {
+  padding-top: 36px;
+  padding-bottom: 56px;
+}
+.faq-page h1 {
+  font:
+    650 clamp(26px, 3.5vw, 36px)/1.3 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  letter-spacing: -0.025em;
+  margin: 28px 0 20px;
 }

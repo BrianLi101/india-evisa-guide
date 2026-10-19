@@ -50,6 +50,13 @@ export function textFeedback(field: VisaField, value: string) {
     }
   }
 
+  if (
+    (field.id === "surname" && value.includes("-")) ||
+    (field.id === "givenNames" && value.includes("."))
+  )
+    warnings.push(
+      "The portal rejected this punctuation in a test. Keep your passport name accurate and consult official help if it cannot be entered.",
+    );
   if (field.id === "employer") {
     if (/[.,]/.test(value))
       warnings.push("Periods and commas have been reported to reset the form.");

@@ -7,7 +7,13 @@ import { searchArrivalPorts } from "@/lib/locations";
 const alternateNames = (port: ArrivalPort) =>
   [port.code, ...port.names.slice(0, 3)].filter(Boolean).join(" · ");
 
-export default function ArrivalPortPreview({ label }: { label: string }) {
+export default function ArrivalPortPreview({
+  id,
+  label,
+}: {
+  id: string;
+  label: string;
+}) {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<ArrivalPort>();
   const [open, setOpen] = useState(false);
@@ -28,9 +34,9 @@ export default function ArrivalPortPreview({ label }: { label: string }) {
   useEffect(() => {
     if (open && activePort)
       document
-        .getElementById(`arrival-option-${activePort.id}`)
+        .getElementById(`${id}-option-${activePort.id}`)
         ?.scrollIntoView({ block: "nearest" });
-  }, [open, activePort]);
+  }, [open, activePort, id]);
 
   function choose(port: ArrivalPort) {
     revision.current += 1;
@@ -68,17 +74,17 @@ export default function ArrivalPortPreview({ label }: { label: string }) {
         <div className="arrival-input">
           <input
             ref={inputRef}
-            id="arrivalPort-sample"
+            id={`${id}-sample`}
             className="field-example"
             role="combobox"
             aria-label={label}
             aria-autocomplete="list"
             aria-expanded={open}
-            aria-controls="arrival-port-options"
+            aria-controls={`${id}-options`}
             aria-activedescendant={
-              open && activePort ? `arrival-option-${activePort.id}` : undefined
+              open && activePort ? `${id}-option-${activePort.id}` : undefined
             }
-            aria-describedby="arrivalPort-hint arrival-selection-hint"
+            aria-describedby={`${id}-hint ${id}-selection-hint`}
             autoComplete="off"
             spellCheck={false}
             placeholder="Try Thiruvananthapuram, TRV or Bangalore"
@@ -155,14 +161,10 @@ export default function ArrivalPortPreview({ label }: { label: string }) {
       </div>
       {open && (
         <div className="arrival-menu">
-          <ul
-            id="arrival-port-options"
-            role="listbox"
-            aria-label="Arrival ports"
-          >
+          <ul id={`${id}-options`} role="listbox" aria-label="Arrival ports">
             {results.map((port, index) => (
               <li
-                id={`arrival-option-${port.id}`}
+                id={`${id}-option-${port.id}`}
                 key={port.id}
                 role="option"
                 aria-selected={selected?.id === port.id}
@@ -180,7 +182,7 @@ export default function ArrivalPortPreview({ label }: { label: string }) {
           )}
         </div>
       )}
-      <p id="arrival-selection-hint" className="compact-field-hint">
+      <p id={`${id}-selection-hint`} className="compact-field-hint">
         {selected
           ? alternateNames(selected)
           : query.trim() && !open

@@ -3,18 +3,20 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { matchesLocation } from "@/lib/locations";
 
+const noAliases: Record<string, readonly string[]> = {};
+
 export default function SearchableChoicePreview({
   id,
   label,
   choices,
-  aliases,
+  aliases = noAliases,
   value,
   onChange,
 }: {
   id: string;
   label: string;
   choices: readonly string[];
-  aliases: Record<string, readonly string[]>;
+  aliases?: Record<string, readonly string[]>;
   value: string;
   onChange: (value: string) => void;
 }) {

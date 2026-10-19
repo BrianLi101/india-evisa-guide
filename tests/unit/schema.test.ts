@@ -16,11 +16,11 @@ const field = (id: string) => {
 };
 describe("conditional worksheet", () => {
   it("requires the Other religion explanation without mutating user text", () => {
-    const answers: Answers = { religion: " Other ", religionOther: "" };
+    const answers: Answers = { religion: " OTHERS ", religionOther: "" };
     expect(isVisible(field("religionOther"), answers)).toBe(true);
     expect(isRequired(field("religionOther"), answers)).toBe(true);
     expect(fieldError(field("religionOther"), answers)).toBeDefined();
-    expect(answers.religion).toBe(" Other ");
+    expect(answers.religion).toBe(" OTHERS ");
     answers.religion = "Buddhism";
     expect(fieldError(field("religionOther"), answers)).toBeUndefined();
   });
@@ -105,7 +105,13 @@ describe("content integrity and source boundaries", () => {
     expect(
       fields
         .filter((f) => f.sectionId === "employment")
-        .every((f) => f.evidenceStatus === "NEEDS_VERIFICATION"),
+        .every(
+          (f) =>
+            f.evidenceStatus === "LIVE_VERIFIED" &&
+            f.helpSources.includes(
+              "https://indianvisaonline.gov.in/evisa/FamilyDetails",
+            ),
+        ),
     ).toBe(true);
   });
 });

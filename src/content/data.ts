@@ -1,3 +1,4 @@
+import { liveFields, liveChoices, LIVE_OBSERVED_AT } from "./livePortal";
 import { arrivalPorts, PORTS_OBSERVED_AT, PORTS_SOURCE } from "./arrivalPorts";
 import type {
   VisaField,
@@ -11,6 +12,8 @@ export const PORTAL = "https://indianvisaonline.gov.in/evisa/";
 export const REGISTRATION = `${PORTAL}Registration`;
 export const SAMPLE = `${PORTAL}images/SampleForm.pdf`;
 export const CLARIFIED_AT = "2026-10-17";
+export const FIELD_HELP_REVIEWED_AT = "2026-10-18";
+export const VISA_INSTRUCTIONS = `${PORTAL}tvoa.html`;
 export const CONTENT_VERSION = 2;
 const sectionSeed = [
   [
@@ -22,31 +25,31 @@ const sectionSeed = [
   [
     "identity",
     "Personal & passport",
-    "Applicant Details Form · sample page 2",
+    "Applicant Details Form",
     "Keep your passport beside you. Names and identity details should match it exactly.",
   ],
   [
     "family",
     "Address & family",
-    "Applicant Details Form · sample page 3",
+    "Applicant Details Form",
     "Prepare your addresses and family details before opening the government form.",
   ],
   [
     "employment",
     "Occupation details",
-    "Provisional supplementary section",
-    "Employment details are reported by applicants but absent from the reviewed sample. Confirm fields on your live form.",
+    "Profession / Occupation Details of Applicant",
+    "Occupation and service fields observed in the synthetic tourist application.",
   ],
   [
     "travel",
     "Visit & references",
-    "Visa Details Form · sample page 4",
+    "Visa Details Form",
     "Your plans, earlier visits and two reference contacts.",
   ],
   [
     "background",
     "Additional questions",
-    "Additional Question Details · sample page 5",
+    "Additional Question Details",
     "Answer carefully and truthfully. Read the full wording on the official portal before answering.",
   ],
 ] as const;
@@ -57,10 +60,21 @@ export const sections: VisaSection[] = sectionSeed.map(
     order,
     officialPageTitle,
     description,
-    evidenceStatus:
-      id === "registration" ? "LIVE_VERIFIED" : "NEEDS_VERIFICATION",
-    sourceUrls: [id === "registration" ? REGISTRATION : SAMPLE],
-    ...(id === "registration" ? { verifiedAt: REVIEWED_AT } : {}),
+    evidenceStatus: "LIVE_VERIFIED",
+    sourceUrls: [
+      PORTAL +
+        (
+          {
+            registration: "Registration",
+            identity: "BasicDetails",
+            family: "FamilyDetails",
+            employment: "FamilyDetails",
+            travel: "VisaDetails",
+            background: "AdditionalQuestions",
+          } as Record<string, string>
+        )[id],
+    ],
+    verifiedAt: LIVE_OBSERVED_AT,
   }),
 );
 type FieldSeed = Omit<Partial<VisaField>, "options"> & {
@@ -178,14 +192,35 @@ add(
   "arrivalDate",
   "Expected Date of Arrival",
   "Use your planned arrival date. Check the applicable application window on the official portal.",
-  { ...live, ...date, validationRules: ["date", "future"] },
+  {
+    ...live,
+    ...date,
+    validationRules: ["date", "future"],
+    helpSources: [REGISTRATION, VISA_INSTRUCTIONS],
+  },
+);
+add(
+  "registration",
+  "visaService",
+  "Visa Service",
+  "The portal fills Visa Service from your Visiting India for selection.",
+  {
+    type: "select",
+    helpSources: [VISA_INSTRUCTIONS, SAMPLE],
+    verifiedAt: FIELD_HELP_REVIEWED_AT,
+  },
 );
 add(
   "registration",
   "purpose",
   "Visiting India for",
-  "Select the purpose shown on your official form after choosing your nationality.",
-  { placeholder: "Your tourist purpose as displayed" },
+  "Search the exact purpose labels from the public registration form, including their visa service and duration. Availability depends on nationality and service.",
+  {
+    type: "select",
+    evidenceStatus: "LIVE_VERIFIED",
+    verifiedAt: FIELD_HELP_REVIEWED_AT,
+    helpSources: [REGISTRATION],
+  },
 );
 add(
   "registration",
@@ -237,7 +272,8 @@ add(
   "identity",
   "gender",
   "Gender",
-  "Choose the corresponding option on your live form. Current options have not been verified.",
+  "Choose the option corresponding to your passport.",
+  { type: "select" },
 );
 add(
   "identity",
@@ -286,7 +322,7 @@ add(
   "identity",
   "education",
   "Educational Qualification",
-  "Choose your highest qualification. These options are transcribed from a published walkthrough.",
+  "Choose your highest qualification from the portal options.",
 );
 add(
   "identity",
@@ -411,9 +447,9 @@ add(
 add(
   "family",
   "sameAddress",
-  "Is your permanent address the same?",
-  "Guidance topic: check whether your official form offers a same-address control. Its current wording and behavior have not been verified.",
-  { ...yn, evidenceStatus: "NEEDS_VERIFICATION", helpSources: [] },
+  "Click here for same address",
+  "The official sample shows a checkbox for using your present address as your permanent address.",
+  { ...yn, verifiedAt: CLARIFIED_AT },
 );
 for (const [id, label] of [
   ["permanentStreet", "House No./Street (permanent address)"],
@@ -459,16 +495,10 @@ for (const [id, label] of [
   ["spouseBirthplace", "Spouse place of birth"],
   ["spouseBirthCountry", "Spouse country of birth"],
 ])
-  add(
-    "family",
-    id,
-    label,
-    "Provisional spouse field; confirm exact labels and requirements on the portal.",
-    {
-      visibleWhen: when("maritalStatus", "Married"),
-      evidenceStatus: "NEEDS_VERIFICATION",
-    },
-  );
+  add("family", id, label, "Use your spouse’s details.", {
+    visibleWhen: when("maritalStatus", "Married"),
+    evidenceStatus: "NEEDS_VERIFICATION",
+  });
 add(
   "family",
   "pakistanFamily",
@@ -499,11 +529,6 @@ for (const [id, label, help] of [
     "employerAddress",
     "Employer address",
     "Use the full accurate address before considering any explicit formatting change.",
-  ],
-  [
-    "employerPhone",
-    "Employer phone",
-    "Use the requested contact number if applicable.",
   ],
 ])
   add("employment", id, label, help, {
@@ -539,6 +564,18 @@ add(
     visibleWhen: when("military"),
     evidenceStatus: "NEEDS_VERIFICATION",
     helpSources: [],
+  },
+);
+add(
+  "travel",
+  "visaArrival",
+  "Port of Arrival in India",
+  "The port is carried over from registration. Search the shared registry to check its airport code, city or alternate name.",
+  {
+    type: "port",
+    helpSources: [SAMPLE, REGISTRATION],
+    knownIssueIds: ["airport-names"],
+    verifiedAt: PORTS_OBSERVED_AT,
   },
 );
 add(
@@ -658,7 +695,7 @@ add(
   "travel",
   "saarcDetails",
   "SAARC visit details",
-  "Prepare the country, year and duration details requested on your form.",
+  "Prepare the country, year and number of visits requested on your form.",
   {
     type: "textarea",
     visibleWhen: when("saarcVisited"),
@@ -708,7 +745,7 @@ for (const [id, label] of questions) {
     "background",
     id,
     label,
-    "From the official sample; compare exact wording with the current form. No answer is selected for you.",
+    "Read the full question and answer accurately on the official form.",
     yn,
   );
   add(
@@ -716,8 +753,75 @@ for (const [id, label] of questions) {
     `${id}Details`,
     "Details for the preceding question",
     "Give accurate details if you answered Yes.",
-    { type: "textarea", visibleWhen: when(id) },
+    {
+      type: "textarea",
+      visibleWhen: when(id),
+      evidenceStatus: "NEEDS_VERIFICATION",
+    },
   );
+}
+// Keep metadata for every observed control, including fields without walkthrough help.
+for (const observed of liveFields) {
+  let seed = seeds.find((item) => item.id === observed.id);
+  if (!seed) {
+    seed = {
+      id: observed.id,
+      sectionId: observed.sectionId,
+      officialLabel: observed.label,
+      description:
+        observed.help ??
+        `Complete ${observed.label} as requested on the official form.`,
+    };
+    seeds.push(seed);
+  }
+  seed.officialLabel = observed.label;
+  seed.evidenceStatus = "LIVE_VERIFIED";
+  seed.verifiedAt = LIVE_OBSERVED_AT;
+  seed.helpSources = [
+    ...new Set([observed.source, ...(seed.helpSources ?? [])]),
+  ];
+  // The guide does not enforce completion; this represents the visible required marker.
+  seed.required = observed.requiredMarker;
+  const condition =
+    observed.when &&
+    (
+      {
+        "If name change is checked": when("nameChanged"),
+        "If Religion is OTHERS": when("religion", "OTHERS"),
+        "If nationality acquired by Naturalization": when(
+          "nationalityAcquired",
+          "Naturalization",
+        ),
+        "If another valid Passport/Identity Certificate is held":
+          when("otherPassport"),
+        "If marital status is MARRIED": when("maritalStatus", "MARRIED"),
+        "If Pakistan family question is Yes": when("pakistanFamily"),
+        "If Present Occupation is OTHERS": when("occupation", "OTHERS"),
+        "Shown for STUDENT; help also mentions HouseWife/Student/Minor": when(
+          "occupation",
+          "STUDENT",
+        ),
+        "If Past Occupation is OTHERS": when("pastOccupation", "OTHERS"),
+        "If military / police / security service is Yes": when("military"),
+        "If booked through a tour operator": when("tourOperator"),
+        "If you have visited India before": when("visitedIndia"),
+        "If permission was refused": when("refusedIndia"),
+        "If SAARC visits is Yes": when("saarcVisited"),
+      } as Record<string, Condition>
+    )[observed.when];
+  if (condition) seed.visibleWhen = condition;
+  if (observed.id === "religionOther")
+    seed.requiredWhen = when("religion", "OTHERS");
+  seed.options = liveChoices(observed)?.slice();
+  if (observed.control === "select" || observed.control === "radio")
+    seed.type = "select";
+  else if (observed.control === "date") seed.type = "date";
+  else if (observed.control === "textarea") seed.type = "textarea";
+  else if (observed.id !== "visaArrival") seed.type = "text";
+  if (seed.description.startsWith("Provisional"))
+    seed.description =
+      observed.help ??
+      `Use the ${observed.label.toLowerCase()} requested by the form.`;
 }
 export const fields: VisaField[] = seeds.map((f, order) => ({
   type: "text",
@@ -738,7 +842,11 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
 })[] = [
   {
     id: "employer-punctuation",
-    title: "The form clears after an employer name",
+    title: "Why does the form clear after I enter my employer’s name?",
+    answer:
+      "Remove periods and commas from the employer name, keeping the name accurate, then re-enter any cleared fields and try again.",
+    lastVerifiedAt: CLARIFIED_AT,
+    otherSources: ["Firsthand applicant confirmation · 17 October 2026"],
     sectionIds: ["employment"],
     fieldIds: ["employer"],
     symptoms:
@@ -754,7 +862,11 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "religion-other",
-    title: "“Other” religion needs an explanation",
+    title: "What should I enter when I choose OTHERS for religion?",
+    answer:
+      "Enter your explanation in “If Others, Please specify,” or NA if not applicable, before continuing.",
+    lastVerifiedAt: CLARIFIED_AT,
+    otherSources: ["Firsthand applicant confirmation · 17 October 2026"],
     sectionIds: ["identity"],
     fieldIds: ["religion", "religionOther"],
     symptoms: "The form resets or refuses to continue after Other is selected.",
@@ -769,7 +881,11 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "selections-reset",
-    title: "A selection disappears after editing another field",
+    title: "Why did my selection disappear?",
+    answer:
+      "Complete the form from top to bottom and recheck dropdowns and radio buttons after changing an earlier field.",
+    lastVerifiedAt: CLARIFIED_AT,
+    otherSources: ["Firsthand applicant confirmation · 17 October 2026"],
     sectionIds: ["identity", "family", "travel"],
     fieldIds: [],
     symptoms:
@@ -784,8 +900,30 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
       "This describes the user’s observed sequence; recheck selections after changing earlier fields.",
   },
   {
+    id: "saved-application-fields",
+    title: "Why are some fields blank after Save and Exit?",
+    answer:
+      "After using Save and Exit on the official application, some fields may be blank when you return, so check your answers and fill in anything missing before continuing.",
+    lastVerifiedAt: CLARIFIED_AT,
+    otherSources: ["User-reported Save and Exit behavior · 17 October 2026"],
+    sectionIds: [],
+    fieldIds: [],
+    symptoms:
+      "Fields or answers are cleared, blank or missing when you return to resume a saved application after Save and Exit.",
+    explanation:
+      "The user reported that some fields may be cleared when returning to the official application after Save and Exit.",
+    workaround:
+      "Check each section when reopening the application and fill in any missing answers before continuing.",
+    evidenceStatus: "REPORTED",
+    officialUrls: [],
+    caveats:
+      "The report does not identify every affected field or establish that this happens in every session.",
+  },
+  {
     id: "eta-or-application-id",
-    title: "ETA number or Application ID?",
+    title: "Should I enter my ETA number or Application ID?",
+    answer:
+      "For a previous Indian e-Visa, enter the ETA number from the issued document in the previous visa field, not the Application ID.",
     sectionIds: ["travel"],
     fieldIds: ["previousVisaNumber"],
     symptoms:
@@ -803,7 +941,9 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "visa-place-of-issue",
-    title: "What was the previous visa’s place of issue?",
+    title: "What is the place of issue for my previous visa?",
+    answer:
+      "Enter New Delhi for a previous Indian e-Visa, or the place printed on your visa for a regular visa.",
     sectionIds: ["travel"],
     fieldIds: ["previousVisaPlace"],
     symptoms: "You arrived through one airport but applied online.",
@@ -819,7 +959,9 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "airport-names",
-    title: "Trivandrum, Thiruvananthapuram… which one?",
+    title: "Why is my arrival airport listed under a different name?",
+    answer:
+      "Search Port of Arrival by city, airport name or code to find the matching label, including alternate names such as Trivandrum and Thiruvananthapuram.",
     sectionIds: ["registration"],
     fieldIds: ["arrivalPort"],
     symptoms: "Your ticket’s city name differs from the arrival dropdown.",
@@ -835,7 +977,9 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "address-mapping",
-    title: "City, district, state, or neighborhood?",
+    title: "How do I split an address across the fields?",
+    answer:
+      "Use your accommodation’s address in the matching street, city, state or district and PIN fields, treating Gurgaon and Gurugram as the same city.",
     sectionIds: ["family"],
     fieldIds: ["addressStreet", "addressCity", "addressRegion"],
     symptoms: "Your accommodation address has several place names.",
@@ -852,7 +996,9 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "national-id",
-    title: "Citizenship / National ID is not your nationality",
+    title: "What if I don’t have a National ID number?",
+    answer:
+      "Enter your national identity number if you have one, or NA if it does not apply. Americans, for example, do not have national ID numbers and should specify “NA”.",
     sectionIds: ["identity"],
     fieldIds: ["nationalId"],
     symptoms: "You are unsure what number to enter or whether you have one.",
@@ -871,7 +1017,9 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "upload-action",
-    title: "Choosing a file may not finish the upload",
+    title: "Why does my file still say “Not Uploaded”?",
+    answer:
+      "After choosing the file, click Upload Photo or Upload Document and check that the uploaded preview appears before continuing.",
     sectionIds: [],
     fieldIds: [],
     symptoms:
@@ -888,7 +1036,9 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "document-requirements",
-    title: "The right file type and size",
+    title: "What file types and sizes do I need?",
+    answer:
+      "Use a square JPEG photo of 10 KB–1 MB and at least 350 × 350 pixels, and a passport biodata PDF of 10–300 KB.",
     sectionIds: [],
     fieldIds: [],
     symptoms: "A photo or passport scan is rejected for format or file size.",
@@ -904,7 +1054,9 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
   },
   {
     id: "payment-pending",
-    title: "Payment was taken but the status has not changed",
+    title: "What if I was charged but payment is still pending?",
+    answer:
+      "Allow up to two hours for the status to update, then use Verify Payment / Pay e-Visa Fee on the official portal before trying another payment.",
     sectionIds: [],
     fieldIds: [],
     symptoms: "The bank shows a charge but the government status is pending.",
@@ -922,11 +1074,7 @@ const issueSeed: (Omit<KnownIssue, "lastReviewedAt" | "otherSources"> & {
 export const issues: KnownIssue[] = issueSeed.map((i) => ({
   ...i,
   lastReviewedAt: i.otherSources ? CLARIFIED_AT : REVIEWED_AT,
-  otherSources:
-    i.otherSources ??
-    (i.evidenceStatus === "REPORTED"
-      ? ["Project SPEC.md · initial user research"]
-      : []),
+  otherSources: i.otherSources ?? [],
 }));
 export const locations: LocationAlias[] = arrivalPorts.map((port) => ({
   id: port.id,

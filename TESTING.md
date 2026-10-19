@@ -1,3 +1,91 @@
+# CAPTCHA and instruction confirmation omitted — 18 October 2026
+
+Removed the CAPTCHA prompt and instruction/document-readiness confirmation from the walkthrough’s registration rows, retaining their collected metadata and searchable references. Build, lint, all 47 unit tests and all four walkthrough browser checks passed. Visually confirmed the updated registration screenshot, with neither confirmation row.
+
+# Muted walkthrough fields — 18 October 2026
+
+Fields without expandable help now use the existing muted text color, while retaining their card shape, spacing and type weight. Build, lint and all 47 unit tests passed. The existing walkthrough accessibility/browser journey passed at 1440, 720, 390 and 320px, including keyboard interactions and axe contrast checks. Visually inspected `test-results/walkthrough-registration-desktop.png`; no new tests were added for this CSS-only change.
+
+# Live portal metadata and shared guide — 18 October 2026
+
+User-authorized synthetic portal traversal reached PhotoUpload after separately approved CAPTCHA and background declaration. This was a manual research session, not product automation. No files uploaded, final application submitted or payment made. Saved records exclude applicant values and application/session identifiers.
+
+Production build, standalone typecheck, lint and all 47 unit tests passed. The 39-test Chromium suite passed 38 checks initially; the remaining check expected the previous employer character counter without a limit. Updated that stale assertion to the independently observed 50-character limit, then reran the affected text-feedback/privacy journey successfully (1/1, 4.3 seconds). The passing full-run checks include all-field search/walkthrough markup/style parity, exact gender/purpose choices, passport Place of Issue overflow without truncation, independent arrival selectors without duplicate IDs, keyboard behavior, mobile accessibility, memory clearing, and no runtime transmission/storage. Converter privacy tests also passed.
+
+New metadata tests verify exact country and district transcriptions against browser-computed checksums, distinguish visible markers from HTML required attributes, check later-screen limits independently of the passport gate, and exercise newly captured conditional rules. Initial/previous-nationality country lists match; Countries Visited differs in two apostrophe labels and is retained separately. After that correction, build/typecheck/lint and all 47 unit tests were rerun successfully. The local in-app preview was refreshed.
+
+The official screenshot was blocked by automatic approval review because it contained a temporary application identifier; no portal screenshot was retained. Local synthetic-only screenshots are in `test-results/`, including `employer-text-feedback-mobile.png`. The later photo/document crop/upload acceptance, final review, payment, alternative nationality/service flows, full state-to-district mapping and complete server character whitelist remain untested.
+
+# Selective walkthrough help — 17 October 2026
+
+The walkthrough now has 38 expandable help rows and 91 plain rows, with the Religion explanation still nested inside Religion. Email, repeated email, birthplace, dates and other straightforward labels have no chevron, hidden inputs or unnecessary tab stops. All rows retain their order, conditions and public anchors; links to plain rows focus them. All original field guides remain available through search, and expandable help still uses the identical shared component and styles.
+
+Build, lint, typecheck, all 44 unit tests and all six walkthrough/dropdown Chromium journeys passed (10.6 seconds). Coverage checks the three requested plain fields and their deep-link focus, shared help content/styles, retained scratch text, keyboard navigation, history, responsive accessibility and zero runtime requests/storage writes. Desktop and mobile registration screenshots were inspected, and the in-app browser confirmed ordinary text labels beside expandable choice help. Screenshots: `test-results/walkthrough-registration-desktop.png` and `test-results/walkthrough-registration-mobile.png`.
+
+# Identical search and walkthrough field content — 17 October 2026
+
+Both views now use the same canonical records and `FieldReference` body, including hints, controls, source disclosure, dates and styling. Walkthrough supplies only the surrounding accordion/section context. Religion’s OTHERS explanation renders inline once in both views; its existing deep link opens Religion and reveals the explanation. The explanation survives collapsing and section jumps in memory.
+
+Build, lint, typecheck and all 44 unit tests passed. The full Chromium run passed the 37 existing journeys; the new comparison initially treated server-rendered comments and HTML attribute order as content differences. After normalizing those irrelevant serialization details, the new comparison passed. A final shared-style adjustment was rebuilt and all four walkthrough journeys passed again (8.0 seconds), covering all 38 browser journeys across the runs. The parity test compares markup and computed typography, colors, borders and spacing for all 106 top-level field guides, plus the conditional 107th field after following its deep link and entering synthetic text. Existing tests cover responsive accessibility, unique IDs, keyboard operation, history and zero runtime requests or storage writes.
+
+The in-app browser confirmed the search-selected Religion field and its walkthrough counterpart. Updated screenshots were inspected: `test-results/shared-field-search.png` and `test-results/shared-field-walkthrough.png`. Safari, Firefox and real mobile hardware remain untested.
+
+# Homepage walkthrough button — 17 October 2026
+
+Moved “Walk through the form” into a prominent green card after Checklist and before Prepare passport PDF, with the remaining card numbers updated. Build (including TypeScript), lint, all 44 unit tests and the four selected homepage/walkthrough Chromium journeys passed (10.4 seconds). Desktop and mobile screenshots were visually checked; the in-app browser confirmed the card order. Existing coverage verifies navigation to the walkthrough, responsive accessibility, production CSP and local-only scratch input. Screenshots: `test-results/home-desktop.png` and `test-results/home-mobile.png`.
+
+# Save and Exit FAQ — 17 October 2026
+
+Added the twelfth FAQ about fields that may be blank when reopening the official application after Save and Exit. Build, lint, typecheck, all 44 unit tests and both FAQ Chromium journeys passed (3.1 seconds). Browser coverage checks all 12 inline answers and individual URLs, finds the new FAQ with “save exit,” and retains keyboard, responsive accessibility and no-network/no-storage checks. The in-app browser confirmed the new answer and its 17 October date. Screenshot: `test-results/faq-saved-application.png`. Government behavior is user-reported; this update did not independently verify it.
+
+# Concise Common Problems FAQs — 17 October 2026
+
+Build, lint, typecheck, all 44 unit tests and the full 37-test Chromium suite passed (35.4 seconds). All 11 Common Problems now have question titles and a single-sentence answer, shown identically in the inline FAQ list and at the existing individual URLs. Each answer has a Verified date beneath it. Existing verification dates are retained; the three firsthand behavior reports use their recorded 17 October confirmation. This copy change did not independently reverify government behavior.
+
+Browser coverage opens all 11 answers and visits all 11 URLs, checks concise answer length, date placement, absence of essay sections and research boilerplate, and consistent content between views. FAQ search, no-results feedback and keyboard Enter/Space toggles work with networking blocked and zero requests, cookies, Web Storage or IndexedDB writes. Expanded list and individual-answer layouts pass axe and overflow checks at desktop/mobile widths, with the list also checked at 320px. Desktop and mobile screenshots were inspected, and the in-app browser confirmed the employer answer and inline FAQ list. Screenshots: `test-results/faq-list-*.png` and `test-results/faq-answer-*.png`. Safari, Firefox and real mobile hardware remain untested.
+
+# Remove verification section — 17 October 2026
+
+Removed the complete “Verify your details” section, repeated review records and step link. The eight remaining steps flow from passport upload directly to Payment; the step grid distributes them evenly. Build, lint, typecheck, all 44 unit tests and the three walkthrough browser journeys passed (8.3 seconds). Updated coverage checks still verify all 107 original fields exactly once, with no review records. Browser history, section jumps, responsive accessibility and privacy checks pass. The in-app browser confirmed the eight-step navigation after refresh.
+
+# Remove section introductions — 17 October 2026
+
+Removed the introductory paragraphs beneath all nine walkthrough section headings and their unused styles. Build, lint, typecheck, all 44 unit tests and the three walkthrough browser journeys passed (9.4 seconds). Refreshed the in-app browser and confirmed Registration leads directly into the field groups. Field guidance remains inside the toggles.
+
+# Remove group disclosures — 17 October 2026
+
+Removed the “About these fields” disclosures and their unused styles. Build, lint, typecheck, all 44 unit tests and the three walkthrough browser journeys passed (9.4 seconds). Refreshed the in-app browser and confirmed that group headings lead directly into the collapsed field rows. The separate provisional employment note remains visible.
+
+# Continuous walkthrough with collapsed fields — 17 October 2026
+
+Build, lint, typecheck and all 44 unit tests passed. The full Chromium run passed the 32 existing search, dropdown, file-tool and privacy journeys. After correcting the rewritten walkthrough tests' section IDs, hash-only navigation expectation and ambiguous arrival-hint selector, all three walkthrough journeys passed (9.2 seconds). No product code changed after the full run; all 35 browser journeys are covered across these runs.
+
+The walkthrough renders all nine sections together with every field closed initially and no visible inputs. A sticky step bar jumps to sections, moves keyboard focus to their headings and follows manual scrolling. Tests cover all nine jumps, heading visibility below the bar, Back/Forward, retained legacy anchors, auto-opening/focusing a linked field, safe unknown hashes, and keyboard Enter/Space expansion. Help, controls and sources work within expanded fields. Synthetic text and selections survive closing/reopening and section jumps, clear on reload, and produce zero runtime requests or browser storage writes. All rendered IDs remain unique.
+
+Desktop (1440px), side-by-side (720px), mobile (390px) and small mobile (320px) layouts passed overflow and axe WCAG A/AA checks. Collapsed and expanded screenshots were captured; desktop, side-by-side and small-mobile outputs were visually inspected. The in-app browser also confirmed the step bar, section jump and expanded Port of Arrival guidance. Screenshots are `test-results/walkthrough-collapsed-*.png` and `test-results/walkthrough-expanded-*.png`. Safari, Firefox and real touch hardware remain untested. Source coverage and live-form verification limits are unchanged.
+
+# Consistent searchable dropdowns — 17 October 2026
+
+Build, lint, typecheck and all 44 unit tests passed. The full Chromium suite passed 34 of 35 tests; the new dropdown test initially assumed that searching `can` matched only CANADA, though DOMINICAN REPUBLIC and VATICAN CITY STATE also correctly matched. After using `canad` and checking option labels separately from Religion's alias text, both focused dropdown tests passed (6.9 seconds). No product code changed after the full run.
+
+All available option lists now share Port of Arrival's input, inset chevron, menu and highlighting in walkthrough and home search. Browser checks cover the seven generic dropdown instances, exact option counts, filtering, arrow/Enter selection, selected highlighting, reopening, Escape/Tab dismissal, unmatched input, retained choices across pages and reload clearing. With networking blocked, interaction made zero requests and left cookies, Web Storage and IndexedDB empty. Open menus passed axe and overflow checks at 1440, 720, 390 and 320 pixels. Passport Type was also visually checked in the in-app browser; side-by-side and mobile screenshots were inspected. Screenshots: `test-results/dropdown-*.png`. Safari, Firefox and real mobile devices remain untested.
+
+# Direct fields and Info callouts — 17 October 2026
+
+Build, lint, typecheck, all 44 unit tests and the full 33-test Chromium suite passed. The final navigation touch-target adjustment was rebuilt and the three walkthrough journeys passed again (7.4 seconds). Fields and optional inputs are visible immediately, without numbered rows or collapsible field containers. Info opens explanations, sources and dates beneath its field; keyboard opening/closing leaves the input and selected value intact. The page dropdown was replaced with a plain title, Previous/Next buttons and an unnumbered page list.
+
+Browser checks cover initially hidden help, keyboard Info activation, callout placement below the control, sources, immediate input/copying, page navigation/history and mobile page jumping, 44px navigation targets, memory-only answer retention/reload clearing, zero runtime requests or browser-storage writes, and unchanged search/converter behavior. Axe and overflow checks pass on desktop, 720px side-by-side and mobile layouts, including a 320px overflow check. The in-app browser was refreshed and the Passport No Info callout was visually checked. Updated screenshots include `test-results/walkthrough-fields-info.png` and `test-results/walkthrough-expanded-mobile.png`.
+
+# Page-by-page walkthrough — 17 October 2026
+
+Build, typecheck, lint, 44 unit tests and all 33 Chromium browser tests passed. The walkthrough covers all 107 existing guide fields exactly once, plus sample-only repeated values, upload/declaration prompts and review rows. Unit coverage checks unique anchors, full field coverage, conditional prompt placement, nine-page structure, source boundaries and known/unknown anchor resolution.
+
+Browser coverage checks home mode switching, all nine pages, Previous/Next limits, page picker and browser Back/Forward, direct page/field links, reload restoration of the public page, keyboard expansion, Religion selection, literal copying, optional scratch-text retention across every walkthrough page and clearing after reload. With all networking blocked after initial load, synthetic text entry and navigation triggered zero requests and left localStorage, sessionStorage, cookies and IndexedDB empty. All mounted pages have unique element IDs.
+
+Desktop (1440px), side-by-side (720px) and mobile (390px) screenshots were visually inspected. Expanded field help and page navigation passed axe WCAG 2 A/AA and 2.1 AA checks; overflow checks also passed at 320px. Existing search, converter, clipboard and privacy tests pass. Screenshots are in `test-results/walkthrough-*.png` and `test-results/home-mobile.png`.
+
+The official public sample was visually checked, but no applicant gate was passed or live application submitted. Later screen layouts and conditional branches remain sample-based/provisional, explicitly labeled in the UI and tracked in TODO.md. Safari, Firefox and real-device touch were not tested.
+
 # Compact verification footer and explanations — 17 October 2026
 
 Build, typecheck, lint, 40 unit tests and all 30 Chromium browser tests passed (22.5 seconds). Field cards show a single Verified At footer with the recorded observation/source-review date; their disclosure contains source and related-help links without research paragraphs. Concise explanations cover airport aliases, Religion OTHERS, citizenship acquisition, employer formatting, postal codes, departure ports and visa identifiers. The standalone airport finder uses the same compact date treatment. The local browser confirmed the arrival explanation and footer; the mobile airport screenshot was visually inspected. Existing clipboard, conditional-field, accessibility and no-upload checks pass.

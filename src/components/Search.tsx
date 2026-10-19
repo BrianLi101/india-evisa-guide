@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Search as SearchIcon, ArrowRight } from "lucide-react";
 import { searchGuides } from "@/lib/search";
 import { fields } from "@/content/data";
+import { fieldGuideId } from "@/content/fieldHints";
 import { portalObservations } from "@/content/portalObservations";
 import FieldReference from "./FieldReference";
 export default function Search({ compact = false }: { compact?: boolean }) {
@@ -11,8 +12,7 @@ export default function Search({ compact = false }: { compact?: boolean }) {
   const [selectedId, setSelectedId] = useState("");
   const selectedRef = useRef<HTMLDivElement>(null);
   const selectedField = fields.find(
-    (field) =>
-      field.id === (selectedId === "religionOther" ? "religion" : selectedId),
+    (field) => field.id === fieldGuideId(selectedId),
   );
 
   useEffect(() => {

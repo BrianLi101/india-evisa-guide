@@ -924,22 +924,24 @@ test("corrupt HEIC, undersized files and invalid PDFs fail visibly", async ({
   );
 });
 
-test("guide search, direct article and airport evidence work without a draft", async ({
+test("guide search, direct FAQ and airport evidence work without a draft", async ({
   page,
 }) => {
   await page.goto("/");
   await page.getByLabel("Search fields and common problems").fill("employer");
   await page
     .getByRole("link", {
-      name: "Troubleshooting The form clears after an employer name",
+      name: "FAQ Why does the form clear after I enter my employer’s name?",
     })
     .click();
   await expect(
     page.getByRole("heading", {
-      name: "The form clears after an employer name",
+      name: "Why does the form clear after I enter my employer’s name?",
     }),
   ).toBeVisible();
-  await expect(page.getByText("Reported issue", { exact: true })).toBeVisible();
+  await expect(page.locator(".faq-verified")).toHaveText(
+    "Verified: 17 October 2026",
+  );
   await page.goto("/reference/airports/");
   await page.getByLabel("Search airport or city").fill("TRV");
   await expect(

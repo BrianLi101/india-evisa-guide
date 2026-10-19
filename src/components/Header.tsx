@@ -4,7 +4,7 @@ import { Compass } from "lucide-react";
 export default function Header() {
   const path = usePathname();
   const nav = [
-    ["/tools/", "Files"],
+    ["/walkthrough/", "Walkthrough"],
     ["/problems/", "Common problems"],
   ];
   return (
@@ -21,7 +21,7 @@ export default function Header() {
         {nav.map(([url, title]) => (
           <a
             key={url}
-            href={url === "/tools/" ? "/tools/passport-pdf/" : url}
+            href={url}
             aria-current={
               path.startsWith(url.slice(0, -1)) ? "page" : undefined
             }
