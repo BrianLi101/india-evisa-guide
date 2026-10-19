@@ -45,11 +45,11 @@ Run build before typecheck/e2e; do not run build and standalone typecheck concur
 
 ## Privacy and implementation
 
-Next.js App Router, React, strict TypeScript and static export. The local preview serves GET/HEAD files only. There are no application APIs, server actions, analytics, remote fonts, accounts or submission/payment flows.
+Next.js App Router, React, strict TypeScript and static export. The local preview serves GET/HEAD files only. There are no application APIs, server actions, remote fonts, accounts or submission/payment flows.
 
 Queries and selected files stay in volatile browser memory. Optional file tools never upload documents. HEIC may download bundled same-origin decoder code; after relevant static assets load, processing works with networking blocked. No service worker means fresh-page offline navigation is not supported.
 
-Production CSP uses hashed scripts, `connect-src 'none'`, `form-action 'none'`, and `worker-src blob:` for the bundled decoder. Hosting request logs may contain ordinary network metadata. Disable host analytics and set `SITE_URL` before deployment. Downloaded files are managed by the user; local processing cannot protect against a compromised device or extension.
+Production CSP uses hashed scripts, `connect-src 'none'` when analytics is disabled (or `'self'` for the same-origin Vercel endpoint when enabled), `form-action 'none'`, and `worker-src blob:` for the bundled decoder. Hosting request logs may contain ordinary network metadata. Set `SITE_URL` before deployment. Downloaded files are managed by the user; local processing cannot protect against a compromised device or extension.
 
 Legacy drafts use PBKDF2-SHA-256 (600,000 iterations) and AES-256-GCM. The existing crypto/schema code and unit tests remain for backup compatibility; no new drafts can be created in the UI. Export preserves ciphertext exactly. Deletion checks the previous nonce to avoid deleting a draft changed by another tab.
 
@@ -72,3 +72,11 @@ Field UI shows character counts and established limits only; verification-status
 Field footers distinguish directly observed portal fields (Verified At) from sourced or user-confirmed guidance (Reviewed). Previous e-Visa hints explain the ETA number and New Delhi issuance location. City/region/reference-address hints explain alternate place names such as Gurgaon/Gurugram; home search indexes these explanations. Remaining research gaps are tracked in TODO.md.
 
 Religion uses a searchable dropdown with keyboard navigation. Agnostic, atheist, non-religious and not religious all match the single OTHERS option and reveal its explanation field when selected. The original 11 portal labels are preserved; aliases do not create additional options or fill an answer automatically.
+
+## Visitor counts on Vercel
+
+Enable **Web Analytics** in the Vercel project dashboard, then deploy. Production Vercel builds enable the component automatically (`VERCEL_ENV=production`); local and preview builds disable it. Set `NEXT_PUBLIC_VISITOR_ANALYTICS=false` to disable it, or `true` to test an enabled build. These are build-time settings. No API key is needed.
+
+We use `@vercel/analytics/react` with fixed `route` and `path` values of `/`. The Next.js adapter automatically records routes, which is outside the requested visitor-count scope. A `beforeSend` filter accepts only page views and replaces their URL with the origin root; it discards paths, queries, fragments and extra event properties. Client-side navigation and form interactions do not trigger new events. No custom events, identity calls or analytics cookies are enabled. Vercel still derives standard browser/device, country and referrer metadata; this service is not strictly a count-only datastore.
+
+Analytics-enabled builds allow same-origin runtime connections in CSP for `/_vercel/insights/view`; external connections remain blocked. This relaxes the former blanket network block, but no applicant data is wired to analytics. Files and answers remain local. Non-Vercel static hosts do not supply the analytics endpoint; leave analytics disabled there. The local static preview does not emulate Vercel ingestion. Verify live visitor counts in the dashboard after deployment; automated tests use a stub and do not send telemetry.

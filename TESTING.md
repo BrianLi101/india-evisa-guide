@@ -1,3 +1,9 @@
+# Visitor counts — 19 October 2026
+
+Builds passed with analytics disabled and explicitly enabled. Lint, standalone TypeScript and all 53 unit tests passed. The full existing Chromium suite passed (39 tests); the enabled-only analytics test was skipped in that run. Separate analytics checks passed in both modes: no script requests when disabled, and fixed homepage URL/route/path with queries/fragments removed when enabled. The enabled check rejects a custom event and confirms search and passport-file selection produce no additional telemetry. It uses an intercepted SDK script/endpoint; it does not verify Vercel ingestion or send telemetry. The lockfile passed `npm ci --dry-run --ignore-scripts`.
+
+Vercel project dashboard enablement, deployment and live visitor counts remain unverified. Production Vercel builds enable analytics automatically, with a build-time opt-out. The React adapter intentionally replaces the Next adapter to avoid automatic route tracking. Vercel's standard visit metadata is disclosed in the privacy page.
+
 # Phone spacing clarification — 19 October 2026
 
 Updated all five phone-field hints and the phone FAQ to exclude dashes, parentheses and `+`, while noting that spaces may be accepted. Removed the digits-only wording and corrected the source notes. Production build (including TypeScript), lint, all 48 unit tests and all six FAQ/walkthrough Chromium journeys passed (10.3 seconds), including shared field rendering and preservation of literal phone input. The full browser suite was not rerun for this copy correction.

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import VisitorAnalytics from "@/components/VisitorAnalytics";
 import { PORTAL } from "@/content/data";
 import "./globals.css";
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default function RootLayout({
             </a>
           </div>
         </footer>
+        <VisitorAnalytics />
       </body>
     </html>
   );

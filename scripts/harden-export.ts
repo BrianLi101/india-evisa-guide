@@ -27,8 +27,13 @@ for (const path of (await walk("out")).filter((p) => p.endsWith(".html"))) {
   }
   pages.push({ path, html });
 }
-// The HEIC decoder uses blob workers inheriting connect-src 'none'.
-const csp = `default-src 'none'; script-src 'self' ${[...hashes].join(" ")}; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; connect-src 'none'; object-src 'none'; frame-src blob:; worker-src blob:; base-uri 'none'; form-action 'none';`;
+const analyticsEnabled =
+  (process.env.NEXT_PUBLIC_VISITOR_ANALYTICS ??
+    (process.env.VERCEL_ENV === "production" ? "true" : "false")) === "true";
+// Vercel serves the visitor-count endpoint on the deployment's own origin.
+// CSP cannot express an origin-relative path, so analytics builds allow self.
+const connections = analyticsEnabled ? "'self'" : "'none'";
+const csp = `default-src 'none'; script-src 'self' ${[...hashes].join(" ")}; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; connect-src ${connections}; object-src 'none'; frame-src blob:; worker-src blob:; base-uri 'none'; form-action 'none';`;
 for (const { path, html } of pages)
   await writeFile(
     path,
@@ -46,5 +51,5 @@ await writeFile(
   JSON.stringify({ csp: `${csp} frame-ancestors 'none';` }),
 );
 console.log(
-  `Hardened ${pages.length} static HTML pages. Runtime connections disabled.`,
+  `Hardened ${pages.length} static HTML pages. Runtime connections: ${connections}.`,
 );

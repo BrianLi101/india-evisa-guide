@@ -11,6 +11,10 @@ The user explicitly authorized a synthetic official-portal research session, inc
 
 Use the live capture for applicant, family/employment, travel and background field structure. Purpose precedes derived Purpose/Visa Service summaries and arrival date at registration. Search and walkthrough continue sharing FieldReference. Retain the continuous, collapsed guide and omit the review screen. Detailed raw metadata is exported independently at `/reference/portal-capture.json`; later upload/payment remain sample-based. Existing reported advice retains its attribution.
 
+## Visitor counts — 19 October 2026
+
+The user explicitly authorized Vercel Analytics solely for website visitor counts, with no forms or other interactions tracked. This supersedes the earlier blanket analytics prohibition. Use fixed homepage route/path and redact event URLs to the origin root; reject custom events. No applicant answers, searches, selections, photos, documents or drafts may be transmitted. Production Vercel builds may permit same-origin connections for the analytics endpoint; local/preview builds default to no analytics. Disclose Vercel's standard visit metadata and keep the remaining privacy restrictions.
+
 ## Current direction — 17 October 2026
 
 ### Home actions — 19 October 2026

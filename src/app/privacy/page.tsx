@@ -38,11 +38,31 @@ export default function Privacy() {
           It runs on your device; the file is never sent with that download.{" "}
           <a href="/third-party/NOTICES.txt">Open-source notices</a>.
         </p>
-        <h2>No account or tracking</h2>
+        <h2>Visitor counts</h2>
         <p>
-          There are no accounts, analytics, remote fonts, advertisements or
-          third-party runtime scripts. The guide does not create saved
-          application drafts or collect payment information.
+          We use analytics only to count website visitors. We do not track form
+          interactions, searches, answers, selections, files or downloads. Visits
+          are reported under the homepage URL, without the individual page path,
+          query string or fragment. We do not enable analytics cookies, custom
+          events or user identification.
+        </p>
+        <p>
+          Our provider, Vercel Web Analytics, also collects standard visit
+          metadata such as browser, device, location and referring website.
+          Although visitor counting is our only analytics purpose, Vercel’s
+          service is not limited to collecting a count. See{" "}
+          <a
+            href="https://vercel.com/docs/analytics/privacy-policy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Vercel’s analytics privacy information
+          </a>
+          .
+        </p>
+        <p>
+          There are no accounts, remote fonts or advertisements. The guide does
+          not create saved application drafts or collect payment information.
         </p>
         <h2>Older encrypted drafts</h2>
         <p>
@@ -57,9 +77,10 @@ export default function Privacy() {
         <p>
           Your browser downloads static page assets. A hosting provider may
           retain ordinary request metadata such as IP address, user agent, time
-          and page URL. Production pages block runtime network connections using
-          a Content Security Policy. Opening the government portal is a separate
-          visit governed by its own practices.
+          and page URL. A Content Security Policy blocks external runtime
+          connections; visitor counts use a same-origin Vercel endpoint when
+          enabled. Opening the government portal is a separate visit governed by
+          its own practices.
         </p>
         <h2>Device privacy</h2>
         <p>

@@ -12,6 +12,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "heic-to": "1.6.6",
     "lucide-react": "^0.468.0",
     "next": "16.4.2",
