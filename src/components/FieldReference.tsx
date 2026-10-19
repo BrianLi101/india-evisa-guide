@@ -42,7 +42,7 @@ export default function FieldReference({
     ].includes(field.id);
   const label =
     observation?.displayLabel ?? observation?.label ?? field.officialLabel;
-  const { hint, explanation, example, prompt } = fieldHint(field);
+  const { hint, explanation, commonOptions, example, prompt } = fieldHint(field);
   const verifiedAt = observation
     ? (observation.observedAt ?? OBSERVED_AT)
     : (reported?.checkedAt ?? field.verifiedAt ?? REVIEWED_AT);
@@ -59,6 +59,16 @@ export default function FieldReference({
       </p>
       {explanation && (
         <p className="compact-field-explanation">{explanation}</p>
+      )}
+      {commonOptions && (
+        <div className="compact-field-common-options">
+          <p id={`${field.id}-common-options`}>Common options</p>
+          <ul aria-labelledby={`${field.id}-common-options`}>
+            {commonOptions.map((option) => (
+              <li key={option}>{option}</li>
+            ))}
+          </ul>
+        </div>
       )}
     </>
   );

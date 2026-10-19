@@ -4,7 +4,16 @@ export default function ProblemAnswer({ issue }: { issue: KnownIssue }) {
   const verifiedAt = issue.lastVerifiedAt ?? issue.lastReviewedAt;
   return (
     <>
-      <p className="faq-answer">{issue.answer}</p>
+      <div className="faq-answer">
+        <p>{issue.answer}</p>
+        {issue.answerBullets?.length ? (
+          <ul>
+            {issue.answerBullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
+        ) : null}
+      </div>
       <p className="faq-verified">
         Verified:{" "}
         <time dateTime={verifiedAt}>

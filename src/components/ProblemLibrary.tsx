@@ -10,7 +10,7 @@ export default function ProblemLibrary() {
   const words = normalizeSearch(query).split(/\s+/).filter(Boolean);
   const matches = issues.filter((issue) => {
     const terms = normalizeSearch(
-      `${issue.title} ${issue.answer} ${issue.symptoms}`,
+      `${issue.title} ${issue.answer} ${issue.answerBullets?.join(" ") ?? ""} ${issue.symptoms}`,
     );
     return words.every((word) => terms.includes(word));
   });

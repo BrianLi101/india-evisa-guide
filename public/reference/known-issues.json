@@ -5,10 +5,11 @@
     {
       "id": "employer-punctuation",
       "title": "Why does the form clear after I enter my employer’s name?",
-      "answer": "Remove periods and commas from the employer name, keeping the name accurate, then re-enter any cleared fields and try again.",
+      "answer": "When the employer name’s formatting is rejected, clicking Next may reset the form instead of showing an error. Remove periods and commas while keeping the name accurate, then re-enter any cleared fields and try again.",
       "lastVerifiedAt": "2026-10-17",
       "otherSources": [
-        "Firsthand applicant confirmation · 17 October 2026"
+        "Firsthand applicant confirmation · 17 October 2026",
+        "User clarification · 19 October 2026: clicking Next may reset the form instead of displaying a formatting error."
       ],
       "sectionIds": [
         "employment"
@@ -17,7 +18,7 @@
         "employer"
       ],
       "symptoms": "Save and Next clears fields after you enter a company name with periods or commas.",
-      "explanation": "A user confirmed firsthand that periods or commas in an employer name caused Save and Next to clear fields.",
+      "explanation": "A user confirmed firsthand that periods or commas in an employer name caused Save and Next to clear fields, and later clarified that the form may reset instead of displaying the formatting error.",
       "workaround": "Keep a record of your original answer. Check all entries before retrying. If you consider removing punctuation, first confirm that the resulting name remains accurate. Ask official support when a legal name cannot be entered correctly.",
       "evidenceStatus": "REPORTED",
       "officialUrls": [],
@@ -26,8 +27,8 @@
     },
     {
       "id": "religion-other",
-      "title": "What should I enter when I choose OTHERS for religion?",
-      "answer": "Enter your explanation in “If Others, Please specify,” or NA if not applicable, before continuing.",
+      "title": "What if my religion isn’t available?",
+      "answer": "Just select 'Others' and specify either 'NA' or your religion. You can also specify 'not religious' or 'atheist.'",
       "lastVerifiedAt": "2026-10-17",
       "otherSources": [
         "Firsthand applicant confirmation · 17 October 2026"
@@ -74,15 +75,16 @@
     {
       "id": "saved-application-fields",
       "title": "Why are some fields blank after Save and Exit?",
-      "answer": "After using Save and Exit on the official application, some fields may be blank when you return, so check your answers and fill in anything missing before continuing.",
+      "answer": "Save and Exit can be inconsistent and does not always save every field. When you return, recheck every section and re-enter any missing answers before continuing.",
       "lastVerifiedAt": "2026-10-17",
       "otherSources": [
-        "User-reported Save and Exit behavior · 17 October 2026"
+        "User-reported Save and Exit behavior · 17 October 2026",
+        "User clarification · 19 October 2026: saving is inconsistent and does not always retain all fields."
       ],
       "sectionIds": [],
       "fieldIds": [],
       "symptoms": "Fields or answers are cleared, blank or missing when you return to resume a saved application after Save and Exit.",
-      "explanation": "The user reported that some fields may be cleared when returning to the official application after Save and Exit.",
+      "explanation": "The user reported that some fields may be cleared when returning to the official application after Save and Exit, and clarified that saving can inconsistently retain only some fields.",
       "workaround": "Check each section when reopening the application and fill in any missing answers before continuing.",
       "evidenceStatus": "REPORTED",
       "officialUrls": [],
@@ -91,7 +93,7 @@
     },
     {
       "id": "eta-or-application-id",
-      "title": "Should I enter my ETA number or Application ID?",
+      "title": "What value do I use for my previous visa? Should I enter my ETA number or Application ID?",
       "answer": "For a previous Indian e-Visa, enter the ETA number from the issued document in the previous visa field, not the Application ID.",
       "sectionIds": [
         "travel"
@@ -142,7 +144,14 @@
     {
       "id": "airport-names",
       "title": "Why is my arrival airport listed under a different name?",
-      "answer": "Search Port of Arrival by city, airport name or code to find the matching label, including alternate names such as Trivandrum and Thiruvananthapuram.",
+      "answer": "Indian cities and airports may be listed under alternate names. Match your ticket’s airport code to the corresponding portal entry:",
+      "answerBullets": [
+        "Thiruvananthapuram / Trivandrum (TRV) — TRIVANDRUM AIRPORT.",
+        "Bengaluru / Bangalore / Kempegowda (BLR) — BENGALURU AIRPORT.",
+        "Kochi / Cochin (COK) — COCHIN AIRPORT.",
+        "Kozhikode / Calicut (CCJ) — CALICUT AIRPORT.",
+        "Mangaluru / Mangalore (IXE) — MANGALORE AIRPORT."
+      ],
       "sectionIds": [
         "registration"
       ],
@@ -164,8 +173,8 @@
     },
     {
       "id": "address-mapping",
-      "title": "How do I split an address across the fields?",
-      "answer": "Use your accommodation’s address in the matching street, city, state or district and PIN fields, treating Gurgaon and Gurugram as the same city.",
+      "title": "I don’t see my city in the toggle options or in the dropdown options.",
+      "answer": "Some Indian cities go by multiple names—for example, Gurgaon is also called Gurugram. Google your city’s name plus “alternate names” to find other names to look for in the options.",
       "sectionIds": [
         "family"
       ],
@@ -174,9 +183,9 @@
         "addressCity",
         "addressRegion"
       ],
-      "symptoms": "Your accommodation address has several place names.",
+      "symptoms": "Your city is missing from the toggle or dropdown options, or appears under a different name.",
       "explanation": "Some places have multiple names: Gurgaon and Gurugram refer to the same city in Haryana. Older and newer names can appear in addresses and dropdowns. City, district and state are separate parts of an address.",
-      "workaround": "Use the full address supplied by your accommodation. Put the street/locality in the address lines and the city, district, state and PIN in their corresponding fields. If a dropdown uses an alternate name, select the matching place.",
+      "workaround": "Google the city’s name with alternate names to find other names to look for. Confirm that the option refers to the same place; city, district and state are separate address fields.",
       "evidenceStatus": "REPORTED",
       "lastVerifiedAt": "2026-10-17",
       "otherSources": [

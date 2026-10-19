@@ -1,3 +1,41 @@
+# Combined changes before push — 19 October 2026
+
+The final home, walkthrough, dropdown-alias and FAQ changes passed the production build (including TypeScript), lint and all 47 unit tests. The complete 39-test Chromium suite then passed in 35.6 seconds, including local search, responsive accessibility, exact dropdown selection/copying, FAQ parity, walkthrough navigation and privacy/no-upload checks for both file tools. Safari, Firefox and real mobile hardware remain untested.
+
+# Walkthrough title and description — 19 October 2026
+
+Added the visible “Walk through the form” title and the requested description, with the green “Open official form” button underneath at every screen width. Build (including TypeScript), lint, all 47 unit tests and all four walkthrough Chromium journeys passed (6.7 seconds). Visually checked the header on desktop and mobile; screenshots: `test-results/walkthrough-titled-desktop.jpg` and `test-results/walkthrough-titled-mobile.jpg`. The full browser suite was not rerun.
+
+# Simplified walkthrough header — 19 October 2026
+
+Removed the mode switch and visible slogan, promoted “Open official form” to a green primary button, and added “Click on a field to get guidance.” The page retains a screen-reader heading. Build (including TypeScript), lint, all 47 unit tests and all four walkthrough Chromium journeys passed (6.9 seconds), covering navigation/history, retained local input, shared field rendering, and responsive accessibility at 1440, 720, 390 and 320px. The full browser suite was not rerun. Desktop and mobile header screenshots were visually inspected; the mobile button is 56px high and spans the content width without horizontal overflow. Screenshots: `test-results/walkthrough-header-desktop.jpg` and `test-results/walkthrough-header-mobile.jpg`.
+
+# Common questions home card — 19 October 2026
+
+Added Common questions as the second home card, linked to the existing FAQ library, and removed numbers from all home cards. Build (including TypeScript), lint, all 47 unit tests and three affected Chromium journeys passed (7.1 seconds), covering homepage accessibility/CSP, local search and walkthrough navigation. The in-app browser confirmed the card order and successful FAQ navigation. Desktop and mobile home screenshots were visually inspected. The full browser suite was not rerun for this layout change.
+
+# Airport-name FAQ examples — 19 October 2026
+
+Expanded the airport-name FAQ with five bullet examples covering Thiruvananthapuram/Trivandrum, Bengaluru/Bangalore/Kempegowda, Kochi/Cochin, Kozhikode/Calicut and Mangaluru/Mangalore. Each pairs an existing sourced airport code with its exact observed portal label. Both FAQ views and both local searches include the bullets; the recorded 17 October verification date is unchanged.
+
+Build (including TypeScript), lint and all 47 unit tests passed. Both FAQ Chromium journeys passed (2.8 seconds) after correcting two test assumptions: rendered list text needs an inner-text comparison, and substring search for IXE can also match another answer. Coverage checks all 12 FAQ views, bullet content/parity, alias discovery, keyboard interaction, desktop/mobile accessibility and zero runtime requests/storage during FAQ search. Desktop and mobile screenshots were visually inspected, and the updated FAQ is open in the in-app preview. The full browser suite was not rerun for this content change. Screenshots: `test-results/faq-answer-desktop.png` and `test-results/faq-answer-mobile.png`.
+
+# Parenthesized dropdown aliases — 19 October 2026
+
+Airport and generic choice dropdowns now show aliases in parentheses in menu options and selected values. All mapped airport aliases are included; a wrapping hint keeps aliases readable when the input is narrow. Canonical values still drive conditional fields and Copy portal name. Choices without aliases retain their literal labels, including any original parentheses.
+
+Build (including TypeScript), lint, all 47 unit tests and all 39 Chromium browser journeys passed (34.8 seconds). Updated browser checks cover menu/selection parentheses, reopening and changing selections, no-alias choices, exact clipboard labels, Religion’s conditional explanation and retained state, both arrival selectors, shared home/walkthrough rendering, accessibility and zero runtime uploads/storage. The in-app preview confirmed the selected Trivandrum aliases. Mobile airport and Religion screenshots and the desktop walkthrough selection were visually inspected: `test-results/arrival-selected-aliases-mobile.png`, `test-results/religion-others-mobile.png` and `test-results/live-portal-arrival-help.png`. Safari, Firefox and real mobile hardware were not tested.
+
+# Restore secondary walkthrough card — 19 October 2026
+
+Restored the green walkthrough card beside Checklist while retaining the top walkthrough button. The restored card is unnumbered; Prepare passport PDF remains step 02. Build (including TypeScript), lint, all 47 unit tests and the three affected Chromium journeys passed, covering card navigation, home search privacy and mobile accessibility. Refreshed the in-app preview and confirmed both walkthrough links. The desktop home screenshot was visually inspected. This pass did not rerun the full browser suite.
+
+# Home actions and full-width search — 19 October 2026
+
+Moved “Walk through the form” and “Open official portal” into prominent buttons above search, with the walkthrough removed from the preparation cards. Build, typecheck, lint, all 47 unit tests and all 39 Chromium browser tests passed (34.4 seconds), including search/walkthrough navigation, responsive accessibility and privacy/no-upload checks.
+
+Desktop and mobile screenshots were visually inspected. In-app browser measurements at 1440, 720, 390 and 320 pixels confirmed identical left edges and widths for the action row, search box and preparation grid, both actions above search, and no horizontal overflow. Buttons are side by side at larger widths and stacked on mobile. Screenshots: `test-results/home-desktop.png` and `test-results/home-mobile.png`. Safari, Firefox and real mobile hardware were not tested.
+
 # CAPTCHA and instruction confirmation omitted — 18 October 2026
 
 Removed the CAPTCHA prompt and instruction/document-readiness confirmation from the walkthrough’s registration rows, retaining their collected metadata and searchable references. Build, lint, all 47 unit tests and all four walkthrough browser checks passed. Visually confirmed the updated registration screenshot, with neither confirmation row.

@@ -48,7 +48,11 @@ test("all available field lists support search, keyboard selection and memory-on
       ]);
       await input.press("ArrowDown");
       await input.press("Enter");
-      await expect(input).toHaveValue(selected);
+      const selectedDisplay =
+        id === "religion"
+          ? "OTHERS (Agnostic · Atheist · Non-religious · Not religious)"
+          : selected;
+      await expect(input).toHaveValue(selectedDisplay);
       await expect(input).toHaveAttribute("aria-expanded", "false");
       await field.getByRole("button", { name: /^Show all/ }).click();
       await expect(field.getByRole("option")).toHaveCount(count);
@@ -56,7 +60,7 @@ test("all available field lists support search, keyboard selection and memory-on
         field.getByRole("option", { name: selected, exact: id !== "religion" }),
       ).toHaveAttribute("aria-selected", "true");
       await input.press("Escape");
-      await expect(input).toHaveValue(selected);
+      await expect(input).toHaveValue(selectedDisplay);
       await expect(input).toHaveAttribute("aria-expanded", "false");
     }
   }
@@ -161,8 +165,16 @@ test("live purpose help, passport limit and both arrival pickers work independen
   await expect(place.getByRole("textbox")).toHaveValue("A".repeat(21));
   await expect(place).toContainText("1 character over the 20-character limit");
   for (const [id, query, expected] of [
-    ["arrivalPort", "TRV", "TRIVANDRUM AIRPORT"],
-    ["visaArrival", "BLR", "BENGALURU AIRPORT"],
+    [
+      "arrivalPort",
+      "TRV",
+      "TRIVANDRUM AIRPORT (TRV · Thiruvananthapuram · Trivandrum · Thiruvananthapuram International Airport)",
+    ],
+    [
+      "visaArrival",
+      "BLR",
+      "BENGALURU AIRPORT (BLR · Bengaluru · Bangalore · Kempegowda · Kempegowda International Airport)",
+    ],
   ]) {
     await page.goto(`/walkthrough/#${id}`);
     const input = page.locator(`#${id}`).getByRole("combobox");
@@ -172,7 +184,7 @@ test("live purpose help, passport limit and both arrival pickers work independen
     await expect(input).toHaveValue(expected);
   }
   await expect(page.locator("#arrivalPort").getByRole("combobox")).toHaveValue(
-    "TRIVANDRUM AIRPORT",
+    "TRIVANDRUM AIRPORT (TRV · Thiruvananthapuram · Trivandrum · Thiruvananthapuram International Airport)",
   );
   expect(
     await page.evaluate(() => {

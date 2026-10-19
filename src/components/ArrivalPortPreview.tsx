@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { Check, ChevronDown, Copy } from "lucide-react";
 import { arrivalPorts, type ArrivalPort } from "@/content/arrivalPorts";
 import { searchArrivalPorts } from "@/lib/locations";
+import { formatChoiceAliases, formatChoiceLabel } from "@/lib/choiceLabels";
 
-const alternateNames = (port: ArrivalPort) =>
-  [port.code, ...port.names.slice(0, 3)].filter(Boolean).join(" · ");
+const alternateNames = (port: ArrivalPort) => [port.code, ...port.names];
 
 export default function ArrivalPortPreview({
   id,
@@ -30,6 +30,10 @@ export default function ArrivalPortPreview({
   const revision = useRef(0);
   const results = searchArrivalPorts(arrivalPorts, browse ? "" : query);
   const activePort = results[active];
+
+  useEffect(() => {
+    if (selected) inputRef.current?.setSelectionRange(0, 0);
+  }, [selected]);
 
   useEffect(() => {
     if (open && activePort)
@@ -58,7 +62,9 @@ export default function ArrivalPortPreview({
       if (revision.current === currentRevision) setCopyStatus("Copied");
     } catch {
       if (revision.current === currentRevision)
-        setCopyStatus("Couldn’t copy. Select the text and copy it manually.");
+        setCopyStatus(
+          `Couldn’t copy. Copy only this portal name manually: ${selected.label}`,
+        );
     }
   }
 
@@ -88,7 +94,11 @@ export default function ArrivalPortPreview({
             autoComplete="off"
             spellCheck={false}
             placeholder="Try Thiruvananthapuram, TRV or Bangalore"
-            value={query}
+            value={
+              selected
+                ? formatChoiceLabel(selected.label, alternateNames(selected))
+                : query
+            }
             onFocus={() => setOpen(true)}
             onChange={(event) => {
               revision.current += 1;
@@ -173,7 +183,9 @@ export default function ArrivalPortPreview({
                 onClick={() => choose(port)}
               >
                 <strong>{port.label}</strong>
-                {alternateNames(port) && <span>{alternateNames(port)}</span>}
+                {formatChoiceAliases(alternateNames(port)) && (
+                  <span>{formatChoiceAliases(alternateNames(port))}</span>
+                )}
               </li>
             ))}
           </ul>
@@ -184,7 +196,7 @@ export default function ArrivalPortPreview({
       )}
       <p id={`${id}-selection-hint`} className="compact-field-hint">
         {selected
-          ? alternateNames(selected)
+          ? formatChoiceAliases(alternateNames(selected))
           : query.trim() && !open
             ? "Choose a matching entry from the list."
             : ""}

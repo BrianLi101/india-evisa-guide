@@ -1864,14 +1864,6 @@ small {
   font-size: 16px;
   margin-bottom: 24px;
 }
-.home-privacy {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 18px;
-}
 .home-tools {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1898,6 +1890,10 @@ small {
 .home-tool-card.checklist-card {
   background: #f3e5ce;
   color: #624822;
+}
+.home-tool-card.questions-card {
+  background: #f3e2db;
+  color: #684936;
 }
 .home-tool-card.walkthrough-card {
   background: var(--green);
@@ -2496,10 +2492,20 @@ progress::-moz-progress-bar {
 }
 
 .home-start-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.home-start-actions .button {
+  min-height: 64px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.home-start-actions .button svg {
+  flex-shrink: 0;
 }
 .prep-link {
   font-size: 13px;
@@ -2616,7 +2622,8 @@ progress::-moz-progress-bar {
 }
 @media (max-width: 580px) {
   .home-start-actions {
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .prep-link {
     font-size: 12px;
@@ -2733,11 +2740,14 @@ progress::-moz-progress-bar {
   margin: 8px 0 0;
 }
 
-/* Search-first field guidance */
+/* Full-width home field guidance */
 .home-start .search-wrap {
-  max-width: 680px;
-  margin: 28px auto 18px;
+  max-width: none;
+  margin: 28px 0 18px;
   text-align: left;
+}
+.home-start .search-box {
+  max-width: none;
 }
 .search-hint {
   margin: 8px 2px;
@@ -2972,6 +2982,23 @@ progress::-moz-progress-bar {
   font-size: 13px;
   line-height: 1.5;
 }
+.compact-field-common-options {
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.field-guide-entry .compact-field-common-options > p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+}
+.compact-field-common-options ul {
+  margin: 4px 0 0;
+  padding-left: 22px;
+}
+.compact-field-common-options li + li {
+  margin-top: 4px;
+}
 .field-guide-entry .field-verified {
   margin: 12px 0 0;
   font-size: 12px;
@@ -3051,8 +3078,7 @@ progress::-moz-progress-bar {
   border-bottom: 0;
   padding: 0;
 }
-.home-simple:has(.selected-field) .home-tools,
-.home-simple:has(.selected-field) .home-privacy {
+.home-simple:has(.selected-field) .home-tools {
   display: none;
 }
 
@@ -3150,55 +3176,37 @@ textarea.field-example {
 }
 
 /* Continuous form guide, sized for a window beside the official form. */
-.guide-mode-switch {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  padding: 4px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #f0f3ed;
-  font-size: 13px;
-}
-.guide-mode-switch a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 9px 15px;
-  border-radius: 7px;
-}
-.guide-mode-switch a[aria-current="page"] {
-  background: var(--white);
-  box-shadow: 0 1px 3px #263c3512;
-  color: var(--green);
-  font-weight: 600;
-}
 /* Keep the step bar and anchor offsets in sync at each breakpoint. */
 .walkthrough {
   max-width: 1100px;
   padding-top: 26px;
   padding-bottom: 56px;
 }
-.walkthrough-title-row {
+.walkthrough-start {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  margin: 26px 0 14px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
 }
-.walkthrough-title-row h1 {
+.walkthrough-start h1 {
+  margin: 0;
   font-size: clamp(27px, 3.4vw, 38px);
-  margin: 0 0 8px;
 }
-.walkthrough-title-row p {
+.walkthrough-start p {
   margin: 0;
   color: var(--muted);
   font-size: 14px;
 }
-.walkthrough-title-row .official-link {
+.walkthrough-start .button {
   flex-shrink: 0;
+  margin-top: 6px;
+  min-height: 56px;
+  padding: 16px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
 }
 .walkthrough-scope {
   color: var(--muted);
@@ -3429,11 +3437,6 @@ textarea.field-example {
   text-align: center;
 }
 @media (max-width: 800px) {
-  .walkthrough-title-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
   .walkthrough-steps {
     padding: 8px 0 10px;
     margin-top: 18px;
@@ -3467,10 +3470,10 @@ textarea.field-example {
   .walkthrough {
     padding-top: 20px;
   }
-  .walkthrough-title-row {
-    margin-top: 22px;
+  .walkthrough-start .button {
+    width: 100%;
   }
-  .walkthrough-title-row p {
+  .walkthrough-start p {
     font-size: 13px;
   }
   .walkthrough-step-number {
@@ -3498,12 +3501,6 @@ textarea.field-example {
   }
   .walkthrough-field-body {
     padding: 16px 14px;
-  }
-  .guide-mode-switch {
-    font-size: 12px;
-  }
-  .guide-mode-switch a {
-    padding: 9px 10px;
   }
   .site-header {
     flex-wrap: wrap;
@@ -3557,6 +3554,16 @@ textarea.field-example {
   font-size: 15px;
   line-height: 1.8;
   margin: 0;
+}
+.faq-answer > p {
+  margin: 0;
+}
+.faq-answer > ul {
+  margin: 14px 0 0;
+  padding-left: 22px;
+}
+.faq-answer li + li {
+  margin-top: 8px;
 }
 .faq-verified {
   font-size: 12px;

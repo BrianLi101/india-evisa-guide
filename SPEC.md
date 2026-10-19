@@ -13,17 +13,26 @@ Use the live capture for applicant, family/employment, travel and background fie
 
 ## Current direction — 17 October 2026
 
+### Home actions — 19 October 2026
+
+Place prominent “Walk through the form” and “Go to official portal” buttons above the home search, side by side on larger screens and stacked on mobile. Search spans the same full content width as the actions and preparation cards. This supersedes the earlier search-first ordering. Keep the walkthrough card as a second way to reach the guide. Home cards have no numbers and appear in this order: Checklist, Common questions (linking to the existing FAQs), Walk through the form, Prepare passport PDF, Prepare photo, After you’re approved.
+
 ### Shared field rendering — latest user direction
+
+Dropdown alias presentation (19 October 2026): show secondary names in parentheses in menu options and retain them in the selected display, across home and walkthrough. Include all known aliases and codes, with a wrapping selection hint for narrow screens. Keep canonical option values separate from display text so copying uses the exact official label and conditional behavior is unchanged. Do not add parentheses to choices without aliases or alter parentheses already present in official labels.
 
 Expanded walkthrough help and search must render identical field content through the same component and canonical field records. Walkthrough rows provide the collapsed heading and section context; they must not override the field body's hints, labels, sources or controls. Keep shared control order, styling, conditional behavior and dates. Religion's OTHERS explanation belongs inside Religion in both views, with its existing public deep link preserved and no duplicate input. Source notes stay in the shared Details & source disclosure. Walkthrough-only sample notes and section navigation remain outside the shared field component.
 
 ### Common Problems FAQs — latest user direction
 
+- Airport-name FAQ (19 October 2026): include a short introduction and bullet examples mapping alternate city/airport names and airport codes to exact portal labels. Use the existing sourced arrival-port mappings. Render the same examples inline and on the individual FAQ page, and include them in local search. Keep the recorded verification date.
 - Present all Common Problems as simple questions with a concise, usually single-sentence answer and a Verified date beneath the answer. Remove the essay sections, evidence badges, source filter and displayed research/provenance commentary, including references to SPEC.md, initial research and “not official evidence.”
 - The question list opens answers inline; existing `/problems/[slug]/` links show the same question, answer and date. Search remains local, with no query persistence or transmission.
 - Preserve evidence statuses, source records and fuller background internally; this presentation change does not turn applicant reports into official rules. Use each record's existing verification date, with its recorded review date as a fallback. Firsthand confirmations from 17 October retain that date; rewriting copy is not a new live verification.
 
 ### Continuous walkthrough — latest user direction
+
+Header revision (19 October 2026): remove the Search a field / Walk through the form mode switch and the “A little help, when you need it” heading. Use the visible title “Walk through the form”, followed by “Click on a field to get guidance on common issues or how to answer the question.” Place a prominent colored “Open official form” button below the description. Keep the existing section navigation.
 
 The user requested a simpler structure based on their responsive form mockup: one continuous guide with section headings and a clickable step bar. This supersedes earlier pagination and always-visible input requirements. Preserve the existing search experience, field order, source boundaries and legacy links.
 

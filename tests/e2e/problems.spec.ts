@@ -35,7 +35,19 @@ test("all FAQs show a concise answer and recorded date, inline and at their exis
     await expect(answer).toBeVisible();
     await expect(answer).not.toBeEmpty();
     const text = await answer.innerText();
-    expect(text.trim().split(/\s+/).length).toBeLessThanOrEqual(40);
+    const introduction = await answer.locator("p").innerText();
+    expect(introduction.trim().split(/\s+/).length).toBeLessThanOrEqual(40);
+    if (id === "airport-names") {
+      await expect(answer.getByRole("listitem")).toHaveText([
+        "Thiruvananthapuram / Trivandrum (TRV) — TRIVANDRUM AIRPORT.",
+        "Bengaluru / Bangalore / Kempegowda (BLR) — BENGALURU AIRPORT.",
+        "Kochi / Cochin (COK) — COCHIN AIRPORT.",
+        "Kozhikode / Calicut (CCJ) — CALICUT AIRPORT.",
+        "Mangaluru / Mangalore (IXE) — MANGALORE AIRPORT.",
+      ]);
+    } else {
+      await expect(answer.getByRole("listitem")).toHaveCount(0);
+    }
     const date = faq.locator(".faq-verified time");
     await expect(date).toHaveAttribute("datetime", /^2026-10-1[67]$/);
     const dateBox = await date.boundingBox();
@@ -47,7 +59,9 @@ test("all FAQs show a concise answer and recorded date, inline and at their exis
   for (const id of faqIds) {
     await page.goto(`/problems/${id}/`);
     await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
-    await expect(page.locator(".faq-answer")).toHaveText(answers.get(id)!);
+    await expect(page.locator(".faq-answer")).toHaveText(answers.get(id)!, {
+      useInnerText: true,
+    });
     await expect(page.locator(".faq-verified")).toHaveText(
       `Verified: ${dates.get(id)}`,
     );
@@ -75,11 +89,15 @@ test("FAQ search and keyboard help stay local and fit desktop and mobile", async
   await expect(
     page.getByText("No matching questions. Try another word or phrase."),
   ).toBeVisible();
+  for (const query of ["Bangalore", "Kochi", "CCJ", "IXE"]) {
+    await search.fill(query);
+    await expect(page.locator("#airport-names")).toBeVisible();
+  }
   await search.fill("save exit");
   await expect(page.getByRole("status")).toHaveText("1 question");
   await page.locator("#saved-application-fields > summary").click();
   await expect(page.locator(".faq-answer")).toContainText(
-    "some fields may be blank when you return",
+    "does not always save every field",
   );
   await page.screenshot({ path: "test-results/faq-saved-application.png" });
   await search.fill("cleared employer");
@@ -91,6 +109,7 @@ test("FAQ search and keyboard help stay local and fit desktop and mobile", async
   await toggle.press("Space");
   await expect(page.locator(".faq-answer")).toBeHidden();
   await search.fill("");
+  await page.locator("#airport-names > summary").click();
   for (const [name, width] of [
     ["desktop", 1440],
     ["mobile", 390],
@@ -127,7 +146,7 @@ test("FAQ search and keyboard help stay local and fit desktop and mobile", async
     })),
   ).toEqual({ local: {}, session: {}, cookies: "", databases: [] });
   await page.unroute("**/*");
-  await page.goto("/problems/employer-punctuation/");
+  await page.goto("/problems/airport-names/");
   for (const [name, width] of [
     ["desktop", 1440],
     ["mobile", 390],
@@ -147,4 +166,12 @@ test("FAQ search and keyboard help stay local and fit desktop and mobile", async
     ).toBe(true);
     await page.screenshot({ path: `test-results/faq-answer-${name}.png` });
   }
+  await page.goto("/");
+  await page.getByRole("searchbox").fill("Bangalore");
+  await page
+    .getByRole("link", {
+      name: "FAQ Why is my arrival airport listed under a different name?",
+    })
+    .click();
+  await expect(page.getByRole("listitem")).toHaveCount(5);
 });

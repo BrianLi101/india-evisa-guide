@@ -5,6 +5,10 @@ import { PDFDocument } from "pdf-lib";
 import path from "node:path";
 import { encryptDraft, newSession } from "../../src/lib/draft";
 const fixture = (name: string) => path.resolve("tests/fixtures", name);
+const religionWithAliases =
+  "OTHERS (Agnostic · Atheist · Non-religious · Not religious)";
+const trivandrumWithAliases =
+  "TRIVANDRUM AIRPORT (TRV · Thiruvananthapuram · Trivandrum · Thiruvananthapuram International Airport)";
 
 async function expectInlineCopy(input: Locator, button: Locator) {
   const fieldBox = await input.boundingBox();
@@ -253,6 +257,9 @@ test("Religion OTHERS reveals an editable explanation and stays private", async 
   await religion.fill("agnostic");
   await expect(page.getByRole("option")).toHaveCount(1);
   await expect(page.getByRole("option")).toContainText("OTHERS");
+  await expect(page.getByRole("option").locator("span")).toHaveText(
+    "(Agnostic · Atheist · Non-religious · Not religious)",
+  );
   await expect(explanation).toHaveCount(0);
   const openAudit = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -263,7 +270,10 @@ test("Religion OTHERS reveals an editable explanation and stays private", async 
   });
   await religion.press("ArrowDown");
   await religion.press("Enter");
-  await expect(religion).toHaveValue("OTHERS");
+  await expect(religion).toHaveValue(religionWithAliases);
+  await expect(page.locator("#religion-selection-hint")).toHaveText(
+    "(Agnostic · Atheist · Non-religious · Not religious)",
+  );
   await expect(explanation).toBeVisible();
   await expect(explanation).toBeEditable();
   await expect(explanation).toHaveValue("");
@@ -280,11 +290,13 @@ test("Religion OTHERS reveals an editable explanation and stays private", async 
   await explanation.fill("SYNTHETIC-PRIVATE-EXPLANATION");
   await religion.fill("buddh");
   await page.getByRole("option", { name: "BUDDHISM", exact: true }).click();
+  await expect(religion).toHaveValue("BUDDHISM");
+  await expect(page.locator("#religion-selection-hint")).toHaveCount(0);
   await expect(explanation).toHaveCount(0);
   await religion.fill("non religious");
   await expect(page.getByRole("option")).toHaveCount(1);
   await page.getByRole("option", { name: /OTHERS/ }).click();
-  await expect(religion).toHaveValue("OTHERS");
+  await expect(religion).toHaveValue(religionWithAliases);
   await expect(explanation).toHaveValue("SYNTHETIC-PRIVATE-EXPLANATION");
   await explanation.fill("NA");
   const audit = await new AxeBuilder({ page })
@@ -323,7 +335,7 @@ test("Religion OTHERS reveals an editable explanation and stays private", async 
   await expect(religion).toHaveValue("");
   await expect(explanation).toHaveCount(0);
   await page.goto("/#religionOther");
-  await expect(religion).toHaveValue("OTHERS");
+  await expect(religion).toHaveValue(religionWithAliases);
   await expect(explanation).toBeVisible();
   await expect(explanation).toHaveValue("");
   await expect(page.locator("#religionOther")).toHaveCount(1);
@@ -573,10 +585,16 @@ test("arrival field resolves airport aliases inline and copies only a selected p
     await expect(page.getByRole("option")).toHaveCount(1);
     await expect(page.getByRole("option")).toContainText("TRIVANDRUM AIRPORT");
     await expect(page.getByRole("option")).toContainText("Thiruvananthapuram");
+    await expect(page.getByRole("option").locator("span")).toHaveText(
+      "(TRV · Thiruvananthapuram · Trivandrum · Thiruvananthapuram International Airport)",
+    );
   }
   await input.press("ArrowDown");
   await input.press("Enter");
-  await expect(input).toHaveValue("TRIVANDRUM AIRPORT");
+  await expect(input).toHaveValue(trivandrumWithAliases);
+  await expect(page.locator("#arrivalPort-selection-hint")).toHaveText(
+    "(TRV · Thiruvananthapuram · Trivandrum · Thiruvananthapuram International Airport)",
+  );
   await expect(input).toHaveAttribute("aria-expanded", "false");
   const arrivalBeforeCopy = await page
     .locator("article#arrivalPort")
@@ -599,7 +617,15 @@ test("arrival field resolves airport aliases inline and copies only a selected p
     await expect(page.getByRole("option")).toContainText("BENGALURU AIRPORT");
   }
   await page.getByRole("option").click();
-  await expect(input).toHaveValue("BENGALURU AIRPORT");
+  await expect(input).toHaveValue(
+    "BENGALURU AIRPORT (BLR · Bengaluru · Bangalore · Kempegowda · Kempegowda International Airport)",
+  );
+  await input.press("ArrowDown");
+  await expect(page.getByRole("option")).toHaveAttribute(
+    "aria-selected",
+    "true",
+  );
+  await input.press("Escape");
   await input.fill("Goa");
   await expect(page.getByRole("option")).toHaveCount(3);
   await expect(page.getByRole("option").nth(0)).toContainText(
@@ -635,11 +661,21 @@ test("arrival field resolves airport aliases inline and copies only a selected p
   });
   await input.fill("GOX");
   await page.getByRole("option").click();
-  await expect(input).toHaveValue("GOA AIRPORT (MOPA)");
+  await expect(input).toHaveValue(
+    "GOA AIRPORT (MOPA) (GOX · Goa Mopa · Mopa · Manohar International Airport)",
+  );
+  await expect(page.locator("#arrivalPort-selection-hint")).toBeVisible();
+  await page.locator("article#arrivalPort").screenshot({
+    path: "test-results/arrival-selected-aliases-mobile.png",
+  });
   await expectInlineCopy(
     input,
     page.getByRole("button", { name: "Copy portal name" }),
   );
+  await input.fill("GOA SEAPORT");
+  await page.getByRole("option").click();
+  await expect(input).toHaveValue("GOA SEAPORT");
+  await expect(page.locator("#arrivalPort-selection-hint")).toBeEmpty();
   await input.fill("Cochin");
   await expect(page.getByRole("option")).toHaveCount(2);
   await input.fill("COK");
@@ -680,7 +716,7 @@ test("old guide links open only the selected field on home", async ({
   await expect(page.locator(".field-guide-entry")).toHaveCount(1);
   await expect(
     page.getByRole("combobox", { name: "Religion", exact: true }),
-  ).toHaveValue("OTHERS");
+  ).toHaveValue(religionWithAliases);
   await expect(
     page.getByRole("textbox", {
       name: "If Others, Please specify",

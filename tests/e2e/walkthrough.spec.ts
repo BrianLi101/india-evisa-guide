@@ -93,7 +93,10 @@ test("walkthrough keeps simple labels and selective help with working anchors an
 }) => {
   await page.goto("/");
   await expect(page.getByRole("searchbox")).toBeVisible();
-  await page.getByRole("link", { name: "Walk through the form" }).click();
+  await page
+    .getByRole("navigation", { name: "Preparation tools" })
+    .getByRole("link", { name: "Walk through the form" })
+    .click();
   await expect(page.locator(".walkthrough-section")).toHaveCount(8);
   await expect(
     page.locator(".walkthrough-section[hidden], .walkthrough-field[open]"),
@@ -202,7 +205,9 @@ test("opening help and retaining scratch text stays local through collapsing and
     await jumpToStep(page, index);
   await jumpToStep(page, 1);
   await openField(page, "religion");
-  await expect(religion.getByRole("combobox")).toHaveValue("OTHERS");
+  await expect(religion.getByRole("combobox")).toHaveValue(
+    "OTHERS (Agnostic · Atheist · Non-religious · Not religious)",
+  );
   await expect(explanation).toHaveValue("SYNTHETIC EXPLANATION");
   await expect(input).toHaveValue("  SYNTHETIC, O’EXAMPLE  ");
   expect(requests).toEqual([]);
@@ -273,7 +278,7 @@ test("step bar follows scrolling and collapsed help is accessible on desktop and
     await arrival.getByRole("combobox").press("ArrowDown");
     await arrival.getByRole("combobox").press("Enter");
     await expect(arrival.getByRole("combobox")).toHaveValue(
-      "TRIVANDRUM AIRPORT",
+      "TRIVANDRUM AIRPORT (TRV · Thiruvananthapuram · Trivandrum · Thiruvananthapuram International Airport)",
     );
     await expect(arrival.locator(".field-verified")).toBeHidden();
     await arrival.getByText("Details & source", { exact: true }).click();

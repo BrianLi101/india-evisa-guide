@@ -17,12 +17,14 @@ export function Evidence({ status }: { status: EvidenceStatus }) {
 }
 export function OfficialLink({
   children = "Open official portal",
+  className = "",
 }: {
   children?: React.ReactNode;
+  className?: string;
 }) {
   return (
     <a
-      className="official-link"
+      className={`official-link ${className}`.trim()}
       href={PORTAL}
       target="_blank"
       rel="noopener noreferrer"

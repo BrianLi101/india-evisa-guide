@@ -2,10 +2,10 @@ import Search from "@/components/Search";
 import { OfficialLink } from "@/components/ui";
 import {
   ArrowRight,
+  CircleHelp,
   ClipboardCheck,
   FileText,
   Image as ImageIcon,
-  LockKeyhole,
   PanelsTopLeft,
   Printer,
 } from "lucide-react";
@@ -21,18 +21,20 @@ export default function Home() {
         <p>
           Complete the official form. Find a field or follow along with the guide.
         </p>
-        <Search />
         <div className="home-start-actions">
-          <OfficialLink />
+          <a className="button primary" href="/walkthrough/">
+            Walk through the form <ArrowRight size={20} aria-hidden="true" />
+          </a>
+          <OfficialLink className="button">
+            Go to official portal
+          </OfficialLink>
         </div>
-        <span className="home-privacy">
-          <LockKeyhole size={14} /> No personal answers needed.
-        </span>
+        <Search />
       </section>
       <nav className="home-tools" aria-label="Preparation tools">
         <a className="home-tool-card checklist-card" href="/before-you-start/">
           <span className="home-step" aria-hidden="true">
-            01 · Before you apply
+            Before you apply
           </span>
           <ClipboardCheck
             className="home-tool-icon"
@@ -44,9 +46,23 @@ export default function Home() {
             Checklist <ArrowRight size={20} aria-hidden="true" />
           </span>
         </a>
+        <a className="home-tool-card questions-card" href="/problems/">
+          <span className="home-step" aria-hidden="true">
+            Quick answers
+          </span>
+          <CircleHelp
+            className="home-tool-icon"
+            size={48}
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
+          <span className="home-tool-label">
+            Common questions <ArrowRight size={20} aria-hidden="true" />
+          </span>
+        </a>
         <a className="home-tool-card walkthrough-card" href="/walkthrough/">
           <span className="home-step" aria-hidden="true">
-            02 · Follow along
+            Follow along
           </span>
           <PanelsTopLeft
             className="home-tool-icon"
@@ -60,7 +76,7 @@ export default function Home() {
         </a>
         <a className="home-tool-card passport-card" href="/tools/passport-pdf/">
           <span className="home-step" aria-hidden="true">
-            03 · Your document
+            Your document
           </span>
           <FileText
             className="home-tool-icon"
@@ -74,7 +90,7 @@ export default function Home() {
         </a>
         <a className="home-tool-card photo-card" href="/tools/photo-jpeg/">
           <span className="home-step" aria-hidden="true">
-            04 · Your photo
+            Your photo
           </span>
           <ImageIcon
             className="home-tool-icon"
@@ -88,7 +104,7 @@ export default function Home() {
         </a>
         <a className="home-tool-card approval-card" href="/after-approval/">
           <span className="home-step" aria-hidden="true">
-            05 · Before you fly
+            Before you fly
           </span>
           <Printer
             className="home-tool-icon"

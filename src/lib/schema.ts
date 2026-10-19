@@ -37,6 +37,7 @@ export type KnownIssue = {
   id: string;
   title: string;
   answer: string;
+  answerBullets?: string[];
   sectionIds: string[];
   fieldIds: string[];
   symptoms: string;

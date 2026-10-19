@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { matchesLocation } from "@/lib/locations";
+import { formatChoiceAliases, formatChoiceLabel } from "@/lib/choiceLabels";
 
 const noAliases: Record<string, readonly string[]> = {};
 
@@ -25,6 +26,7 @@ export default function SearchableChoicePreview({
   const [browse, setBrowse] = useState(true);
   const [active, setActive] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
+  const selectedAliases = formatChoiceAliases(aliases[value]);
   const results = choices.filter((choice) =>
     matchesLocation(browse ? "" : value || query, [
       choice,
@@ -34,6 +36,10 @@ export default function SearchableChoicePreview({
   const activeChoice = results[active];
   const optionId = (choice: string) =>
     `${id}-option-${choices.indexOf(choice)}`;
+
+  useEffect(() => {
+    if (value) inputRef.current?.setSelectionRange(0, 0);
+  }, [value]);
 
   useEffect(() => {
     if (open && activeChoice)
@@ -73,11 +79,13 @@ export default function SearchableChoicePreview({
           aria-activedescendant={
             open && activeChoice ? optionId(activeChoice) : undefined
           }
-          aria-describedby={`${id}-hint`}
+          aria-describedby={
+            selectedAliases ? `${id}-hint ${id}-selection-hint` : `${id}-hint`
+          }
           autoComplete="off"
           spellCheck={false}
           placeholder="Search or choose an option"
-          value={value || query}
+          value={value ? formatChoiceLabel(value, aliases[value]) : query}
           onFocus={() => {
             setOpen(true);
             setBrowse(true);
@@ -150,7 +158,7 @@ export default function SearchableChoicePreview({
               >
                 <strong>{choice}</strong>
                 {aliases[choice]?.length ? (
-                  <span>{aliases[choice].join(" · ")}</span>
+                  <span>{formatChoiceAliases(aliases[choice])}</span>
                 ) : null}
               </li>
             ))}
@@ -159,6 +167,11 @@ export default function SearchableChoicePreview({
             <p role="status">No match. Try another term or show all choices.</p>
           )}
         </div>
+      )}
+      {selectedAliases && (
+        <p id={`${id}-selection-hint`} className="compact-field-hint">
+          {selectedAliases}
+        </p>
       )}
     </div>
   );

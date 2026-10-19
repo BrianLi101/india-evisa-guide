@@ -120,21 +120,15 @@ export default function Walkthrough() {
   return (
     <div className="walkthrough page-width">
       <header className="walkthrough-intro">
-        <nav className="guide-mode-switch" aria-label="Guide mode">
-          <a href="/">Search a field</a>
-          <a href="/walkthrough/" aria-current="page">
-            Walk through the form
-          </a>
-        </nav>
-        <div className="walkthrough-title-row">
-          <div>
-            <h1>A little help, when you need it.</h1>
-            <p>
-              Follow the official form. Open a field only when you need
-              guidance.
-            </p>
-          </div>
-          <OfficialLink />
+        <div className="walkthrough-start">
+          <h1>Walk through the form</h1>
+          <p>
+            Click on a field to get guidance on common issues or how to answer
+            the question.
+          </p>
+          <OfficialLink className="button primary">
+            Open official form
+          </OfficialLink>
         </div>
         <details className="walkthrough-scope">
           <summary>About this guide · adult tourist e-Visa</summary>

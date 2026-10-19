@@ -921,7 +921,12 @@
         },
         "hint": {
           "hint": "Search your reason for visiting, then match the service and duration on your form.",
-          "explanation": "Tourist purposes include sightseeing, meeting friends or relatives, and short-term yoga. Keep the exact option that fits your plans."
+          "explanation": "Tourist purposes include sightseeing, meeting friends or relatives, and short-term yoga. Keep the exact option that fits your plans.",
+          "commonOptions": [
+            "e-Tourist Visa 30 days (e-T1 V) - TOURISM,RECREATION,SIGHT-SEEING",
+            "e-Tourist Visa 1 year (e-T1 V) - RECREATION/SIGHT-SEEING",
+            "e-Tourist Visa 30 days (e-T1 V) - MEETING FRIENDS/RELATIVES"
+          ]
         },
         "currentOptionsVerified": true,
         "requiredMarker": true,

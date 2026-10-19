@@ -1,4 +1,5 @@
 import type { VisaField } from "../lib/schema";
+import type { visaPurposeLabels } from "./visaPurposes";
 
 export const WALKTHROUGH =
   "https://www.visatraveler.com/blog/india-e-visa-application/";
@@ -72,6 +73,7 @@ export const reportedChoices: Record<
 type FieldHint = {
   hint: string;
   explanation?: string;
+  commonOptions?: readonly string[];
   example?: string;
   prompt?: string;
 };
@@ -120,6 +122,11 @@ const hints: Record<string, FieldHint> = {
     hint: "Search your reason for visiting, then match the service and duration on your form.",
     explanation:
       "Tourist purposes include sightseeing, meeting friends or relatives, and short-term yoga. Keep the exact option that fits your plans.",
+    commonOptions: [
+      "e-Tourist Visa 30 days (e-T1 V) - TOURISM,RECREATION,SIGHT-SEEING",
+      "e-Tourist Visa 1 year (e-T1 V) - RECREATION/SIGHT-SEEING",
+      "e-Tourist Visa 30 days (e-T1 V) - MEETING FRIENDS/RELATIVES",
+    ] satisfies readonly (typeof visaPurposeLabels)[number][],
   },
   captcha: {
     hint: "Type the code displayed on the official page.",

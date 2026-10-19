@@ -28,14 +28,14 @@ const records = [
     kind: "Field guide",
     section: sections.find((s) => s.id === f.sectionId)?.title ?? "",
     url: `/#${f.id}`,
-    terms: `${f.id.replace(/([a-z])([A-Z])/g, "$1 $2")} ${f.description} ${fieldHint(f).hint} ${fieldHint(f).explanation ?? ""} ${reportedChoices[f.id]?.labels.join(" ") ?? ""} ${aliases[f.id] ?? ""} ${portalObservations[f.id]?.choices?.join(" ") ?? ""}`,
+    terms: `${f.id.replace(/([a-z])([A-Z])/g, "$1 $2")} ${f.description} ${fieldHint(f).hint} ${fieldHint(f).explanation ?? ""} ${fieldHint(f).commonOptions?.join(" ") ?? ""} ${reportedChoices[f.id]?.labels.join(" ") ?? ""} ${aliases[f.id] ?? ""} ${portalObservations[f.id]?.choices?.join(" ") ?? ""}`,
   })),
   ...issues.map((i) => ({
     title: i.title,
     kind: "FAQ",
     section: "Common problems",
     url: `/problems/${i.id}/`,
-    terms: `${i.symptoms} ${i.answer} ${i.workaround}`,
+    terms: `${i.symptoms} ${i.answer} ${i.answerBullets?.join(" ") ?? ""} ${i.workaround}`,
   })),
   {
     title: "After you’re approved",
